@@ -1,25 +1,20 @@
-//
-//  ViewController.swift
-//  LanguageBook
-//
-//  Created by Chakrit Wichian on 7/30/14.
-//  Copyright (c) 2014 Chakrit Wichian. All rights reserved.
-//
-
 import UIKit
+import SpriteKit
 
 class ViewController: UIViewController {
-                            
+    override func loadView() {
+        let skv = SKView(frame: UIScreen.mainScreen().bounds)
+        skv.showsFPS = true
+        skv.showsDrawCount = true
+        skv.backgroundColor = .blackColor()
+        skv.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        
+        view = skv
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        (view as SKView).presentScene(MainScene())
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
