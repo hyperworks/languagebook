@@ -1,13 +1,17 @@
 import SpriteKit
 
-class TurquoiseButton: SKSpriteNode {
+class Button: SKSpriteNode {
+    var onPress: () -> Void = { }
+    
     init(text: String = "(button)") {
-        super.init(texture: SKTexture(imageNamed: "button_turquoise"),
+        super.init(texture: SKTexture(imageNamed: "button_base"),
             color: nil,
             size: CGSize(width: 200, height: 100))
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         userInteractionEnabled = true
+        color = .blueColor()
+        colorBlendFactor = 0.5
         
         var label = SKLabelNode(fontNamed: "Chalkduster")
         label.text = text
@@ -17,11 +21,5 @@ class TurquoiseButton: SKSpriteNode {
         addChild(label)
     }
     
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!){
-        NSLog("touchBegan")
-    }
-    
-    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-        NSLog("touchEnd")
-    }
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!){ onPress() }
 }

@@ -6,12 +6,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "button_turquoise.png"
+      "filename" : "button_base.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "button_turquoise@2x.png"
+      "filename" : "button_base@2x.png"
     }
   ],
   "info" : {

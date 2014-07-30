@@ -1,21 +1,22 @@
 import SpriteKit
 
-class MainScene: Scene {
-    let verticalGuide = VerticalLineGuide()
-    let horizontalGuide = HorizontalLineGuide()
+class MainScene: NavigableScene {
+    let titleLabel = SKLabelNode(fontNamed: "Chalkduster")
     
     override func didMoveToView(view: SKView!) {
-        addChild(verticalGuide)
-        addChild(horizontalGuide)
+        super.didMoveToView(view)
+        backgroundColor = .grayColor()
+        nextButton.color = .grayColor()
+        previousButton.color = .grayColor()
+        previousButton.hidden = true
         
-        let next = TurquoiseButton(text: "NEXT >")
-        next.position = CGPoint(x: 768, y: 192)
-        next.name = "next"
-        addChild(next)
-        
-        let prev = TurquoiseButton(text: "< BACK")
-        prev.position = CGPoint(x: 256, y: 192)
-        prev.name = "prev"
-        addChild(prev)
+        titleLabel.position = CGPoint(x: 512, y: 576)
+        titleLabel.text = "Main Scene"
+        titleLabel.color = .whiteColor()
+        addChild(titleLabel)
+    }
+    
+    override func didTapNext() {
+        view.presentScene(SecondScene(), transition: SKTransition.crossFadeWithDuration(1.0))
     }
 }
