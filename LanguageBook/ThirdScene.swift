@@ -1,7 +1,9 @@
 import SpriteKit
 
 class ThirdScene: NavigableScene {
-    let titleLabel = SKLabelNode(fontNamed: "Chalkduster")
+    let titleLabel = SKLabelNode(fontNamed: "Thonburi")
+    
+    override func previousScene() -> Scene? { return SecondScene() }
     
     override func didMoveToView(view: SKView!) {
         super.didMoveToView(view)
@@ -11,10 +13,9 @@ class ThirdScene: NavigableScene {
         nextButton.hidden = true
         
         titleLabel.position = CGPoint(x: 512, y: 576)
-        titleLabel.text = "Third Scene"
+        titleLabel.text = "ระนอง ระยอง ยะลา"
+        titleLabel.fontSize = 24.0
         titleLabel.color = .whiteColor()
         addChild(titleLabel)
     }
-    
-    override func previousScene() -> Scene? { return SecondScene() }
 }

@@ -4,6 +4,9 @@ class NavigableScene: Scene {
     let nextButton = Button(text: "NEXT >")
     let previousButton = Button(text: "< PREV")
     
+    func nextScene() -> Scene? { return nil }
+    func previousScene() -> Scene? { return nil }
+    
     override func didMoveToView(view: SKView!) {
         nextButton.position = CGPoint(x: 768, y: 192)
         nextButton.onPress = didTapNext
@@ -14,22 +17,15 @@ class NavigableScene: Scene {
         addChild(previousButton)
     }
     
-    func nextScene() -> Scene? { return nil }
-    func previousScene() -> Scene? { return nil }
-    
     func didTapNext() {
-        if let d = navigationDelegate {
-            if let next = nextScene() {
-                d.scene(self, shouldAdvanceTo: next)
-            }
+        if let next = nextScene() {
+            navigationDelegate?.scene(self, shouldAdvanceTo: next)
         }
     }
     
     func didTapPrevious() {
-        if let d = navigationDelegate {
-            if let prev = previousScene() {
-                d.scene(self, shouldReturnTo: prev)
-            }
+        if let prev = previousScene() {
+            navigationDelegate?.scene(self, shouldReturnTo: prev)
         }
     }
 }

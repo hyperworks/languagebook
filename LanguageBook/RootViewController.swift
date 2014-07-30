@@ -38,24 +38,17 @@ class RootViewController: UIPageViewController, UIPageViewControllerDataSource,
     // MARK: UIPageViewControllerDataSource
     func pageViewController(pageViewController: UIPageViewController!,
         viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController! {
-            if let c = viewController as? SceneViewController {
-                if let nav = c.scene as? NavigableScene {
-                    if let prev = nav.previousScene() {
-                        return controllerFor(prev)
-                    }
-                }
+            if let scene = ((viewController as? SceneViewController)?.scene as? NavigableScene)?.previousScene() {
+                return controllerFor(scene)
             }
+            
             return nil
     }
     
     func pageViewController(pageViewController: UIPageViewController!,
         viewControllerAfterViewController viewController: UIViewController!) -> UIViewController! {
-            if let c = viewController as? SceneViewController {
-                if let nav = c.scene as? NavigableScene {
-                    if let next = nav.nextScene() {
-                        return controllerFor(next)
-                    }
-                }
+            if let scene = ((viewController as? SceneViewController)?.scene as? NavigableScene)?.nextScene() {
+                return controllerFor(scene)
             }
             return nil
     }
