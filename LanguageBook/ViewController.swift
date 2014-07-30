@@ -8,6 +8,7 @@ class ViewController: UIViewController {
         skv.showsDrawCount = true
         skv.backgroundColor = .blackColor()
         skv.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        skv.contentMode = .ScaleAspectFit
         
         view = skv
     }

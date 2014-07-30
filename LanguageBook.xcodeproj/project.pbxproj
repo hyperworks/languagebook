@@ -13,6 +13,10 @@
 		22E6BA491988A1C700F166D0 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E6BA481988A1C700F166D0 /* SpriteKit.framework */; };
 		22E6BA4C1988A63700F166D0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BA4B1988A63700F166D0 /* Scene.swift */; };
 		22E6BA4E1988A67300F166D0 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BA4D1988A67300F166D0 /* MainScene.swift */; };
+		22F858EA1988B58600220F9F /* VerticalLineGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858E91988B58600220F9F /* VerticalLineGuide.swift */; };
+		22F858EC1988B6F800220F9F /* HorizontalLineGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858EB1988B6F800220F9F /* HorizontalLineGuide.swift */; };
+		22F858EF1988BA7500220F9F /* TurquoiseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858EE1988BA7500220F9F /* TurquoiseButton.swift */; };
+		22F858F11988BEB800220F9F /* SecondScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858F01988BEB800220F9F /* SecondScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		22E6BA481988A1C700F166D0 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22E6BA4B1988A63700F166D0 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		22E6BA4D1988A67300F166D0 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		22F858E91988B58600220F9F /* VerticalLineGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalLineGuide.swift; sourceTree = "<group>"; };
+		22F858EB1988B6F800220F9F /* HorizontalLineGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalLineGuide.swift; sourceTree = "<group>"; };
+		22F858EE1988BA7500220F9F /* TurquoiseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurquoiseButton.swift; sourceTree = "<group>"; };
+		22F858F01988BEB800220F9F /* SecondScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 				22AA922D19889D1F0091F5E2 /* AppDelegate.swift */,
 				22AA922F19889D1F0091F5E2 /* ViewController.swift */,
 				22AA923419889D1F0091F5E2 /* Images.xcassets */,
+				22F858ED1988B9D600220F9F /* Nodes */,
 				22E6BA4A1988A62400F166D0 /* Scenes */,
 				22AA922B19889D1F0091F5E2 /* Supporting Files */,
 			);
@@ -88,8 +97,19 @@
 			children = (
 				22E6BA4D1988A67300F166D0 /* MainScene.swift */,
 				22E6BA4B1988A63700F166D0 /* Scene.swift */,
+				22F858F01988BEB800220F9F /* SecondScene.swift */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		22F858ED1988B9D600220F9F /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				22F858EB1988B6F800220F9F /* HorizontalLineGuide.swift */,
+				22F858EE1988BA7500220F9F /* TurquoiseButton.swift */,
+				22F858E91988B58600220F9F /* VerticalLineGuide.swift */,
+			);
+			name = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,9 +181,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F858EF1988BA7500220F9F /* TurquoiseButton.swift in Sources */,
+				22F858EC1988B6F800220F9F /* HorizontalLineGuide.swift in Sources */,
 				22AA923019889D1F0091F5E2 /* ViewController.swift in Sources */,
 				22E6BA4E1988A67300F166D0 /* MainScene.swift in Sources */,
 				22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */,
+				22F858EA1988B58600220F9F /* VerticalLineGuide.swift in Sources */,
+				22F858F11988BEB800220F9F /* SecondScene.swift in Sources */,
 				22E6BA4C1988A63700F166D0 /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

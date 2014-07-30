@@ -2,7 +2,11 @@ import SpriteKit
 
 class Scene: SKScene {
     init() {
-        super.init(size: UIScreen.mainScreen().bounds.size)
-        backgroundColor = .blackColor()
+        // Find out screen size in landscape (since UIScreen will give us size in portrait.)
+        let screenSize = UIScreen.mainScreen().bounds.size
+        let size = CGSize(width: screenSize.height, height: screenSize.width)
+        
+        super.init(size: size)
+        backgroundColor = SKColor.grayColor()
     }
 }
