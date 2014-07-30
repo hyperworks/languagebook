@@ -14,6 +14,22 @@ class NavigableScene: Scene {
         addChild(previousButton)
     }
     
-    func didTapNext() { /* child overrides */ }
-    func didTapPrevious() { /* child overrides */ }
+    func nextScene() -> Scene? { return nil }
+    func previousScene() -> Scene? { return nil }
+    
+    func didTapNext() {
+        if let d = navigationDelegate {
+            if let next = nextScene() {
+                d.scene(self, shouldAdvanceTo: next)
+            }
+        }
+    }
+    
+    func didTapPrevious() {
+        if let d = navigationDelegate {
+            if let prev = previousScene() {
+                d.scene(self, shouldReturnTo: prev)
+            }
+        }
+    }
 }

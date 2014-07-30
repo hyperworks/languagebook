@@ -16,7 +16,5 @@ class MainScene: NavigableScene {
         addChild(titleLabel)
     }
     
-    override func didTapNext() {
-        view.presentScene(SecondScene(), transition: SKTransition.crossFadeWithDuration(1.0))
-    }
+    override func nextScene() -> Scene? { return SecondScene() }
 }

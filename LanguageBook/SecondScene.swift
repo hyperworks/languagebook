@@ -15,12 +15,6 @@ class SecondScene: NavigableScene {
         addChild(titleLabel)
     }
     
-    override func didTapNext() {
-        view.presentScene(ThirdScene(), transition: SKTransition.fadeWithDuration(1.0))
-    }
-    
-    override func didTapPrevious() {
-        view.presentScene(MainScene(),
-        transition: SKTransition.revealWithDirection(.Down, duration: 1.0))
-    }
+    override func nextScene() -> Scene? { return ThirdScene() }
+    override func previousScene() -> Scene? { return MainScene() }
 }

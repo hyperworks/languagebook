@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22530CD01988F41400B6B012 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22530CCF1988F41400B6B012 /* SceneViewController.swift */; };
 		22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA922D19889D1F0091F5E2 /* AppDelegate.swift */; };
-		22AA923019889D1F0091F5E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA922F19889D1F0091F5E2 /* ViewController.swift */; };
+		22AA923019889D1F0091F5E2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA922F19889D1F0091F5E2 /* RootViewController.swift */; };
 		22AA923519889D1F0091F5E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AA923419889D1F0091F5E2 /* Images.xcassets */; };
 		22E6BA491988A1C700F166D0 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E6BA481988A1C700F166D0 /* SpriteKit.framework */; };
 		22E6BA4C1988A63700F166D0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BA4B1988A63700F166D0 /* Scene.swift */; };
@@ -22,10 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22530CCF1988F41400B6B012 /* SceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		22AA922819889D1F0091F5E2 /* LanguageBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AA922C19889D1F0091F5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AA922D19889D1F0091F5E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22AA922F19889D1F0091F5E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22AA922F19889D1F0091F5E2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		22AA923419889D1F0091F5E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22E6BA481988A1C700F166D0 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		22E6BA4B1988A63700F166D0 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -79,7 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				22AA922D19889D1F0091F5E2 /* AppDelegate.swift */,
-				22AA922F19889D1F0091F5E2 /* ViewController.swift */,
+				22530CCF1988F41400B6B012 /* SceneViewController.swift */,
+				22AA922F19889D1F0091F5E2 /* RootViewController.swift */,
 				22AA923419889D1F0091F5E2 /* Images.xcassets */,
 				22F858ED1988B9D600220F9F /* Nodes */,
 				22E6BA4A1988A62400F166D0 /* Scenes */,
@@ -190,11 +193,12 @@
 				22F858F51988C7D000220F9F /* ThirdScene.swift in Sources */,
 				22F858EF1988BA7500220F9F /* Button.swift in Sources */,
 				22F858EC1988B6F800220F9F /* HorizontalLineGuide.swift in Sources */,
-				22AA923019889D1F0091F5E2 /* ViewController.swift in Sources */,
+				22AA923019889D1F0091F5E2 /* RootViewController.swift in Sources */,
 				22E6BA4E1988A67300F166D0 /* MainScene.swift in Sources */,
 				22F858F31988C4E500220F9F /* NavigableScene.swift in Sources */,
 				22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */,
 				22F858EA1988B58600220F9F /* VerticalLineGuide.swift in Sources */,
+				22530CD01988F41400B6B012 /* SceneViewController.swift in Sources */,
 				22F858F11988BEB800220F9F /* SecondScene.swift in Sources */,
 				22E6BA4C1988A63700F166D0 /* Scene.swift in Sources */,
 			);

@@ -1,9 +1,15 @@
 import SpriteKit
 
+protocol SceneNavigationDelegate {
+    func scene(Scene, shouldAdvanceTo nextScene: Scene)
+    func scene(Scene, shouldReturnTo previousScene: Scene)
+}
+
 class Scene: SKScene {
     let verticalGuide = VerticalLineGuide()
     let horizontalGuide = HorizontalLineGuide()
     
+    var navigationDelegate: SceneNavigationDelegate? = nil
     var guidesEnabled = false
     
     init() {

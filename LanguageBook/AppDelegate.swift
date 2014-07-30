@@ -8,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let w = window {
             w.backgroundColor = .whiteColor()
-            w.rootViewController = ViewController()
+            w.rootViewController = RootViewController()
             w.makeKeyAndVisible()
         }
         
