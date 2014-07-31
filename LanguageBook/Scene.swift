@@ -1,6 +1,6 @@
 import SpriteKit
 
-protocol SceneNavigationDelegate {
+@objc protocol SceneNavigationDelegate {
     func scene(Scene, shouldAdvanceTo nextScene: Scene)
     func scene(Scene, shouldReturnTo previousScene: Scene)
 }
@@ -9,10 +9,10 @@ class Scene: SKScene {
     let verticalGuide = VerticalLineGuide()
     let horizontalGuide = HorizontalLineGuide()
     
-    var navigationDelegate: SceneNavigationDelegate? = nil
+    weak var navigationDelegate: SceneNavigationDelegate? = nil
     var guidesEnabled = false
-    
-    init() {
+
+    required init() {
         // Find out screen size in landscape (since UIScreen will give us size in portrait.)
         let screenSize = UIScreen.mainScreen().bounds.size
         let size = CGSize(width: screenSize.height, height: screenSize.width)

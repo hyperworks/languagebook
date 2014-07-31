@@ -3,10 +3,32 @@ import SpriteKit
 class NavigableScene: Scene {
     let nextButton = Button(text: "NEXT >")
     let previousButton = Button(text: "< PREV")
-    
-    func nextScene() -> Scene? { return nil }
-    func previousScene() -> Scene? { return nil }
-    
+
+    var nextSceneType: Scene.Type? { return nil }
+    var previousSceneType: Scene.Type? { return nil }
+
+    init() { }
+
+    func nextScene() -> Scene? {
+        if let sceneType = nextSceneType {
+            let next = sceneType()
+            next.navigationDelegate = navigationDelegate
+            return next
+        }
+
+        return nil
+    }
+
+    func previousScene() -> Scene? {
+        if let sceneType = previousSceneType {
+            let previous = sceneType()
+            previous.navigationDelegate = navigationDelegate
+            return previous
+        }
+
+        return nil
+    }
+
     override func didMoveToView(view: SKView!) {
         nextButton.position = CGPoint(x: 768, y: 192)
         nextButton.onPress = didTapNext

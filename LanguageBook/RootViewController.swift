@@ -4,35 +4,29 @@ import SpriteKit
 class RootViewController: UIPageViewController, UIPageViewControllerDataSource,
     UIPageViewControllerDelegate, SceneNavigationDelegate {
     
-    var currentSceneViewController: SceneViewController? = nil
-    
     init() {
         super.init(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: [:])
         doubleSided = false
         dataSource = self
         delegate = self
-        
-        setViewControllers([controllerFor(MainScene())], direction: .Forward,
-            animated: false, completion: nil)
-    }
-    
-    func controllerFor(scene: Scene?) -> UIViewController! {
-        if let nav = scene as? NavigableScene {
-            nav.navigationDelegate = self
-            return SceneViewController(nav)
-        }
 
-        return nil
+        let firstScene = MainScene()
+        firstScene.navigationDelegate = self
+
+        setViewControllers([firstScene.controller()], direction: .Forward,
+            animated: false, completion: nil)
     }
     
     // MARK: SceneNavigationDelegate
     func scene(scene: Scene, shouldAdvanceTo nextScene: Scene) {
-        setViewControllers([controllerFor(nextScene)], direction: .Forward,
+        nextScene.navigationDelegate = self
+        setViewControllers([nextScene.controller()], direction: .Forward,
             animated: true, completion: nil)
     }
     
     func scene(scene: Scene, shouldReturnTo previousScene: Scene) {
-        setViewControllers([controllerFor(previousScene)], direction: .Reverse,
+        previousScene.navigationDelegate = self
+        setViewControllers([previousScene.controller()], direction: .Reverse,
             animated: true, completion: nil)
     }
     
@@ -41,14 +35,14 @@ class RootViewController: UIPageViewController, UIPageViewControllerDataSource,
         viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController! {
             let controller = viewController as SceneViewController
             let scene = controller.scene as? NavigableScene
-            return controllerFor(scene?.previousScene())
+            return scene?.previousScene()?.controller()
     }
     
     func pageViewController(pageViewController: UIPageViewController!,
         viewControllerAfterViewController viewController: UIViewController!) -> UIViewController! {
             let controller = viewController as SceneViewController
             let scene = controller.scene as? NavigableScene
-            return controllerFor(scene?.nextScene())
+            return scene?.nextScene()?.controller()
     }
     
     // MARK: UIPageViewControllerDelegate

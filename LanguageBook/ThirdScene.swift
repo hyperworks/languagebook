@@ -3,8 +3,10 @@ import SpriteKit
 class ThirdScene: NavigableScene {
     let titleLabel = SKLabelNode(fontNamed: "Thonburi")
     
-    override func previousScene() -> Scene? { return SecondScene() }
-    
+    override var previousSceneType: Scene.Type? { return SecondScene.self }
+
+    init() { }
+
     override func didMoveToView(view: SKView!) {
         super.didMoveToView(view)
         backgroundColor = .greenColor()

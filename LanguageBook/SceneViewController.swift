@@ -1,6 +1,12 @@
 import UIKit
 import SpriteKit
 
+extension Scene {
+    func controller() -> SceneViewController {
+        return SceneViewController(self)
+    }
+}
+
 class SceneViewController: UIViewController {
     let scene: Scene
     
