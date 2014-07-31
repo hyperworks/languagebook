@@ -2,18 +2,18 @@ import UIKit
 import SpriteKit
 
 class SceneViewController: UIViewController {
-    let scene: SKScene
+    let scene: Scene
     
     var paused: Bool {
     get { return (view as SKView).paused }
     set { (view as SKView).paused = newValue }
     }
-    
-    init(_ scene: SKScene) {
+
+    init(_ scene: Scene, nibName: String? = nil, bundle: NSBundle? = nil) {
         self.scene = scene
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibName, bundle: bundle)
     }
-    
+
     override func loadView() {
         let skv = SKView(frame: CGRect(x: 0, y: 0, width: 1024, height: 768))
         skv.showsDrawCount = true
