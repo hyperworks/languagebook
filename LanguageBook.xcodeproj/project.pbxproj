@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		22530CD01988F41400B6B012 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22530CCF1988F41400B6B012 /* SceneViewController.swift */; };
+		22744A4F198B8FC400605F3D /* AttributedStringNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22744A4E198B8FC400605F3D /* AttributedStringNode.swift */; };
+		228C34E8198D145600E9E6B9 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C34E7198D145600E9E6B9 /* NSAttributedString.swift */; };
+		228C34EA198E1D7E00E9E6B9 /* DebugNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C34E9198E1D7E00E9E6B9 /* DebugNode.swift */; };
+		228C34EC198E200600E9E6B9 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C34EB198E200600E9E6B9 /* CGPoint.swift */; };
 		22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA922D19889D1F0091F5E2 /* AppDelegate.swift */; };
 		22AA923019889D1F0091F5E2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA922F19889D1F0091F5E2 /* RootViewController.swift */; };
 		22AA923519889D1F0091F5E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AA923419889D1F0091F5E2 /* Images.xcassets */; };
@@ -24,6 +28,10 @@
 
 /* Begin PBXFileReference section */
 		22530CCF1988F41400B6B012 /* SceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
+		22744A4E198B8FC400605F3D /* AttributedStringNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringNode.swift; sourceTree = "<group>"; };
+		228C34E7198D145600E9E6B9 /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
+		228C34E9198E1D7E00E9E6B9 /* DebugNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugNode.swift; sourceTree = "<group>"; };
+		228C34EB198E200600E9E6B9 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		22AA922819889D1F0091F5E2 /* LanguageBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AA922C19889D1F0091F5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AA922D19889D1F0091F5E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2246438C198E20D70001DEBF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				228C34EB198E200600E9E6B9 /* CGPoint.swift */,
+				228C34E7198D145600E9E6B9 /* NSAttributedString.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		229B804C1988AE9D00642015 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,9 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				22AA922D19889D1F0091F5E2 /* AppDelegate.swift */,
-				22530CCF1988F41400B6B012 /* SceneViewController.swift */,
 				22AA922F19889D1F0091F5E2 /* RootViewController.swift */,
+				22530CCF1988F41400B6B012 /* SceneViewController.swift */,
 				22AA923419889D1F0091F5E2 /* Images.xcassets */,
+				2246438C198E20D70001DEBF /* Extensions */,
 				22F858ED1988B9D600220F9F /* Nodes */,
 				22E6BA4A1988A62400F166D0 /* Scenes */,
 				22AA922B19889D1F0091F5E2 /* Supporting Files */,
@@ -114,9 +132,11 @@
 		22F858ED1988B9D600220F9F /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				22F858EB1988B6F800220F9F /* HorizontalLineGuide.swift */,
+				22744A4E198B8FC400605F3D /* AttributedStringNode.swift */,
 				22F858EE1988BA7500220F9F /* Button.swift */,
+				22F858EB1988B6F800220F9F /* HorizontalLineGuide.swift */,
 				22F858E91988B58600220F9F /* VerticalLineGuide.swift */,
+				228C34E9198E1D7E00E9E6B9 /* DebugNode.swift */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -193,13 +213,17 @@
 				22F858F51988C7D000220F9F /* ThirdScene.swift in Sources */,
 				22F858EF1988BA7500220F9F /* Button.swift in Sources */,
 				22F858EC1988B6F800220F9F /* HorizontalLineGuide.swift in Sources */,
+				228C34EA198E1D7E00E9E6B9 /* DebugNode.swift in Sources */,
 				22AA923019889D1F0091F5E2 /* RootViewController.swift in Sources */,
 				22E6BA4E1988A67300F166D0 /* MainScene.swift in Sources */,
 				22F858F31988C4E500220F9F /* NavigableScene.swift in Sources */,
 				22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */,
 				22F858EA1988B58600220F9F /* VerticalLineGuide.swift in Sources */,
 				22530CD01988F41400B6B012 /* SceneViewController.swift in Sources */,
+				22744A4F198B8FC400605F3D /* AttributedStringNode.swift in Sources */,
 				22F858F11988BEB800220F9F /* SecondScene.swift in Sources */,
+				228C34E8198D145600E9E6B9 /* NSAttributedString.swift in Sources */,
+				228C34EC198E200600E9E6B9 /* CGPoint.swift in Sources */,
 				22E6BA4C1988A63700F166D0 /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
