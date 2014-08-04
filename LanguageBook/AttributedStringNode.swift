@@ -1,11 +1,17 @@
 import UIKit
 import SpriteKit
 
+@objc protocol AttributedStringNodeDelegate {
+    optional func attributedStringNode(node: AttributedStringNode, didTapSubstring substring: NSString)
+    optional func attributedStringNode(node: AttributedStringNode, didTapWord word: NSString)
+}
+
 class AttributedStringNode: SKSpriteNode {
     private var _textStorage: NSTextStorage? = nil
     private var _stringImage: UIImage? = nil
     private var _topOffset: CGFloat = 0.0
 
+    weak var delegate: AttributedStringNodeDelegate?
     let layoutManager = NSLayoutManager()
 
     var attributedString: NSAttributedString? {
@@ -78,7 +84,7 @@ class AttributedStringNode: SKSpriteNode {
         let charRange = rawString.rangeOfComposedCharacterSequenceAtIndex(charIndex)
         let char = rawString.substringWithRange(charRange)
 
-        NSLog("touch: %@", char)
+        delegate?.attributedStringNode?(self, didTapSubstring: char)
     }
 
 
