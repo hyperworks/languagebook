@@ -1,6 +1,8 @@
 import SpriteKit
+import AVFoundation
 
 class MainScene: NavigableScene, MarkedTextNodeDelegate {
+    let speech: AVSpeechSynthesizer = AVSpeechSynthesizer()
     let titleLabel: SKLabelNode = SKLabelNode(fontNamed: "Thonburi")
     let storyTextNode: MarkedTextNode = MarkedTextNode(markedText: Dummy.scenarioOne())
     
@@ -27,8 +29,20 @@ class MainScene: NavigableScene, MarkedTextNodeDelegate {
     }
     
     
-    // MARK: AttributedStringNodeDelegate
-    func attributedStringNode(node: AttributedStringNode, didTapSubstring substring: NSString) {
-        titleLabel.text = substring
+    // MARK: MarkedTextNodeDelegate
+    func markedTextNode(node: MarkedTextNode, didTapPortion portion: TextPortion) {
+        titleLabel.text = portion.word
+        
+        for object in AVSpeechSynthesisVoice.speechVoices() {
+            let voice = object as AVSpeechSynthesisVoice
+            NSLog("available voice: %@", voice.language)
+        }
+        
+        let utterance = AVSpeechUtterance(string: portion.word)
+        utterance.voice = AVSpeechSynthesisVoice(language: "th-TH")
+        utterance.volume = 1.0
+        
+        speech.stopSpeakingAtBoundary(.Word)
+        speech.speakUtterance(utterance)
     }
 }
