@@ -30,6 +30,7 @@ class RootViewController: UIPageViewController, UIPageViewControllerDataSource,
             animated: true, completion: nil)
     }
     
+    
     // MARK: UIPageViewControllerDataSource
     func pageViewController(pageViewController: UIPageViewController!,
         viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController! {
@@ -44,6 +45,7 @@ class RootViewController: UIPageViewController, UIPageViewControllerDataSource,
             let scene = controller.scene as? NavigableScene
             return scene?.nextScene()?.controller()
     }
+    
     
     // MARK: UIPageViewControllerDelegate
     func pageViewController(pageViewController: UIPageViewController!,

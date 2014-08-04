@@ -1,7 +1,8 @@
 import SpriteKit
 
-class MainScene: NavigableScene, AttributedStringNodeDelegate {
+class MainScene: NavigableScene, MarkedTextNodeDelegate {
     let titleLabel: SKLabelNode = SKLabelNode(fontNamed: "Thonburi")
+    let storyTextNode: MarkedTextNode = MarkedTextNode(markedText: Dummy.scenarioOne())
     
     override var nextSceneType: Scene.Type? { return SecondScene.self }
 
@@ -18,18 +19,11 @@ class MainScene: NavigableScene, AttributedStringNodeDelegate {
         titleLabel.position = CGPoint(x: 512, y: 576)
         addChild(titleLabel)
 
-        let firstLine = NSAttributedString("ชามเขียวคว่ำเช้าชามขาวคว่ำค่ำ",
-            fontName: "Thonburi", fontSize: CGFloat(48.0), color: SKColor.whiteColor(),
-            alignment: .Center, lineBreakMode: .ByWordWrapping)
-
-        let textBoxSize = CGSize(width: 200, height: 300)
-        let firstLineNode = AttributedStringNode(attributedString: firstLine, nodeSize: textBoxSize)
-
-        firstLineNode.position = CGPoint(x: 300, y: 400)
-        firstLineNode.delegate = self
-        
-        addChild(firstLineNode)
-        addChild(DebugNode(sprite: firstLineNode))
+        storyTextNode.position = CGPoint(x: 300, y: 400)
+        storyTextNode.size = CGSize(width: 300, height: 300)
+        storyTextNode.delegate = self
+        addChild(storyTextNode)
+        addChild(DebugNode(sprite: storyTextNode))
     }
     
     

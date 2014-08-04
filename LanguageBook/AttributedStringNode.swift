@@ -1,25 +1,24 @@
 import UIKit
 import SpriteKit
 
-@objc protocol AttributedStringNodeDelegate {
-    optional func attributedStringNode(node: AttributedStringNode, didTapSubstring substring: NSString)
-    optional func attributedStringNode(node: AttributedStringNode, didTapWord word: NSString)
+@objc protocol MarkedTextNodeDelegate {
+    optional func markedTextNode(node: MarkedTextNode, didTapPortion portion: TextPortion)
 }
 
-class AttributedStringNode: SKSpriteNode {
-    private var _textStorage: NSTextStorage? = nil
+class MarkedTextNode: SKSpriteNode {
+    private var _markedText: MarkedTextStorage? = nil
     private var _stringImage: UIImage? = nil
     private var _topOffset: CGFloat = 0.0
 
-    weak var delegate: AttributedStringNodeDelegate?
+    weak var delegate: MarkedTextNodeDelegate?
     let layoutManager = NSLayoutManager()
 
-    var attributedString: NSAttributedString? {
-        get { return _textStorage }
+    var markedText: MarkedTextStorage? {
+        get { return _markedText }
         set {
-            _textStorage?.removeLayoutManager(layoutManager)
-            _textStorage = !newValue ? nil : NSTextStorage(attributedString: newValue)
-            _textStorage?.addLayoutManager(layoutManager)
+            _markedText?.removeLayoutManager(layoutManager)
+            _markedText = !newValue ? nil : newValue
+            _markedText?.addLayoutManager(layoutManager)
 
             invalidateStringImage()
         }
@@ -37,20 +36,20 @@ class AttributedStringNode: SKSpriteNode {
     }
 
 
-    convenience init(attributedString: NSAttributedString, nodeSize: CGSize) {
+    convenience init(markedText: MarkedTextStorage, nodeSize: CGSize = CGSizeZero) {
         self.init(size: nodeSize)
-        self.attributedString = attributedString
+        self.markedText = markedText
     }
-
-    init(size: CGSize) {
+    
+    init(size: CGSize = CGSizeZero) {
         super.init(texture: nil, color: nil, size: size)
         userInteractionEnabled = true
     }
 
 
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        if !_textStorage { return }
-        let ts = _textStorage!
+        if !_markedText { return }
+        let text = _markedText!
 
         // Since UIKit uses a different co-ordinate system to SpriteKit, we need to be careful
         // when moving CGPoints since the meaning of moving up the Y axis in SpriteKit (y+ = up)
@@ -72,24 +71,19 @@ class AttributedStringNode: SKSpriteNode {
         }
 
         // Extract the character at the position
-        let rawString: String = ts.string!
+        let rawString: String = text.string!
         let rawIndex = layoutManager.characterIndexForPoint(offset,
             inTextContainer: container, fractionOfDistanceBetweenInsertionPoints: nil)
-
-        if rawIndex == NSNotFound || rawIndex >= countElements(rawString) {
-            return
+        let portion = text.textPortionAtCharacterIndex(rawIndex)
+        
+        if let p = portion? {
+            delegate?.markedTextNode?(self, didTapPortion: p)
         }
-
-        let charIndex = advance(rawString.startIndex, rawIndex)
-        let charRange = rawString.rangeOfComposedCharacterSequenceAtIndex(charIndex)
-        let char = rawString.substringWithRange(charRange)
-
-        delegate?.attributedStringNode?(self, didTapSubstring: char)
     }
 
 
     private func invalidateStringImage() {
-        if !_textStorage || layoutManager.textContainers.count == 0 {
+        if !_markedText || layoutManager.textContainers.count == 0 || size == CGSizeZero {
             _stringImage = nil
             texture = nil
             return
@@ -100,8 +94,8 @@ class AttributedStringNode: SKSpriteNode {
     }
 
     private func renderStringImage() -> UIImage {
-        assert(_textStorage, "renderStringImage() with nil string.")
-        assert(layoutManager.textContainers.count > 0, "renderStringImage() with textContainer specified.")
+        assert(_markedText, "renderStringImage() with nil string.")
+        assert(layoutManager.textContainers.count > 0, "renderStringImage() with no textContainer specified.")
 
         let range = NSRange(location: 0, length: layoutManager.numberOfGlyphs)
         let container = layoutManager.textContainers[0] as NSTextContainer
