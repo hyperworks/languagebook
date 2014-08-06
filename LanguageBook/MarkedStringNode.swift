@@ -1,24 +1,24 @@
 import UIKit
 import SpriteKit
 
-@objc protocol MarkedTextNodeDelegate {
-    optional func markedTextNode(node: MarkedTextNode, didTapPortion portion: TextPortion)
+@objc protocol MarkedStringNodeDelegate {
+    optional func markedStringNode(node: MarkedStringNode, didTapPortion portion: TextPortion)
 }
 
-class MarkedTextNode: SKSpriteNode {
-    private var _markedText: MarkedTextStorage? = nil
+class MarkedStringNode: SKSpriteNode {
+    private var _markedString: MarkedString? = nil
     private var _stringImage: UIImage? = nil
     private var _topOffset: CGFloat = 0.0
 
-    weak var delegate: MarkedTextNodeDelegate?
+    weak var delegate: MarkedStringNodeDelegate?
     let layoutManager = NSLayoutManager()
 
-    var markedText: MarkedTextStorage? {
-        get { return _markedText }
+    var markedString: MarkedString? {
+        get { return _markedString }
         set {
-            _markedText?.removeLayoutManager(layoutManager)
-            _markedText = !newValue ? nil : newValue
-            _markedText?.addLayoutManager(layoutManager)
+            _markedString?.script.removeLayoutManager(layoutManager)
+            _markedString = !newValue ? nil : newValue
+            _markedString?.script.addLayoutManager(layoutManager)
 
             invalidateStringImage()
         }
@@ -36,9 +36,9 @@ class MarkedTextNode: SKSpriteNode {
     }
 
 
-    convenience init(markedText: MarkedTextStorage, nodeSize: CGSize = CGSizeZero) {
+    convenience init(markedString: MarkedString, nodeSize: CGSize = CGSizeZero) {
         self.init(size: nodeSize)
-        self.markedText = markedText
+        self.markedString = markedString
     }
     
     init(size: CGSize = CGSizeZero) {
@@ -48,8 +48,8 @@ class MarkedTextNode: SKSpriteNode {
 
 
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        if !_markedText { return }
-        let text = _markedText!
+        if !_markedString { return }
+        let ms = _markedString!
 
         // Since UIKit uses a different co-ordinate system to SpriteKit, we need to be careful
         // when moving CGPoints since the meaning of moving up the Y axis in SpriteKit (y+ = up)
@@ -71,19 +71,19 @@ class MarkedTextNode: SKSpriteNode {
         }
 
         // Extract the character at the position
-        let rawString: String = text.string!
+        let rawString: String = ms.script.string!
         let rawIndex = layoutManager.characterIndexForPoint(offset,
             inTextContainer: container, fractionOfDistanceBetweenInsertionPoints: nil)
-        let portion = text.textPortionAtCharacterIndex(rawIndex)
+        let portion = ms.textPortionAtCharacterIndex(rawIndex)
         
         if let p = portion? {
-            delegate?.markedTextNode?(self, didTapPortion: p)
+            delegate?.markedStringNode?(self, didTapPortion: p)
         }
     }
 
 
     private func invalidateStringImage() {
-        if !_markedText || layoutManager.textContainers.count == 0 || size == CGSizeZero {
+        if !_markedString || layoutManager.textContainers.count == 0 || size == CGSizeZero {
             _stringImage = nil
             texture = nil
             return
@@ -94,7 +94,7 @@ class MarkedTextNode: SKSpriteNode {
     }
 
     private func renderStringImage() -> UIImage {
-        assert(_markedText, "renderStringImage() with nil string.")
+        assert(_markedString, "renderStringImage() with nil string.")
         assert(layoutManager.textContainers.count > 0, "renderStringImage() with no textContainer specified.")
 
         let range = NSRange(location: 0, length: layoutManager.numberOfGlyphs)
