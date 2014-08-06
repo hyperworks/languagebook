@@ -8,8 +8,8 @@ class MarkedStringLoader {
     let subtitlePath: String
     let audioPath: String
     
-    convenience init(setName: String) {
-        self.init(bundle: NSBundle.mainBundle(), setName: setName)
+    convenience init(setName: String, attributes: [NSObject : AnyObject]? = nil) {
+        self.init(bundle: NSBundle.mainBundle(), setName: setName, attributes: attributes)
     }
     
     init(bundle: NSBundle, setName: String, attributes: [NSObject : AnyObject]? = nil) {
@@ -38,7 +38,7 @@ class MarkedStringLoader {
                 toTime: subtitle.toTime)
         })
         
-        return MarkedString(script: script,
+        return MarkedString(script: NSAttributedString(string: script, attributes: attributes),
             audioPath: audioPath,
             portions: portions)
     }

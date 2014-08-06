@@ -22,30 +22,39 @@ class MainScene: NavigableScene, MarkedStringNodeDelegate {
         titleLabel.position = CGPoint(x: 512, y: 576)
         addChild(titleLabel)
         
-        let loader = MarkedStringLoader(setName: "01")
-        storyTextNode.markedString = loader.load()
-        storyTextNode.position = CGPoint(x: 300, y: 400)
-        storyTextNode.size = CGSize(width: 300, height: 300)
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .Center
+        paragraph.lineBreakMode = .ByClipping
+        
+        let loader = MarkedStringLoader(setName: "01", attributes: [
+            NSFontAttributeName: UIFont(name: "Thonburi", size: 24.0),
+            NSParagraphStyleAttributeName: paragraph,
+            NSForegroundColorAttributeName: SKColor.whiteColor(),
+            ])
+        let markedString = loader.load()
+        
+        storyTextNode.markedString = markedString
+        storyTextNode.position = CGPoint(x: 300, y: 300)
+        storyTextNode.size = CGSize(width: 500, height: 500)
         storyTextNode.delegate = self
         addChild(storyTextNode)
         addChild(DebugNode(sprite: storyTextNode))
     }
     
     
-    // MARK: MarkedTextNodeDelegate
+    // MARK: MarkedStringNodeDelegate
     func markedStringNode(node: MarkedStringNode, didTapPortion portion: TextPortion) {
-//        titleLabel.text = portion.word
+        let str = node.markedString!.script.string!
+        let span = portion.wordSpan
+        let range = Range(start: span.from, end: span.to)
+        let word = str.substringWithRange(range)
+        titleLabel.text = word
 
-        for object in AVSpeechSynthesisVoice.speechVoices() {
-            let voice = object as AVSpeechSynthesisVoice
-            NSLog("available voice: %@", voice.language)
-        }
-        
-//        let utterance = AVSpeechUtterance(string: portion.word)
-//        utterance.voice = AVSpeechSynthesisVoice(language: "th-TH")
-//        utterance.volume = 1.0
+        let utterance = AVSpeechUtterance(string: word)
+        utterance.voice = AVSpeechSynthesisVoice(language: "th-TH")
+        utterance.volume = 1.0
 
         speech.stopSpeakingAtBoundary(.Word)
-//        speech.speakUtterance(utterance)
+        speech.speakUtterance(utterance)
     }
 }
