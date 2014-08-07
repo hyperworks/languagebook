@@ -44,9 +44,11 @@ class MarkedStringLoader {
     }
     
     func loadScript() -> String {
-        return NSString(contentsOfFile: scriptPath,
+        let str = NSString(contentsOfFile: scriptPath,
             encoding: NSUTF8StringEncoding,
             error: nil)
+        
+        return str.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     }
     
     func loadSubtitle() -> [SubtitleLine] {
@@ -117,7 +119,7 @@ class MarkedStringLoader {
             .map({ $0.toStringRange(inString: timeString) })
             .map({ timeString.substringWithRange($0).toInt()! })
 
-        var seconds: Float = Float(nums[3]) / powf(10.0, Float(nums[3].numberOfDigits))
+        var seconds: Float = Float(nums[3]) / 1000.0
         seconds += Float(nums[2])
         seconds += Float(nums[1] * 60)
         seconds += Float(nums[0] * 60 * 60)

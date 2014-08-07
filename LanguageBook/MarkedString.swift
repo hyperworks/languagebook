@@ -57,7 +57,7 @@ class MarkedString {
             
             return portion
         }
-        
+    
         return nil
     }
     

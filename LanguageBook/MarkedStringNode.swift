@@ -99,8 +99,9 @@ class MarkedStringNode: SKSpriteNode {
 
         let range = NSRange(location: 0, length: layoutManager.numberOfGlyphs)
         let container = layoutManager.textContainers[0] as NSTextContainer
-        let usedRect = layoutManager.usedRectForTextContainer(container)
-
+        
+        // TODO: usedRectForTextContainer sometimes returns CGRectZero so we do this for now.
+        let usedRect = layoutManager.boundingRectForGlyphRange(range, inTextContainer: container)
         _topOffset = CGFloat(size.height - usedRect.height) * 0.5
 
         UIGraphicsBeginImageContext(size)
