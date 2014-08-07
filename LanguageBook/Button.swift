@@ -1,25 +1,30 @@
 import SpriteKit
 
 class Button: SKSpriteNode {
-    var onPress: () -> Void = { }
-    
-    init(text: String = "(button)") {
-        super.init(texture: SKTexture(imageNamed: "button_base"),
-            color: nil,
+    typealias DidTouchFunction = () -> Void
+
+    let labelNode = SKLabelNode(fontNamed: "Chalkduster")
+    var didTapButton: DidTouchFunction?
+
+    convenience init(text: String = "(button)") {
+        self.init(texture: SKTexture(imageNamed: "button_base"), color: nil,
             size: CGSize(width: 200, height: 100))
-        
+        labelNode.text = text
+    }
+
+    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
+
+    override required init(texture: SKTexture!, color: UIColor!, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         userInteractionEnabled = true
-        color = .blueColor()
         colorBlendFactor = 0.5
-        
-        var label = SKLabelNode(fontNamed: "Chalkduster")
-        label.text = text
-        label.fontSize = CGFloat(38.0)
-        label.position = CGPoint(x: 0, y: -10)
-        label.userInteractionEnabled = false
-        addChild(label)
+
+        labelNode.fontSize = CGFloat(38.0)
+        labelNode.position = CGPoint(x: 0, y: -10)
+        labelNode.userInteractionEnabled = false
+        addChild(labelNode)
     }
-    
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!){ onPress() }
+
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) { didTapButton?() }
 }

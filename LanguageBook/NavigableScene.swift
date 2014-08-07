@@ -7,8 +7,6 @@ class NavigableScene: Scene {
     var nextSceneType: Scene.Type? { return nil }
     var previousSceneType: Scene.Type? { return nil }
 
-    init() { }
-
     func nextScene() -> Scene? {
         if let sceneType = nextSceneType {
             let next = sceneType()
@@ -31,11 +29,11 @@ class NavigableScene: Scene {
 
     override func didMoveToView(view: SKView!) {
         nextButton.position = CGPoint(x: 768, y: 192)
-        nextButton.onPress = didTapNext
+        nextButton.didTapButton = didTapNext
         addChild(nextButton)
         
         previousButton.position = CGPoint(x: 256, y: 192)
-        previousButton.onPress = didTapPrevious
+        previousButton.didTapButton = didTapPrevious
         addChild(previousButton)
     }
     

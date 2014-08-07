@@ -11,9 +11,11 @@ class SceneViewController: UIViewController {
     let scene: Scene
     
     var paused: Bool {
-    get { return (view as SKView).paused }
-    set { (view as SKView).paused = newValue }
+        get { return (view as SKView).paused }
+        set { (view as SKView).paused = newValue }
     }
+
+    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
 
     init(_ scene: Scene, nibName: String? = nil, bundle: NSBundle? = nil) {
         self.scene = scene

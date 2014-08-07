@@ -17,7 +17,7 @@ class MarkedStringNode: SKSpriteNode {
         get { return _markedString }
         set {
             _markedString?.script.removeLayoutManager(layoutManager)
-            _markedString = !newValue ? nil : newValue
+            _markedString = newValue
             _markedString?.script.addLayoutManager(layoutManager)
 
             invalidateStringImage()
@@ -40,6 +40,8 @@ class MarkedStringNode: SKSpriteNode {
         self.init(size: nodeSize)
         self.markedString = markedString
     }
+
+    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
     
     init(size: CGSize = CGSizeZero) {
         super.init(texture: nil, color: nil, size: size)
@@ -48,7 +50,7 @@ class MarkedStringNode: SKSpriteNode {
 
 
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        if !_markedString { return }
+        if _markedString == nil { return }
         let ms = _markedString!
 
         // Since UIKit uses a different co-ordinate system to SpriteKit, we need to be careful
@@ -83,7 +85,7 @@ class MarkedStringNode: SKSpriteNode {
 
 
     private func invalidateStringImage() {
-        if !_markedString || layoutManager.textContainers.count == 0 || size == CGSizeZero {
+        if _markedString == nil || layoutManager.textContainers.count == 0 || size == CGSizeZero {
             _stringImage = nil
             texture = nil
             return
@@ -94,7 +96,7 @@ class MarkedStringNode: SKSpriteNode {
     }
 
     private func renderStringImage() -> UIImage {
-        assert(_markedString, "renderStringImage() with nil string.")
+        assert(_markedString != nil, "renderStringImage() with nil string.")
         assert(layoutManager.textContainers.count > 0, "renderStringImage() with no textContainer specified.")
 
         let range = NSRange(location: 0, length: layoutManager.numberOfGlyphs)

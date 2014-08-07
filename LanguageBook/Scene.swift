@@ -12,7 +12,9 @@ class Scene: SKScene {
     weak var navigationDelegate: SceneNavigationDelegate? = nil
     var guidesEnabled = false
 
-    required init() {
+    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
+
+    override required init() {
         // Find out screen size in landscape (since UIScreen will give us size in portrait.)
         let screenSize = UIScreen.mainScreen().bounds.size
         let size = CGSize(width: screenSize.height, height: screenSize.width)
@@ -20,7 +22,7 @@ class Scene: SKScene {
         super.init(size: size)
         backgroundColor = SKColor.grayColor()
     }
-    
+
     override func didMoveToView(view: SKView!) {
         if guidesEnabled {
             addChild(verticalGuide)

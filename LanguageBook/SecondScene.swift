@@ -6,8 +6,6 @@ class SecondScene: NavigableScene {
     override var nextSceneType: Scene.Type? { return ThirdScene.self }
     override var previousSceneType: Scene.Type? { return MainScene.self }
 
-    init() { }
-    
     override func didMoveToView(view: SKView!) {
         super.didMoveToView(view)
         backgroundColor = .blueColor()

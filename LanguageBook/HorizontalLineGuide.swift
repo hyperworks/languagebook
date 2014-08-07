@@ -2,7 +2,10 @@ import SpriteKit
 
 class HorizontalLineGuide: SKShapeNode {
     let stops = [192, 384, 576]
-    init() {
+
+    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
+
+    override init() {
         super.init()
         
         let guide = CGPathCreateMutable()

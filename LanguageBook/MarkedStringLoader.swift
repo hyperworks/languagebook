@@ -91,7 +91,7 @@ class MarkedStringLoader {
                 options: .CaseInsensitiveSearch | .DiacriticInsensitiveSearch,
                 range: scope, locale: nil)
             
-            assert(occurence, "failed to correlate script to subtitle.")
+            assert(occurence != nil, "failed to correlate script to subtitle.")
             
             let o = occurence!
             results.append(Span(from: o.startIndex, to: o.endIndex))

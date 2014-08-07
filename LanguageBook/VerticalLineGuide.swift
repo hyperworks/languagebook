@@ -2,7 +2,10 @@ import SpriteKit
 
 class VerticalLineGuide: SKShapeNode {
     let stops = [256, 512, 768]
-    init() {
+
+    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
+
+    override init() {
         super.init()
         
         let guide = CGPathCreateMutable()

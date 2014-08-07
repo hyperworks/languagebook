@@ -9,9 +9,7 @@ class MainScene: NavigableScene, MarkedStringNodeDelegate, AVAudioPlayerDelegate
     let playButton = Button(text: "PLAY")
     let storyTextNode = MarkedStringNode()
 
-//    override var nextSceneType: Scene.Type? { return SecondScene.self }
-
-    init() { }
+    override var nextSceneType: Scene.Type? { return SecondScene.self }
 
     override func didMoveToView(view: SKView!) {
         super.didMoveToView(view)
@@ -21,12 +19,9 @@ class MainScene: NavigableScene, MarkedStringNodeDelegate, AVAudioPlayerDelegate
         previousButton.color = .grayColor()
         previousButton.hidden = true
         
-        var p = nextButton.position
-        p.y += 150.0
-        
         playButton.color = .greenColor()
-        playButton.position = p
-        playButton.onPress = didTapPlay
+        playButton.position = CGPoint(x: nextButton.position.x, y: nextButton.position.y + 150.0)
+        playButton.didTapButton = didTapPlay
         addChild(playButton)
         
         titleLabel.text = "(ch)"

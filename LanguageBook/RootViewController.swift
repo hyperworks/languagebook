@@ -4,7 +4,9 @@ import SpriteKit
 class RootViewController: UIPageViewController, UIPageViewControllerDataSource,
     UIPageViewControllerDelegate, SceneNavigationDelegate {
     
-    init() {
+    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
+
+    override init() {
         super.init(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: [:])
         doubleSided = false
         dataSource = self
@@ -13,10 +15,13 @@ class RootViewController: UIPageViewController, UIPageViewControllerDataSource,
         let firstScene = MainScene()
         firstScene.navigationDelegate = self
 
-        setViewControllers([firstScene.controller()], direction: .Forward,
-            animated: false, completion: nil)
+        setViewControllers([firstScene.controller()],
+            direction: .Forward,
+            animated: false,
+            completion: nil)
     }
-    
+
+
     // MARK: SceneNavigationDelegate
     func scene(scene: Scene, shouldAdvanceTo nextScene: Scene) {
         nextScene.navigationDelegate = self
