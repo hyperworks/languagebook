@@ -42,4 +42,23 @@ class MarkedString {
     func wordAtCharacterIndex(index: Int) -> String? {
         return textPortionAtCharacterIndex(index)?.wordInString(script)
     }
+
+
+    func highlightPortion(portion: TextPortion) {
+        let start = distance(script.string!.startIndex, portion.wordSpan.start)
+        let length = distance(portion.wordSpan.start, portion.wordSpan.end)
+        let range = NSRange(location: start, length: length)
+
+        var attr = script.attributesAtIndex(0, effectiveRange: nil)
+        attr[NSForegroundColorAttributeName] = UIColor.yellowColor()
+        script.setAttributes(attr, range: range)
+    }
+
+    func removeAllHighlights() {
+        let range = NSRange(location: 0, length: script.length)
+
+        var attr = script.attributesAtIndex(0, effectiveRange: nil)
+        attr[NSForegroundColorAttributeName] = UIColor.whiteColor()
+        script.setAttributes(attr, range: range)
+    }
 }

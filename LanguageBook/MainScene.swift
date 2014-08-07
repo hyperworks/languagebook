@@ -1,7 +1,7 @@
 import SpriteKit
 import AVFoundation
 
-class MainScene: NavigableScene, MarkedStringNodeDelegate, AVAudioPlayerDelegate {
+class MainScene: NavigableScene, MarkedStringNodeDelegate, AVAudioPlayerDelegate, AudioControllerDelegate {
     private var _audio: AudioController? = nil
     
     let speech = AVSpeechSynthesizer()
@@ -55,6 +55,11 @@ class MainScene: NavigableScene, MarkedStringNodeDelegate, AVAudioPlayerDelegate
         
         _audio?.stop()
         _audio = AudioController(audioPath: ms.audioPath)
+        _audio?.delegate = self
+        for portion in ms.portions {
+            _audio?.addBookmark(portion.timeSpan.start)
+        }
+
         _audio?.playFromBeginning()
     }
     
@@ -68,11 +73,29 @@ class MainScene: NavigableScene, MarkedStringNodeDelegate, AVAudioPlayerDelegate
         let word = portion.wordInString(str)
         titleLabel.text = word
 
-        let timeSpan = portion.timeSpan
         _audio?.stop()
         _audio = AudioController(audioPath: ms.audioPath)
+        _audio?.delegate = self
+
+        let timeSpan = portion.timeSpan
         _audio?.play(startAt: portion.timeSpan.start, playUntil: portion.timeSpan.end)
         
         dump(timeSpan, name: "playing portion of audio.")
+    }
+
+
+    // MARK: AudioControllerDelegate
+    func audioController(controller: AudioController, didReachBookmark bookmark: NSTimeInterval) {
+        dump(bookmark, name: "reached bookmark")
+
+        let ms = storyTextNode.markedString!
+        for portion in ms.portions {
+            if portion.timeSpan.start == bookmark {
+                ms.removeAllHighlights()
+                ms.highlightPortion(portion)
+                storyTextNode.invalidate()
+                return
+            }
+        }
     }
 }

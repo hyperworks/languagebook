@@ -2,7 +2,7 @@ import AVFoundation
 import CoreMedia
 
 @objc protocol AudioControllerDelegate {
-    optional func audioController(controller: AudioController, didReachBookmark: NSTimeInterval)
+    optional func audioController(controller: AudioController, didReachBookmark bookmark: NSTimeInterval)
 }
 
 class AudioController: NSObject {
@@ -11,7 +11,9 @@ class AudioController: NSObject {
     private var _player: AVPlayer? = nil
     private var _playerItem: AVPlayerItem? = nil
     private var _bookmarks: [NSTimeInterval] = []
-    
+    private var _nextBookmarkIndex: Array<NSTimeInterval>.Index = 0
+
+    weak var delegate: AudioControllerDelegate?
     var bookmarks: [NSTimeInterval] { return _bookmarks }
     
     init(audioPath: String) {
@@ -24,29 +26,32 @@ class AudioController: NSObject {
     
     func playFromBeginning() {
         stop()
-        
-        _player = AVPlayer(playerItem: AVPlayerItem(asset: _asset))
-        _player?.play()
+        playItem(AVPlayerItem(asset: _asset))
     }
     
     // REF: http://stackoverflow.com/questions/18203943/convert-from-nstimeinterval-to-cmtime-accurately#comment26688130_18203943
     func play(startAt startTime: NSTimeInterval, playUntil endTime: NSTimeInterval) {
         stop()
-        
-        let cmStartTime = CMTimeMakeWithSeconds(startTime, 1000000)
-        let cmEndTime = CMTimeMakeWithSeconds(endTime, 1000000)
+        let item = AVPlayerItem(asset: _asset)
+        item.seekToTime(CMTime.fromInterval(startTime))
+        item.forwardPlaybackEndTime = CMTime.fromInterval(endTime)
+        playItem(item)
+    }
 
-        _playerItem = AVPlayerItem(asset: _asset)
-        _playerItem!.seekToTime(cmStartTime)
-        _playerItem!.forwardPlaybackEndTime = cmEndTime
+    private func playItem(item: AVPlayerItem) {
+        _playerItem = item
+
         _player = AVPlayer(playerItem: _playerItem)
+        for bookmark in _bookmarks {
+            _player?.addPeriodicTimeObserverForInterval(CMTime.fromInterval(0.10),
+                queue: dispatch_get_main_queue(),
+                usingBlock: playerDidObserveTime)
+        }
 
         if _playerItem!.status == .ReadyToPlay {
-            dump("playing", name: "status")
             _player!.play()
 
         } else {
-            dump("adding observer", name: "status")
             _playerItem!.addObserver(self,
                 forKeyPath: "status",
                 options: NSKeyValueObservingOptions(0),
@@ -54,13 +59,24 @@ class AudioController: NSObject {
         }
     }
 
-    func itemStatusDidChange() {
+    private func itemStatusDidChange() {
         if let pi = _playerItem? {
             if pi.status == .ReadyToPlay {
-                dump("playing", name: "status")
                 pi.removeObserver(self, forKeyPath: "status")
                 _player?.play()
             }
+        }
+    }
+
+    // TODO: We could probably optimize this away by using some form of binary search tree.
+    private func playerDidObserveTime(time: CMTime) {
+        let interval = time.toInterval()
+        if _nextBookmarkIndex >= _bookmarks.count { return }
+
+        let bookmark = _bookmarks[_nextBookmarkIndex]
+        if interval > bookmark {
+            delegate?.audioController?(self, didReachBookmark: bookmark)
+            _nextBookmarkIndex += 1
         }
     }
 
@@ -69,9 +85,11 @@ class AudioController: NSObject {
         _playerItem = nil
         _player?.pause()
         _player = nil
+        _nextBookmarkIndex = 0
     }
 
 
+    // MARK: KVO
     override func observeValueForKeyPath(keyPath: String!,
         ofObject object: AnyObject!,
         change: [NSObject : AnyObject]!,

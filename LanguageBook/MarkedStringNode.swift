@@ -84,6 +84,9 @@ class MarkedStringNode: SKSpriteNode {
     }
 
 
+    // TODO: The node should detect this automatically.
+    func invalidate() { invalidateStringImage() }
+
     private func invalidateStringImage() {
         if _markedString == nil || layoutManager.textContainers.count == 0 || size == CGSizeZero {
             _stringImage = nil
