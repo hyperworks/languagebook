@@ -4,16 +4,16 @@ import UIKit
 //   (which is effectively all protocols until Apple rewrites everything into Swift)
 class TextPortion: NSObject {
     let wordSpan: HalfOpenInterval<String.Index>
-    let timeSpan: HalfOpenInterval<Double>
+    let timeSpan: HalfOpenInterval<NSTimeInterval>
 
     convenience init(fromIndex startIndex: String.Index,
         toIndex endIndex: String.Index,
-        fromTime startTime: Double,
-        toTime endTime: Double) {
+        fromTime startTime: NSTimeInterval,
+        toTime endTime: NSTimeInterval) {
             self.init(wordSpan: startIndex..<endIndex, timeSpan: startTime..<endTime)
     }
 
-    init(wordSpan: HalfOpenInterval<String.Index>, timeSpan: HalfOpenInterval<Double>) {
+    init(wordSpan: HalfOpenInterval<String.Index>, timeSpan: HalfOpenInterval<NSTimeInterval>) {
         self.wordSpan = wordSpan
         self.timeSpan = timeSpan
     }

@@ -1,7 +1,7 @@
 import UIKit
 
 class MarkedStringLoader {
-    typealias SubtitleLine = (index: Int, fromTime: Double, toTime: Double, line: String)
+    typealias SubtitleLine = (index: Int, fromTime: NSTimeInterval, toTime: NSTimeInterval, line: String)
     
     let scriptPath: String
     let attributes: [NSObject : AnyObject]
@@ -104,7 +104,7 @@ class MarkedStringLoader {
     }
     
     
-    private func parseSubtitleTime(timeString: String) -> Double {
+    private func parseSubtitleTime(timeString: String) -> NSTimeInterval {
         // sample time: 00:00:31,866
         let pattern = "([0-9]{2}):([0-9]{2}):([0-9]{2}),([0-9]{3,})"
 
@@ -119,7 +119,7 @@ class MarkedStringLoader {
             .map({ $0.toStringRange(inString: timeString) })
             .map({ timeString.substringWithRange($0).toInt()! })
 
-        var seconds: Double = Double(nums[3]) / 1000.0
+        var seconds: NSTimeInterval = Double(nums[3]) / 1000.0
         seconds += Double(nums[2])
         seconds += Double(nums[1] * 60)
         seconds += Double(nums[0] * 60 * 60)
