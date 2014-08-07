@@ -65,15 +65,14 @@ class MainScene: NavigableScene, MarkedStringNodeDelegate, AVAudioPlayerDelegate
         let str = ms.script.string!
         
         let wordSpan = portion.wordSpan
-        let range = Range(start: wordSpan.from, end: wordSpan.to)
-        let word = str.substringWithRange(range)
+        let word = portion.wordInString(str)
         titleLabel.text = word
 
         let timeSpan = portion.timeSpan
         _audio?.stop()
         _audio = AudioController(audioPath: ms.audioPath)
-        _audio?.play(startAt: Double(timeSpan.from), playUntil: Double(timeSpan.to))
+        _audio?.play(startAt: portion.timeSpan.start, playUntil: portion.timeSpan.end)
         
-        dump(timeSpan, name: "playing a span")
+        dump(timeSpan, name: "playing portion of audio.")
     }
 }

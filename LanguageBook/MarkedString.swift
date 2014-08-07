@@ -30,32 +30,10 @@ class MarkedString {
     func textPortionAtCharacterIndex(index: Int) -> TextPortion? {
         var acc = 0
         let str = script.string!
-        
-        // TODO: There was no way to safely compare String.Index so we have to resort to this.
-        func compare(a: String.Index, b: String.Index, inString str: String) -> NSComparisonResult {
-            if a == b { return .OrderedSame }
-            
-            var i = str.startIndex
-            while i != str.endIndex {
-                if i == a {
-                    return .OrderedAscending
-                } else if i == b {
-                    return .OrderedDescending
-                } else {
-                    i = i.successor()
-                }
-            }
-            
-            // Should actually panic() here, but oh well...
-            return .OrderedAscending
-        }
-        
+
         let idx = advance(str.startIndex, index)
         for portion in portions {
-            if compare(portion.wordSpan.from, idx, inString: str) == .OrderedDescending { continue }
-            if compare(portion.wordSpan.to, idx, inString: str) == .OrderedAscending { continue }
-            
-            return portion
+            if portion.wordSpan ~= idx { return portion }
         }
     
         return nil

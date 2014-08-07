@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		223976431991DCB700D36F62 /* Span.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223976421991DCB700D36F62 /* Span.swift */; };
 		224F99931991054B00013994 /* MarkedStringLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F99921991054B00013994 /* MarkedStringLoader.swift */; };
 		22530CD01988F41400B6B012 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22530CCF1988F41400B6B012 /* SceneViewController.swift */; };
 		2266A970198F4DFF002146C0 /* MarkedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266A96F198F4DFF002146C0 /* MarkedString.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		223976421991DCB700D36F62 /* Span.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Span.swift; sourceTree = "<group>"; };
 		224F99921991054B00013994 /* MarkedStringLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkedStringLoader.swift; sourceTree = "<group>"; };
 		22530CCF1988F41400B6B012 /* SceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		2266A96F198F4DFF002146C0 /* MarkedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkedString.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			children = (
 				2266A96F198F4DFF002146C0 /* MarkedString.swift */,
 				224F99921991054B00013994 /* MarkedStringLoader.swift */,
-				223976421991DCB700D36F62 /* Span.swift */,
 				22B5DF14198F5A9E00D31DDC /* TextPortion.swift */,
 			);
 			name = Models;
@@ -261,7 +258,6 @@
 				22ED986519922BDA00BCEB03 /* AudioController.swift in Sources */,
 				22E6BA4E1988A67300F166D0 /* MainScene.swift in Sources */,
 				224F99931991054B00013994 /* MarkedStringLoader.swift in Sources */,
-				223976431991DCB700D36F62 /* Span.swift in Sources */,
 				22F858F31988C4E500220F9F /* NavigableScene.swift in Sources */,
 				2266A970198F4DFF002146C0 /* MarkedString.swift in Sources */,
 				22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */,

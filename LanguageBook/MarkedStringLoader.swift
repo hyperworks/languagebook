@@ -1,7 +1,7 @@
 import UIKit
 
 class MarkedStringLoader {
-    typealias SubtitleLine = (index: Int, fromTime: Float, toTime: Float, line: String)
+    typealias SubtitleLine = (index: Int, fromTime: Double, toTime: Double, line: String)
     
     let scriptPath: String
     let attributes: [NSObject : AnyObject]
@@ -32,8 +32,8 @@ class MarkedStringLoader {
         let subtitles = loadSubtitle()
         let wordSpans = correlateScriptAndSubtitle(script, subtitle: subtitles)
         let portions = map(Zip2(wordSpans, subtitles), { (word, subtitle) in
-            TextPortion(fromIndex: word.from,
-                toIndex: word.to,
+            TextPortion(fromIndex: word.start,
+                toIndex: word.end,
                 fromTime: subtitle.fromTime,
                 toTime: subtitle.toTime)
         })
@@ -78,12 +78,12 @@ class MarkedStringLoader {
         return results
     }
     
-    func correlateScriptAndSubtitle(script: String, subtitle lines: [SubtitleLine]) -> [Span<String.Index>] {
+    func correlateScriptAndSubtitle(script: String, subtitle lines: [SubtitleLine]) -> [HalfOpenInterval<String.Index>] {
         let whitespaces = NSCharacterSet.whitespaceAndNewlineCharacterSet()
         var queue = Slice(lines)
         var length = countElements(script)
         var scope = Range(start: script.startIndex, end: script.endIndex)
-        var results: [Span<String.Index>] = []
+        var results: [HalfOpenInterval<String.Index>] = []
         
         while !queue.isEmpty {
             let line = queue[0].line
@@ -94,7 +94,7 @@ class MarkedStringLoader {
             assert(occurence != nil, "failed to correlate script to subtitle.")
             
             let o = occurence!
-            results.append(Span(from: o.startIndex, to: o.endIndex))
+            results.append(o.startIndex..<o.endIndex as HalfOpenInterval)
             
             scope.startIndex = o.endIndex
             queue = dropFirst(queue)
@@ -104,7 +104,7 @@ class MarkedStringLoader {
     }
     
     
-    private func parseSubtitleTime(timeString: String) -> Float {
+    private func parseSubtitleTime(timeString: String) -> Double {
         // sample time: 00:00:31,866
         let pattern = "([0-9]{2}):([0-9]{2}):([0-9]{2}),([0-9]{3,})"
 
@@ -119,10 +119,10 @@ class MarkedStringLoader {
             .map({ $0.toStringRange(inString: timeString) })
             .map({ timeString.substringWithRange($0).toInt()! })
 
-        var seconds: Float = Float(nums[3]) / 1000.0
-        seconds += Float(nums[2])
-        seconds += Float(nums[1] * 60)
-        seconds += Float(nums[0] * 60 * 60)
+        var seconds: Double = Double(nums[3]) / 1000.0
+        seconds += Double(nums[2])
+        seconds += Double(nums[1] * 60)
+        seconds += Double(nums[0] * 60 * 60)
         
         return seconds
     }
