@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		222D9B8F1993F24100AE21FE /* CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D9B8E1993F24100AE21FE /* CMTime.swift */; };
+		224CD4571994999900C72178 /* LessonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CD4561994999900C72178 /* LessonScene.swift */; };
+		224CD46019949E8A00C72178 /* 02.ass in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45819949E8900C72178 /* 02.ass */; };
+		224CD46119949E8A00C72178 /* 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45919949E8900C72178 /* 02.mp3 */; };
+		224CD46219949E8A00C72178 /* 02.srt in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45A19949E8900C72178 /* 02.srt */; };
+		224CD46319949E8A00C72178 /* 02.txt in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45B19949E8900C72178 /* 02.txt */; };
+		224CD46419949E8A00C72178 /* 03.ass in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45C19949E8900C72178 /* 03.ass */; };
+		224CD46519949E8A00C72178 /* 03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45D19949E8A00C72178 /* 03.mp3 */; };
+		224CD46619949E8A00C72178 /* 03.srt in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45E19949E8A00C72178 /* 03.srt */; };
+		224CD46719949E8A00C72178 /* 03.txt in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45F19949E8A00C72178 /* 03.txt */; };
+		224CD46B1994B87600C72178 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CD46A1994B87600C72178 /* Array.swift */; };
 		224F99931991054B00013994 /* MarkedStringLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F99921991054B00013994 /* MarkedStringLoader.swift */; };
 		22530CD01988F41400B6B012 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22530CCF1988F41400B6B012 /* SceneViewController.swift */; };
 		2266A970198F4DFF002146C0 /* MarkedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266A96F198F4DFF002146C0 /* MarkedString.swift */; };
@@ -36,6 +46,16 @@
 
 /* Begin PBXFileReference section */
 		222D9B8E1993F24100AE21FE /* CMTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTime.swift; sourceTree = "<group>"; };
+		224CD4561994999900C72178 /* LessonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonScene.swift; sourceTree = "<group>"; };
+		224CD45819949E8900C72178 /* 02.ass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 02.ass; path = Assets/02.ass; sourceTree = SOURCE_ROOT; };
+		224CD45919949E8900C72178 /* 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 02.mp3; path = Assets/02.mp3; sourceTree = SOURCE_ROOT; };
+		224CD45A19949E8900C72178 /* 02.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 02.srt; path = Assets/02.srt; sourceTree = SOURCE_ROOT; };
+		224CD45B19949E8900C72178 /* 02.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 02.txt; path = Assets/02.txt; sourceTree = SOURCE_ROOT; };
+		224CD45C19949E8900C72178 /* 03.ass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 03.ass; path = Assets/03.ass; sourceTree = SOURCE_ROOT; };
+		224CD45D19949E8A00C72178 /* 03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 03.mp3; path = Assets/03.mp3; sourceTree = SOURCE_ROOT; };
+		224CD45E19949E8A00C72178 /* 03.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 03.srt; path = Assets/03.srt; sourceTree = SOURCE_ROOT; };
+		224CD45F19949E8A00C72178 /* 03.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 03.txt; path = Assets/03.txt; sourceTree = SOURCE_ROOT; };
+		224CD46A1994B87600C72178 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		224F99921991054B00013994 /* MarkedStringLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkedStringLoader.swift; sourceTree = "<group>"; };
 		22530CCF1988F41400B6B012 /* SceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		2266A96F198F4DFF002146C0 /* MarkedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkedString.swift; sourceTree = "<group>"; };
@@ -79,9 +99,10 @@
 		2246438C198E20D70001DEBF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				224CD46A1994B87600C72178 /* Array.swift */,
 				228C34EB198E200600E9E6B9 /* CGPoint.swift */,
-				22B915FD199201A600E740D5 /* NSRange.swift */,
 				222D9B8E1993F24100AE21FE /* CMTime.swift */,
+				22B915FD199201A600E740D5 /* NSRange.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -142,10 +163,18 @@
 			isa = PBXGroup;
 			children = (
 				22C204771990AF1500AA4E49 /* 01.ass */,
+				224CD45819949E8900C72178 /* 02.ass */,
+				224CD45C19949E8900C72178 /* 03.ass */,
 				22C2047F1990AFBF00AA4E49 /* README.md */,
 				22C204781990AF1500AA4E49 /* 01.mp3 */,
+				224CD45919949E8900C72178 /* 02.mp3 */,
+				224CD45D19949E8A00C72178 /* 03.mp3 */,
 				22C204791990AF1500AA4E49 /* 01.srt */,
+				224CD45A19949E8900C72178 /* 02.srt */,
+				224CD45E19949E8A00C72178 /* 03.srt */,
 				22C2047A1990AF1500AA4E49 /* 01.txt */,
+				224CD45B19949E8900C72178 /* 02.txt */,
+				224CD45F19949E8A00C72178 /* 03.txt */,
 			);
 			name = Assets;
 			path = LanguageBook;
@@ -154,6 +183,7 @@
 		22E6BA4A1988A62400F166D0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				224CD4561994999900C72178 /* LessonScene.swift */,
 				22E6BA4D1988A67300F166D0 /* MainScene.swift */,
 				22F858F21988C4E500220F9F /* NavigableScene.swift */,
 				22E6BA4B1988A63700F166D0 /* Scene.swift */,
@@ -233,11 +263,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224CD46719949E8A00C72178 /* 03.txt in Resources */,
+				224CD46419949E8A00C72178 /* 03.ass in Resources */,
+				224CD46119949E8A00C72178 /* 02.mp3 in Resources */,
+				224CD46319949E8A00C72178 /* 02.txt in Resources */,
 				22C2047E1990AF1500AA4E49 /* 01.txt in Resources */,
+				224CD46619949E8A00C72178 /* 03.srt in Resources */,
+				224CD46019949E8A00C72178 /* 02.ass in Resources */,
 				22C2047C1990AF1500AA4E49 /* 01.mp3 in Resources */,
 				22C2047B1990AF1500AA4E49 /* 01.ass in Resources */,
 				22C2047D1990AF1500AA4E49 /* 01.srt in Resources */,
 				22AA923519889D1F0091F5E2 /* Images.xcassets in Resources */,
+				224CD46219949E8A00C72178 /* 02.srt in Resources */,
+				224CD46519949E8A00C72178 /* 03.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +292,10 @@
 				222D9B8F1993F24100AE21FE /* CMTime.swift in Sources */,
 				22F858EC1988B6F800220F9F /* HorizontalLineGuide.swift in Sources */,
 				228C34EA198E1D7E00E9E6B9 /* DebugNode.swift in Sources */,
+				224CD46B1994B87600C72178 /* Array.swift in Sources */,
 				22AA923019889D1F0091F5E2 /* RootViewController.swift in Sources */,
 				22ED986519922BDA00BCEB03 /* AudioController.swift in Sources */,
+				224CD4571994999900C72178 /* LessonScene.swift in Sources */,
 				22E6BA4E1988A67300F166D0 /* MainScene.swift in Sources */,
 				224F99931991054B00013994 /* MarkedStringLoader.swift in Sources */,
 				22F858F31988C4E500220F9F /* NavigableScene.swift in Sources */,

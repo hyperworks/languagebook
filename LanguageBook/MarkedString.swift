@@ -24,7 +24,7 @@ class MarkedString {
     }
     
 
-    // TODO: We could store the portions in a BinaryTree<T> for super fast search. This will also
+    // TODO: We could store the portions in a SegmentTree<T> for super fast search. This will also
     //   allow us to find the nearest thing given a random spot as well, for example text portion
     //   nearest a certain point in time (if we ever need to support audio seeking)
     func textPortionAtCharacterIndex(index: Int) -> TextPortion? {

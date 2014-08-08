@@ -75,6 +75,7 @@ class AudioController: NSObject {
 
         let bookmark = _bookmarks[_nextBookmarkIndex]
         if interval > bookmark {
+            dump(bookmark, name: "hit bookmark")
             delegate?.audioController?(self, didReachBookmark: bookmark)
             _nextBookmarkIndex += 1
         }

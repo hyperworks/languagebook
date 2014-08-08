@@ -1,10 +1,8 @@
 import SpriteKit
 
 class Button: SKSpriteNode {
-    typealias DidTouchFunction = () -> Void
-
     let labelNode = SKLabelNode(fontNamed: "Chalkduster")
-    var didTapButton: DidTouchFunction?
+    var didTapButton: (() -> Void)?
 
     convenience init(text: String = "(button)") {
         self.init(texture: SKTexture(imageNamed: "button_base"), color: nil,

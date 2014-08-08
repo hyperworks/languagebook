@@ -1,12 +1,6 @@
 import UIKit
 import SpriteKit
 
-extension Scene {
-    func controller() -> SceneViewController {
-        return SceneViewController(self)
-    }
-}
-
 class SceneViewController: UIViewController {
     let scene: Scene
     
@@ -15,12 +9,14 @@ class SceneViewController: UIViewController {
         set { (view as SKView).paused = newValue }
     }
 
-    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
 
+    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
+    
     init(_ scene: Scene, nibName: String? = nil, bundle: NSBundle? = nil) {
         self.scene = scene
         super.init(nibName: nibName, bundle: bundle)
     }
+    
 
     override func loadView() {
         let skv = SKView(frame: CGRect(x: 0, y: 0, width: 1024, height: 768))
