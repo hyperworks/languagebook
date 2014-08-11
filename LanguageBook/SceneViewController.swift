@@ -12,7 +12,7 @@ class SceneViewController: UIViewController {
 
     required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
     
-    init(_ scene: Scene, nibName: String? = nil, bundle: NSBundle? = nil) {
+    required init(_ scene: Scene, nibName: String? = nil, bundle: NSBundle? = nil) {
         self.scene = scene
         super.init(nibName: nibName, bundle: bundle)
     }

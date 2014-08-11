@@ -45,10 +45,14 @@ class MarkedString {
 
 
     func highlightPortion(portion: TextPortion) {
+        // TODO: We need to calculate the original range span on the script itself, not the backing
+        //   string, since NSAttributedString may modify the length of the string depending on the
+        //   font being applied. (i.e. some font missing some glyphs and thus the number of
+        //   characters can vary)
         let start = distance(script.string!.startIndex, portion.wordSpan.start)
         let length = distance(portion.wordSpan.start, portion.wordSpan.end)
         let range = NSRange(location: start, length: length)
-
+        
         var attr = script.attributesAtIndex(0, effectiveRange: nil)
         attr[NSForegroundColorAttributeName] = UIColor.yellowColor()
         script.setAttributes(attr, range: range)

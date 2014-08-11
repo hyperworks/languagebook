@@ -25,6 +25,7 @@ class Scene: SKScene {
     
 
     override func didMoveToView(view: SKView!) {
+        super.didMoveToView(view)
         if guidesEnabled {
             addChild(verticalGuide)
             addChild(horizontalGuide)
