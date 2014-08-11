@@ -7,7 +7,6 @@ import CoreMedia
 
 class AudioController: NSObject {
     private let _asset: AVAsset
-    
     private var _player: AVPlayer? = nil
     private var _playerItem: AVPlayerItem? = nil
     private var _bookmarks: [NSTimeInterval] = []
@@ -18,6 +17,8 @@ class AudioController: NSObject {
     
     init(audioPath: String) {
         _asset = AVURLAsset(URL: NSURL.fileURLWithPath(audioPath), options: [:])
+        _player?.pause()
+        _player?.pause
     }
     
     func addBookmark(time: NSTimeInterval) { _bookmarks.append(time) }
