@@ -16,7 +16,7 @@ class LessonScene: NavigableScene, MarkedStringNodeDelegate, AudioControllerDele
         backgroundColor = .grayColor()
         
         playButton.color = .greenColor()
-        playButton.position = CGPoint(x: nextButton.position.x, y: nextButton.position.y + 150.0)
+        playButton.position = CGPoint(x: 512, y: 192)
         playButton.didTapButton = didTapPlay
         addChild(playButton)
         
@@ -36,10 +36,12 @@ class LessonScene: NavigableScene, MarkedStringNodeDelegate, AudioControllerDele
         let markedString = loader.load()
         
         storyTextNode.markedString = markedString
-        storyTextNode.position = CGPoint(x: 400, y: 400)
-        storyTextNode.size = CGSize(width: 700, height: 500)
+        storyTextNode.position = CGPoint(x: 512, y: 480)
+        storyTextNode.size = CGSize(width: 768, height: 384)
         storyTextNode.delegate = self
+        storyTextNode.zPosition = previousButton.zPosition + 1.0
         addChild(storyTextNode)
+        addChild(DebugNode(sprite: storyTextNode))
     }
     
     
@@ -88,6 +90,7 @@ class LessonScene: NavigableScene, MarkedStringNodeDelegate, AudioControllerDele
                 ms.removeAllHighlights()
                 ms.highlightPortion(portion)
                 storyTextNode.invalidate()
+                titleLabel.text = portion.wordInString(ms.script.string!)
                 return
             }
         }

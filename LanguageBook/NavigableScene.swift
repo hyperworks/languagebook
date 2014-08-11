@@ -24,14 +24,12 @@ class NavigableScene: Scene {
             nextButton.position = CGPoint(x: 768, y: 192)
             nextButton.didTapButton = didTapNext
             addChild(nextButton)
-            addChild(DebugNode(sprite: nextButton))
         }
         
         if hasPreviousScene {
             previousButton.position = CGPoint(x: 256, y: 192)
             previousButton.didTapButton = didTapPrevious
             addChild(previousButton)
-            addChild(DebugNode(sprite: previousButton))
         }
     }
     

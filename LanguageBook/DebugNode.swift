@@ -10,6 +10,6 @@ class DebugNode: SKSpriteNode {
     init(target: SKNode, size: CGSize) {
         super.init(texture: nil, color: SKColor.blueColor(), size: size)
         position = target.position
-        zPosition -= 1
+        zPosition -= target.zPosition + 1.0
     }
 }
