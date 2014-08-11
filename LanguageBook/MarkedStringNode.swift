@@ -62,17 +62,20 @@ class MarkedStringNode: SKSpriteNode {
         var offset = touches.anyObject().locationInNode(self)
         offset += originDelta // move origin from SK to UIKit
         offset.y *= -1.0 // flip co-ordinates space from SK to UIKit
+        
+        dump(NSStringFromCGPoint(offset), name: "offset")
 
         // Check if we're touching somewhere inside layoutmanager's drawn text.
         let container = layoutManager.textContainers[0] as NSTextContainer
-        let usedRect = layoutManager.usedRectForTextContainer(container)
+        var usedRect = layoutManager.usedRectForTextContainer(container)
+        dump(NSStringFromCGRect(usedRect), name: "usedRect")
+        usedRect.origin.y += _topOffset
 
-        offset -= CGPoint(x: 0, y: _topOffset)
-        if !CGRectContainsPoint(CGRect(origin: CGPointZero, size: usedRect.size), offset) {
-            return
-        }
+        if !CGRectContainsPoint(usedRect, offset) { return }
 
         // Extract the character at the position
+        offset.y -= _topOffset
+        
         let rawString: String = ms.script.string!
         let rawIndex = layoutManager.characterIndexForPoint(offset,
             inTextContainer: container, fractionOfDistanceBetweenInsertionPoints: nil)

@@ -59,6 +59,7 @@ class LessonScene: NavigableScene, MarkedStringNodeDelegate, AudioControllerDele
         }
 
         _audio?.playFromBeginning()
+        dump("playing from beginning")
     }
     
     
@@ -77,8 +78,7 @@ class LessonScene: NavigableScene, MarkedStringNodeDelegate, AudioControllerDele
 
         let timeSpan = portion.timeSpan
         _audio?.play(startAt: portion.timeSpan.start, playUntil: portion.timeSpan.end)
-        
-        dump(timeSpan, name: "playing portion of audio.")
+        dump(timeSpan, name: "playing audio portion.")
     }
     
     
