@@ -16,6 +16,7 @@ extension Array {
         return self
     }
     
+    /// Maps each single element into an array and return concatenated result.
     func flattenMap<U>(transform: (T) -> [U]) -> [U] {
         var result: [U] = []
         for list in self.map(transform) {
@@ -25,9 +26,57 @@ extension Array {
         return result
     }
     
+    func zip<U>(with another: [U]) -> [(T, U)] {
+        let count = self.count > another.count ? self.count : another.count
+        
+        var results: [(T, U)] = []
+        results.reserveCapacity(count)
+        for var i = 0; i < count; i++ {
+            let tuple = (self[i], another[i])
+            results.append(tuple)
+        }
+        
+        return results
+    }
+    
+    /// Folds the array leftwise into a single value.
+    func foldl<U>(var seed acc: U, folder: (U, T) -> U) -> U {
+        for item in self { acc = folder(acc, item) }
+        return acc
+    }
+    
+    /// Folds the array backwards from the right into a single value.
+    func foldr<U>(var seed acc: U, folder: (U, T) -> U) -> U {
+        for item in self.reverse() { acc = folder(acc, item) }
+        return acc
+    }
+    
+    /// Runs the scanner function for each element with an accumulator and returns the results.
+    func scan<U>(var seed acc: U, scanner: (U,  T) -> U) -> [U] {
+        return self.map({ acc = scanner(acc, $0); return acc })
+    }
+    
+    /// Similar to map, but with the element index passed to the transform function in addition to
+    /// the individual array elements.
+    func mapi<U>(transform: (Int, T) -> U) -> [U] {
+        let count = self.count
+        
+        var results: [U] = []
+        results.reserveCapacity(count)
+        for var i = 0; i < count; i++ {
+            results.append(transform(i, self[i]))
+        }
+        
+        return results
+    }
+    
+    /// Finds the minimum item in the array according to the quantifier function.
     func min<U: Comparable>(quantifier: (T) -> U) -> T { return minMax(quantifier).min }
+    
+    /// Finds the maximum item in the array according to the quantifier function.
     func max<U: Comparable>(quantifier: (T) -> U) -> T! { return minMax(quantifier).max }
     
+    /// Finds the minimum and the maximum item in the array according to the quantifier function.
     func minMax<U: Comparable>(quantifier: (T) -> U) -> (min: T, max: T)! {
         if self.count == 0 { return nil }
         
