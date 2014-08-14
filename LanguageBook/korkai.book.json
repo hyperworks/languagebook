@@ -1,3 +1,29 @@
-[
-/* TODO: Example JSON */
+[ { "title": "Learn English by Example #1"
+  , "pages":
+    [ { "audioName": "page1.mp3"
+      , "frame": [0, 0, 300, 300]
+      , "children":
+        [ { "image": "page1.jpeg"
+          , "frame": [0, 0, 300, 300]
+          , "regions":
+            [ { "frame": [0, 0, 300, 100]
+              , "interval": [0.365, 3.123]
+              }
+            , { "frame": [0, 100, 300, 200]
+              , "interval": [3.123, 4.186]
+              }
+            ]
+          }
+        , { "text": "The |Quick |Brown |Fox |jumps |over |the |lazy |dog."
+          , "frame": [100, 100, 100, 100]
+          , "times": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+          , "attributes":
+            { "font": "Tahoma"
+            , "color": "White"
+            }
+          }
+        ]
+      }
+    ]
+  }
 ]
