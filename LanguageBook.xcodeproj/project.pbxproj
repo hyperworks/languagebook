@@ -10,7 +10,7 @@
 		22262A3E199B4B360075B068 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22262A3D199B4B360075B068 /* Book.swift */; };
 		22262A3F199B4B8C0075B068 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FFD3E199B49DA007561B5 /* Page.swift */; };
 		222D9B8F1993F24100AE21FE /* CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D9B8E1993F24100AE21FE /* CMTime.swift */; };
-		222FFD3D199B49C5007561B5 /* korkai.book.json in Resources */ = {isa = PBXBuildFile; fileRef = 222FFD3C199B49C5007561B5 /* korkai.book.json */; };
+		222FFD3D199B49C5007561B5 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 222FFD3C199B49C5007561B5 /* test.json */; };
 		224CD4571994999900C72178 /* LessonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CD4561994999900C72178 /* LessonScene.swift */; };
 		224CD46019949E8A00C72178 /* 02.ass in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45819949E8900C72178 /* 02.ass */; };
 		224CD46119949E8A00C72178 /* 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 224CD45919949E8900C72178 /* 02.mp3 */; };
@@ -56,7 +56,7 @@
 /* Begin PBXFileReference section */
 		22262A3D199B4B360075B068 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		222D9B8E1993F24100AE21FE /* CMTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTime.swift; sourceTree = "<group>"; };
-		222FFD3C199B49C5007561B5 /* korkai.book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = korkai.book.json; sourceTree = "<group>"; };
+		222FFD3C199B49C5007561B5 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		222FFD3E199B49DA007561B5 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		224CD4561994999900C72178 /* LessonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonScene.swift; sourceTree = "<group>"; };
 		224CD45819949E8900C72178 /* 02.ass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 02.ass; path = Assets/02.ass; sourceTree = SOURCE_ROOT; };
@@ -191,7 +191,7 @@
 				22C204771990AF1500AA4E49 /* 01.ass */,
 				224CD45819949E8900C72178 /* 02.ass */,
 				224CD45C19949E8900C72178 /* 03.ass */,
-				222FFD3C199B49C5007561B5 /* korkai.book.json */,
+				222FFD3C199B49C5007561B5 /* test.json */,
 				22C2047F1990AFBF00AA4E49 /* README.md */,
 				22C204781990AF1500AA4E49 /* 01.mp3 */,
 				224CD45919949E8900C72178 /* 02.mp3 */,
@@ -300,7 +300,7 @@
 				22C2047C1990AF1500AA4E49 /* 01.mp3 in Resources */,
 				22C2047B1990AF1500AA4E49 /* 01.ass in Resources */,
 				22C2047D1990AF1500AA4E49 /* 01.srt in Resources */,
-				222FFD3D199B49C5007561B5 /* korkai.book.json in Resources */,
+				222FFD3D199B49C5007561B5 /* test.json in Resources */,
 				22AA923519889D1F0091F5E2 /* Images.xcassets in Resources */,
 				224CD46219949E8A00C72178 /* 02.srt in Resources */,
 				224CD46519949E8A00C72178 /* 03.mp3 in Resources */,
