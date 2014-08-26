@@ -1,0 +1,20 @@
+{ "id": "book-one"
+, "title": "book-one"
+, "pages":
+  [ { "id": "page-one"
+    , "contents":
+      [ { "svg": "bar copy.svg", "flatten": true }
+      ]
+    }
+  , { "id": "page-two"
+    , "contents":
+      [ { "svg": "disco copy.svg", "flatten": true }
+      ]
+    }
+  , { "id": "page-three"
+    , "contents":
+      [ { "svg": "subway copy.svg", "flatten": true }
+      ]
+    }
+  ]
+}
