@@ -1,57 +1,40 @@
 import UIKit
-import SpriteKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    convenience override init() {
-        self.init(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: [:])
-        doubleSided = false
-        dataSource = self
-        delegate = self
-    }
+class PageViewController: UIViewController, SerialController {
+    let chapter: Chapter
+    let page: Page
     
+    let contentControllers: [ContentController] // TODO: Build lazily
     
-    // MARK: UIPageViewControllerDataSource
-    func pageViewController(pageViewController: UIPageViewController!,
-        viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController! {
-        
-        if let viewController = viewControllers![0] as? SerialController {
-            return viewController.previousViewController
-        }
+    var nextViewController: UIViewController? {
+        let nextIdx = find(chapter.pages, page)! + 1
+        if nextIdx >= chapter.pages.count { return nil }
             
-        return nil
+        return PageViewController(chapter: chapter, page: chapter.pages[nextIdx])
     }
     
-    func pageViewController(pageViewController: UIPageViewController!,
-        viewControllerAfterViewController viewController: UIViewController!) -> UIViewController! {
+    var previousViewController: UIViewController? {
+        let prevIdx = find(chapter.pages, page)! - 1
+        if prevIdx < 0 { return nil }
             
-        if let viewController = viewControllers![0] as? SerialController {
-            return viewController.nextViewController
-        }
-            
-        return nil
+        return PageViewController(chapter: chapter, page: chapter.pages[prevIdx])
     }
     
     
-    // MARK: UIPageViewControllerDelegate
-    func pageViewController(pageViewController: UIPageViewController!,
-        spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation)
-        -> UIPageViewControllerSpineLocation {
-        return .Min
-    }
+    required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    func pageViewController(pageViewController: UIPageViewController!,
-        willTransitionToViewControllers pendingViewControllers: [AnyObject]!) {
+    init(chapter: Chapter, page: Page) {
+        self.chapter = chapter
+        self.page = page
         
-        viewControllers.cast({ $0 as? MediaController }).each({ $0.paused = true })
-        pendingViewControllers.cast({ $0 as? MediaController }).each({ $0.paused = true })
+        // TODO: Build this lazily.
+        self.contentControllers = page.contents.map({ ContentController.fromContent($0) })
+        
+        super.init(nibName: nil, bundle: nil)
     }
     
-    func pageViewController(pageViewController: UIPageViewController!,
-        didFinishAnimating finished: Bool,
-        previousViewControllers: [AnyObject]!,
-        transitionCompleted completed: Bool) {
-        
-        viewControllers.cast({ $0 as? MediaController }).each({ $0.paused = false })
+    override func loadView() {
+        // TODO: Load each content and overlay them on top of each other.
+        view = UIView()
     }
 }
-

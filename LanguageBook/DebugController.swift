@@ -10,8 +10,8 @@ class DebugController: UIViewController, SerialController, MediaController {
     
     let backgroundColor: UIColor
     
-    lazy private(set) var nextViewController: UIViewController! = DebugController()
-    lazy private(set) var previousViewController: UIViewController! = DebugController()
+    lazy private(set) var nextViewController: UIViewController? = DebugController()
+    lazy private(set) var previousViewController: UIViewController? = DebugController()
     
     var playheadDidChange: DidChangeHandler? = nil
     var playhead: AudioTime = AudioTime()
