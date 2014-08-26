@@ -1,6 +1,7 @@
 import UIKit
 
 class RootViewController: UIViewController {
+    let book = Book.fromJSON() // TODO: ChapterViewController() for the main chapter.
     let pageViewController = PageViewController()
     
     override func loadView() {
@@ -19,6 +20,8 @@ class RootViewController: UIViewController {
         pageViewController.didMoveToParentViewController(self)
         
         view = v
+        
+        dump(book, name: "loaded book")
     }
     
     override func viewDidLoad() {
