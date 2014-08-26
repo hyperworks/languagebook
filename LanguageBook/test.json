@@ -1,6 +1,6 @@
 [ { "title": "Learn English by Example #1"
   , "pages":
-    [ { "audioName": "page1.mp3"
+    [ { "audio": "page1.mp3"
       , "frame": [0, 0, 300, 300]
       , "children":
         [ { "image": "page1.jpeg"

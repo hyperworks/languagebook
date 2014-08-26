@@ -45,6 +45,13 @@
 		22E6BA4C1988A63700F166D0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BA4B1988A63700F166D0 /* Scene.swift */; };
 		22E6BA4E1988A67300F166D0 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BA4D1988A67300F166D0 /* MainScene.swift */; };
 		22ED986519922BDA00BCEB03 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED986419922BDA00BCEB03 /* AudioController.swift */; };
+		22F11E40199DCDB3006B4033 /* LanguageBook_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E3F199DCDB3006B4033 /* LanguageBook_Tests.swift */; };
+		22F11E47199DCDE3006B4033 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E46199DCDE3006B4033 /* Serializer.swift */; };
+		22F11E49199E04A8006B4033 /* SVG.md in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E48199E04A8006B4033 /* SVG.md */; };
+		22F11E4B199E0E11006B4033 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E4A199E0E11006B4033 /* AudioManager.swift */; };
+		22F11E4D199E0F94006B4033 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E4C199E0F94006B4033 /* Notification.swift */; };
+		22F11E4F199E179B006B4033 /* AudioBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E4E199E179B006B4033 /* AudioBase.swift */; };
+		22F11E51199E1B56006B4033 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E50199E1B56006B4033 /* BlockObserver.swift */; };
 		22F858EA1988B58600220F9F /* VerticalLineGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858E91988B58600220F9F /* VerticalLineGuide.swift */; };
 		22F858EC1988B6F800220F9F /* HorizontalLineGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858EB1988B6F800220F9F /* HorizontalLineGuide.swift */; };
 		22F858EF1988BA7500220F9F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858EE1988BA7500220F9F /* Button.swift */; };
@@ -52,6 +59,16 @@
 		22F858F31988C4E500220F9F /* NavigableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858F21988C4E500220F9F /* NavigableScene.swift */; };
 		22F858F51988C7D000220F9F /* ThirdScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F858F41988C7D000220F9F /* ThirdScene.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22F11E41199DCDB3006B4033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22AA922019889D1E0091F5E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22AA922719889D1F0091F5E2;
+			remoteInfo = LanguageBook;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		22262A3D199B4B360075B068 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -95,6 +112,15 @@
 		22E6BA4B1988A63700F166D0 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		22E6BA4D1988A67300F166D0 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		22ED986419922BDA00BCEB03 /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		22F11E3B199DCDB3006B4033 /* LanguageBook Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LanguageBook Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F11E3E199DCDB3006B4033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22F11E3F199DCDB3006B4033 /* LanguageBook_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageBook_Tests.swift; sourceTree = "<group>"; };
+		22F11E46199DCDE3006B4033 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		22F11E48199E04A8006B4033 /* SVG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SVG.md; sourceTree = "<group>"; };
+		22F11E4A199E0E11006B4033 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		22F11E4C199E0F94006B4033 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		22F11E4E199E179B006B4033 /* AudioBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioBase.swift; sourceTree = "<group>"; };
+		22F11E50199E1B56006B4033 /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
 		22F858E91988B58600220F9F /* VerticalLineGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalLineGuide.swift; sourceTree = "<group>"; };
 		22F858EB1988B6F800220F9F /* HorizontalLineGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalLineGuide.swift; sourceTree = "<group>"; };
 		22F858EE1988BA7500220F9F /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -105,6 +131,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		22AA922519889D1F0091F5E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F11E38199DCDB3006B4033 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -129,6 +162,7 @@
 		2266A96E198F4DF3002146C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22F11E48199E04A8006B4033 /* SVG.md */,
 				22E062EB1998F1AB0082369F /* AnnotatedText.swift */,
 				22262A3D199B4B360075B068 /* Book.swift */,
 				22E062E51998E5BF0082369F /* Image.swift */,
@@ -137,6 +171,7 @@
 				224F99921991054B00013994 /* MarkedStringLoader.swift */,
 				226A90471998D790004D524C /* Media.swift */,
 				222FFD3E199B49DA007561B5 /* Page.swift */,
+				22F11E46199DCDE3006B4033 /* Serializer.swift */,
 				22B5DF14198F5A9E00D31DDC /* TextPortion.swift */,
 				22E062ED1998F2520082369F /* Word.swift */,
 			);
@@ -148,6 +183,7 @@
 			children = (
 				22C2047419909F9B00AA4E49 /* Assets */,
 				22AA922A19889D1F0091F5E2 /* LanguageBook */,
+				22F11E3C199DCDB3006B4033 /* LanguageBook Tests */,
 				22AA922919889D1F0091F5E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				22AA922819889D1F0091F5E2 /* LanguageBook.app */,
+				22F11E3B199DCDB3006B4033 /* LanguageBook Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,7 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				22AA922D19889D1F0091F5E2 /* AppDelegate.swift */,
+				22F11E4E199E179B006B4033 /* AudioBase.swift */,
 				22ED986419922BDA00BCEB03 /* AudioController.swift */,
+				22F11E4A199E0E11006B4033 /* AudioManager.swift */,
+				22F11E4C199E0F94006B4033 /* Notification.swift */,
 				22AA922F19889D1F0091F5E2 /* RootViewController.swift */,
 				22530CCF1988F41400B6B012 /* SceneViewController.swift */,
 				22AA923419889D1F0091F5E2 /* Images.xcassets */,
@@ -173,6 +213,7 @@
 				22F858ED1988B9D600220F9F /* Nodes */,
 				22E6BA4A1988A62400F166D0 /* Scenes */,
 				22AA922B19889D1F0091F5E2 /* Supporting Files */,
+				22F11E50199E1B56006B4033 /* BlockObserver.swift */,
 			);
 			path = LanguageBook;
 			sourceTree = "<group>";
@@ -220,6 +261,23 @@
 			name = Scenes;
 			sourceTree = "<group>";
 		};
+		22F11E3C199DCDB3006B4033 /* LanguageBook Tests */ = {
+			isa = PBXGroup;
+			children = (
+				22F11E3F199DCDB3006B4033 /* LanguageBook_Tests.swift */,
+				22F11E3D199DCDB3006B4033 /* Supporting Files */,
+			);
+			path = "LanguageBook Tests";
+			sourceTree = "<group>";
+		};
+		22F11E3D199DCDB3006B4033 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22F11E3E199DCDB3006B4033 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		22F858ED1988B9D600220F9F /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +310,24 @@
 			productReference = 22AA922819889D1F0091F5E2 /* LanguageBook.app */;
 			productType = "com.apple.product-type.application";
 		};
+		22F11E3A199DCDB3006B4033 /* LanguageBook Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22F11E43199DCDB3006B4033 /* Build configuration list for PBXNativeTarget "LanguageBook Tests" */;
+			buildPhases = (
+				22F11E37199DCDB3006B4033 /* Sources */,
+				22F11E38199DCDB3006B4033 /* Frameworks */,
+				22F11E39199DCDB3006B4033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22F11E42199DCDB3006B4033 /* PBXTargetDependency */,
+			);
+			name = "LanguageBook Tests";
+			productName = "LanguageBook Tests";
+			productReference = 22F11E3B199DCDB3006B4033 /* LanguageBook Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -264,6 +340,10 @@
 					22AA922719889D1F0091F5E2 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = ES39E58ABA;
+					};
+					22F11E3A199DCDB3006B4033 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 22AA922719889D1F0091F5E2;
 					};
 				};
 			};
@@ -281,6 +361,7 @@
 			projectRoot = "";
 			targets = (
 				22AA922719889D1F0091F5E2 /* LanguageBook */,
+				22F11E3A199DCDB3006B4033 /* LanguageBook Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,6 +388,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22F11E39199DCDB3006B4033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -319,10 +407,13 @@
 				22B915FE199201A600E740D5 /* NSRange.swift in Sources */,
 				222D9B8F1993F24100AE21FE /* CMTime.swift in Sources */,
 				22F858EC1988B6F800220F9F /* HorizontalLineGuide.swift in Sources */,
+				22F11E51199E1B56006B4033 /* BlockObserver.swift in Sources */,
 				228C34EA198E1D7E00E9E6B9 /* DebugNode.swift in Sources */,
 				226A90481998D790004D524C /* Media.swift in Sources */,
 				22E062E81998E65C0082369F /* ImageRegion.swift in Sources */,
 				22262A3E199B4B360075B068 /* Book.swift in Sources */,
+				22F11E4B199E0E11006B4033 /* AudioManager.swift in Sources */,
+				22F11E4F199E179B006B4033 /* AudioBase.swift in Sources */,
 				224CD46B1994B87600C72178 /* Array.swift in Sources */,
 				22AA923019889D1F0091F5E2 /* RootViewController.swift in Sources */,
 				22ED986519922BDA00BCEB03 /* AudioController.swift in Sources */,
@@ -335,19 +426,38 @@
 				22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */,
 				22B5DF15198F5A9E00D31DDC /* TextPortion.swift in Sources */,
 				22E062EE1998F2520082369F /* Word.swift in Sources */,
+				22F11E49199E04A8006B4033 /* SVG.md in Sources */,
 				22F858EA1988B58600220F9F /* VerticalLineGuide.swift in Sources */,
 				22E062EA1998E8E80082369F /* IntervalType.swift in Sources */,
 				22530CD01988F41400B6B012 /* SceneViewController.swift in Sources */,
 				22744A4F198B8FC400605F3D /* MarkedStringNode.swift in Sources */,
 				22F858F11988BEB800220F9F /* SecondScene.swift in Sources */,
+				22F11E47199DCDE3006B4033 /* Serializer.swift in Sources */,
 				22E062EC1998F1AB0082369F /* AnnotatedText.swift in Sources */,
+				22F11E4D199E0F94006B4033 /* Notification.swift in Sources */,
 				228C34EC198E200600E9E6B9 /* CGPoint.swift in Sources */,
 				22262A3F199B4B8C0075B068 /* Page.swift in Sources */,
 				22E6BA4C1988A63700F166D0 /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22F11E37199DCDB3006B4033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F11E40199DCDB3006B4033 /* LanguageBook_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22F11E42199DCDB3006B4033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22AA922719889D1F0091F5E2 /* LanguageBook */;
+			targetProxy = 22F11E41199DCDB3006B4033 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		22AA924219889D1F0091F5E2 /* Debug */ = {
@@ -455,6 +565,38 @@
 			};
 			name = Release;
 		};
+		22F11E44199DCDB3006B4033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LanguageBook Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LanguageBook.app/LanguageBook";
+			};
+			name = Debug;
+		};
+		22F11E45199DCDB3006B4033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LanguageBook Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LanguageBook.app/LanguageBook";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -475,6 +617,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		22F11E43199DCDB3006B4033 /* Build configuration list for PBXNativeTarget "LanguageBook Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22F11E44199DCDB3006B4033 /* Debug */,
+				22F11E45199DCDB3006B4033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

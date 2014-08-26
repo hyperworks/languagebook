@@ -2,18 +2,18 @@ import AVFoundation
 import CoreMedia
 
 @objc protocol AudioControllerDelegate {
-    optional func audioController(controller: AudioController, didReachBookmark bookmark: NSTimeInterval)
+    func audioController(controller: AudioController, didReachBookmark bookmark: AudioController.TimeType)
 }
 
-class AudioController: NSObject {
+class AudioController: AudioBase {
     private let _asset: AVAsset
     private var _player: AVPlayer? = nil
     private var _playerItem: AVPlayerItem? = nil
-    private var _bookmarks: [NSTimeInterval] = []
-    private var _nextBookmarkIndex: Array<NSTimeInterval>.Index = 0
+    private var _bookmarks: [TimeType] = []
+    private var _nextBookmarkIndex: Array<TimeType>.Index = 0
 
     weak var delegate: AudioControllerDelegate?
-    var bookmarks: [NSTimeInterval] { return _bookmarks }
+    var bookmarks: [TimeType] { return _bookmarks }
     
     init(audioPath: String) {
         _asset = AVURLAsset(URL: NSURL.fileURLWithPath(audioPath), options: [:])
@@ -21,23 +21,25 @@ class AudioController: NSObject {
         _player?.pause
     }
     
-    func addBookmark(time: NSTimeInterval) { _bookmarks.append(time) }
+    func addBookmark(time: TimeType) { _bookmarks.append(time) }
     func clearBookmarks() { _bookmarks.removeAll(keepCapacity: true) }
     
     
-    func playFromBeginning() {
-        stop()
-        playItem(AVPlayerItem(asset: _asset))
-    }
+    func play(range: IntervalType) { play(startAt: range.start, playUntil: range.end) }
     
-    // REF: http://stackoverflow.com/questions/18203943/convert-from-nstimeinterval-to-cmtime-accurately#comment26688130_18203943
-    func play(startAt startTime: NSTimeInterval, playUntil endTime: NSTimeInterval) {
+    func play(startAt startTime: TimeType, playUntil endTime: TimeType) {
         stop()
         let item = AVPlayerItem(asset: _asset)
         item.seekToTime(CMTime.fromInterval(startTime))
         item.forwardPlaybackEndTime = CMTime.fromInterval(endTime)
         playItem(item)
     }
+    
+    func playFromBeginning() {
+        stop()
+        playItem(AVPlayerItem(asset: _asset))
+    }
+    
 
     private func playItem(item: AVPlayerItem) {
         _playerItem = item
@@ -53,10 +55,7 @@ class AudioController: NSObject {
             _player!.play()
 
         } else {
-            _playerItem!.addObserver(self,
-                forKeyPath: "status",
-                options: NSKeyValueObservingOptions(0),
-                context: nil)
+            _playerItem!.observe("status", usingBlock: itemStatusDidChange)
         }
     }
 
@@ -69,7 +68,9 @@ class AudioController: NSObject {
         }
     }
 
-    // TODO: We could probably optimize this away by using some form of binary search tree.
+    // TODO: We might be able to replace this with a doubly linked list or something where the next
+    //   previous item can be easily linked to so that we can support fast seeking operation in the
+    //   future.
     private func playerDidObserveTime(time: CMTime) {
         let interval = time.toInterval()
         if _nextBookmarkIndex >= _bookmarks.count { return }
@@ -77,7 +78,7 @@ class AudioController: NSObject {
         let bookmark = _bookmarks[_nextBookmarkIndex]
         if interval > bookmark {
             dump(bookmark, name: "hit bookmark")
-            delegate?.audioController?(self, didReachBookmark: bookmark)
+            delegate?.audioController(self, didReachBookmark: bookmark)
             _nextBookmarkIndex += 1
         }
     }
@@ -88,20 +89,5 @@ class AudioController: NSObject {
         _player?.pause()
         _player = nil
         _nextBookmarkIndex = 0
-    }
-
-
-    // MARK: KVO
-    override func observeValueForKeyPath(keyPath: String!,
-        ofObject object: AnyObject!,
-        change: [NSObject : AnyObject]!,
-        context: UnsafeMutablePointer<()>) {
-
-        let item = object as? AVPlayerItem
-        if item == _playerItem && keyPath == "status" {
-            itemStatusDidChange()
-        } else {
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-        }
     }
 }
