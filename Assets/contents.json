@@ -1,3 +1,2 @@
-{ "start": "book-one"
-, "books": ["menu", "book-one", "book-two"]
+{ "chapters": ["menu", "chapter-one", "chapter-two"]
 }

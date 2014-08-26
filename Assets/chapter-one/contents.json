@@ -1,5 +1,4 @@
-{ "id": "book-one"
-, "title": "book-one"
+{ "id": "chapter-one"
 , "pages":
   [ { "id": "page-one"
     , "contents":
