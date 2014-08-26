@@ -2,9 +2,15 @@ import Foundation
 
 extension Array {
 
+    /// Finds the first element in the array that matches the given predicate.
+    func first(predicate: (T) -> Bool) -> T! {
+        for element in self { if predicate(element) { return element } }
+        return nil
+    }
+
     /// Attempt to cast array elements as per the supplied casting function ignoring any elements
     /// which fails the casting test (returning nil). The casting function should generally
-    /// be of the form `{ $0 as TargetType }`.
+    /// be of the form `{ $0 as? TargetType }`.
     func cast<TX>(caster: T -> TX?) -> [TX] {
         return self.map(caster).filter({ $0 != nil }).map({ $0! })
     }
@@ -71,7 +77,7 @@ extension Array {
     }
     
     /// Finds the minimum item in the array according to the quantifier function.
-    func min<U: Comparable>(quantifier: (T) -> U) -> T { return minMax(quantifier).min }
+    func min<U: Comparable>(quantifier: (T) -> U) -> T! { return minMax(quantifier).min }
     
     /// Finds the maximum item in the array according to the quantifier function.
     func max<U: Comparable>(quantifier: (T) -> U) -> T! { return minMax(quantifier).max }

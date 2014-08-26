@@ -1,79 +1,31 @@
 import UIKit
-import SpriteKit
 
-class RootViewController: UIPageViewController, UIPageViewControllerDataSource,
-    UIPageViewControllerDelegate, SceneNavigationDelegate {
+class RootViewController: UIViewController {
+    let pageViewController = PageViewController()
     
-    required init(coder aDecoder: NSCoder!) { fatalError("KVC initializer not supported.") }
-
-    override init() {
-        super.init(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: [:])
-        doubleSided = false
-        dataSource = self
-        delegate = self
+    override func loadView() {
+        let bounds = UIScreen.mainScreen().bounds
+        let v = UIView(frame: bounds)
+        v.backgroundColor = .whiteColor()
         
-        moveToScene(MainScene())
+        let pageView = pageViewController.view
+        addChildViewController(pageViewController)
+        
+        v.addSubview(pageView)
+        pageView.addConstraint(NSLayoutConstraint(item: pageView, width: bounds.size.width))
+        pageView.addConstraint(NSLayoutConstraint(item: pageView, height: bounds.size.height))
+        v.addConstraint(NSLayoutConstraint(verticalAlignItem: pageView, withItem: v))
+        v.addConstraint(NSLayoutConstraint(horizontalAlignItem: pageView, withItem: v))
+        pageViewController.didMoveToParentViewController(self)
+        
+        view = v
     }
     
-    
-    func moveToScene(scene: Scene,
-        direction: UIPageViewControllerNavigationDirection = .Forward,
-        animated: Bool = false) {
-        
-        scene.navigationDelegate = self
-        setViewControllers([SceneViewController(scene)],
-            direction: direction,
-            animated: animated,
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        pageViewController.setViewControllers([DebugController()],
+            direction: .Forward,
+            animated: false,
             completion: nil)
     }
-
-
-    // MARK: SceneNavigationDelegate
-    func scene(scene: Scene, shouldAdvanceTo nextScene: Scene) {
-        moveToScene(nextScene, direction: .Forward, animated: true)
-    }
-    
-    func scene(scene: Scene, shouldReturnTo previousScene: Scene) {
-        moveToScene(previousScene, direction: .Reverse, animated: true)
-    }
-    
-    
-    // MARK: UIPageViewControllerDataSource
-    func pageViewController(pageViewController: UIPageViewController!,
-        viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController! {
-        let controller = viewController as SceneViewController
-        let scene = controller.scene as NavigableScene
-        return scene.hasPreviousScene ? SceneViewController(scene.previousScene) : nil
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController!,
-        viewControllerAfterViewController viewController: UIViewController!) -> UIViewController! {
-        let controller = viewController as SceneViewController
-        let scene = controller.scene as NavigableScene
-        return scene.hasNextScene ? SceneViewController(scene.nextScene) : nil
-    }
-    
-    
-    // MARK: UIPageViewControllerDelegate
-    func pageViewController(pageViewController: UIPageViewController!,
-        spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation)
-        -> UIPageViewControllerSpineLocation {
-        return .Min
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController!,
-        willTransitionToViewControllers pendingViewControllers: [AnyObject]!) {
-        
-        viewControllers.cast({ $0 as? SceneViewController }).each({ $0.paused = true })
-        pendingViewControllers.cast({ $0 as? SceneViewController }).each({ $0.paused = true })
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController!,
-        didFinishAnimating finished: Bool,
-        previousViewControllers: [AnyObject]!,
-        transitionCompleted completed: Bool) {
-        
-        viewControllers.cast({ $0 as? SceneViewController }).each({ $0.paused = false })
-    }
 }
-
