@@ -1,8 +1,6 @@
 import UIKit
 
-// TODO: AudioContentController
-
-class ContentController: UIViewController, MediaController {
+class ContentViewController: UIViewController, MediaController {
     private var _playhead: AudioTime = AudioTime()
     private var _scope: AudioInterval = AudioInterval()
     
@@ -29,12 +27,12 @@ class ContentController: UIViewController, MediaController {
     var paused: Bool = false
     
     
-    class func fromContent(content: Content) -> ContentController {
+    class func fromContent(content: Content) -> ContentViewController {
         switch content {
         case let svg as SVGContent:
-            return SVGContentController(SVGContent: svg)
+            return SVGContentViewController(SVGContent: svg)
         case let image as ImageContent:
-            return ImageContentController(ImageContent: image)
+            return ImageContentViewController(ImageContent: image)
         default:
             fatalError("unsupported content type.")
         }

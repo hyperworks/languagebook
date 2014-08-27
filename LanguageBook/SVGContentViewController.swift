@@ -1,6 +1,6 @@
 import Foundation
 
-class SVGContentController: ContentController {
+class SVGContentViewController: ContentViewController {
     private var _interactiveLayers: [CALayer] = []
     private var _selectedLayers: [CALayer] = []
     

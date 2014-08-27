@@ -16,13 +16,13 @@
 		223B9C3619AD0AFC00421F74 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9C3519AD0AFC00421F74 /* Content.swift */; };
 		223B9C3819AD19B300421F74 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9C3719AD19B300421F74 /* ChapterViewController.swift */; };
 		223B9C3A19AD1A3500421F74 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9C3919AD1A3500421F74 /* PageViewController.swift */; };
-		223B9C3C19AD1A5200421F74 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9C3B19AD1A5200421F74 /* ContentController.swift */; };
+		223B9C3C19AD1A5200421F74 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9C3B19AD1A5200421F74 /* ContentViewController.swift */; };
 		224CD46B1994B87600C72178 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CD46A1994B87600C72178 /* Array.swift */; };
 		225278D319ADB84000557944 /* MediaSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D219ADB84000557944 /* MediaSynchronizer.swift */; };
 		225278D519ADDABF00557944 /* ImageContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D419ADDABF00557944 /* ImageContent.swift */; };
 		225278D719ADDAD300557944 /* SVGContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D619ADDAD300557944 /* SVGContent.swift */; };
-		225278DA19ADDB0F00557944 /* SVGContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D919ADDB0F00557944 /* SVGContentController.swift */; };
-		225278DC19ADDB2500557944 /* ImageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278DB19ADDB2500557944 /* ImageContentController.swift */; };
+		225278DA19ADDB0F00557944 /* SVGContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D919ADDB0F00557944 /* SVGContentViewController.swift */; };
+		225278DC19ADDB2500557944 /* ImageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278DB19ADDB2500557944 /* ImageContentViewController.swift */; };
 		2280A81A19AC877100C6CD4C /* MediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A81919AC877100C6CD4C /* MediaController.swift */; };
 		2280A81F19AC909A00C6CD4C /* AudioTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A81E19AC909A00C6CD4C /* AudioTypes.swift */; };
 		2280A82319ACC11300C6CD4C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A82219ACC11300C6CD4C /* RootViewController.swift */; };
@@ -53,14 +53,14 @@
 		223B9C3519AD0AFC00421F74 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		223B9C3719AD19B300421F74 /* ChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		223B9C3919AD1A3500421F74 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		223B9C3B19AD1A5200421F74 /* ContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
+		223B9C3B19AD1A5200421F74 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		223B9C3E19AD1CD500421F74 /* LanguageBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LanguageBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		224CD46A1994B87600C72178 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		225278D219ADB84000557944 /* MediaSynchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaSynchronizer.swift; sourceTree = "<group>"; };
 		225278D419ADDABF00557944 /* ImageContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContent.swift; sourceTree = "<group>"; };
 		225278D619ADDAD300557944 /* SVGContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGContent.swift; sourceTree = "<group>"; };
-		225278D919ADDB0F00557944 /* SVGContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGContentController.swift; sourceTree = "<group>"; };
-		225278DB19ADDB2500557944 /* ImageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContentController.swift; sourceTree = "<group>"; };
+		225278D919ADDB0F00557944 /* SVGContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGContentViewController.swift; sourceTree = "<group>"; };
+		225278DB19ADDB2500557944 /* ImageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContentViewController.swift; sourceTree = "<group>"; };
 		2280A81919AC877100C6CD4C /* MediaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaController.swift; sourceTree = "<group>"; };
 		2280A81E19AC909A00C6CD4C /* AudioTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTypes.swift; sourceTree = "<group>"; };
 		2280A82219ACC11300C6CD4C /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -125,10 +125,10 @@
 		225278D819ADDB0100557944 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				223B9C3B19AD1A5200421F74 /* ContentController.swift */,
-				225278DB19ADDB2500557944 /* ImageContentController.swift */,
-				225278D919ADDB0F00557944 /* SVGContentController.swift */,
+				223B9C3B19AD1A5200421F74 /* ContentViewController.swift */,
+				225278DB19ADDB2500557944 /* ImageContentViewController.swift */,
 				22CF394119ADE1E2002A1F54 /* LayerData.swift */,
+				225278D919ADDB0F00557944 /* SVGContentViewController.swift */,
 			);
 			name = Content;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B915FE199201A600E740D5 /* NSRange.swift in Sources */,
-				223B9C3C19AD1A5200421F74 /* ContentController.swift in Sources */,
+				223B9C3C19AD1A5200421F74 /* ContentViewController.swift in Sources */,
 				225278D719ADDAD300557944 /* SVGContent.swift in Sources */,
 				223B9C3619AD0AFC00421F74 /* Content.swift in Sources */,
 				222D9B8F1993F24100AE21FE /* CMTime.swift in Sources */,
@@ -319,11 +319,11 @@
 				2280A82319ACC11300C6CD4C /* RootViewController.swift in Sources */,
 				22AA923019889D1F0091F5E2 /* PageNavigationController.swift in Sources */,
 				2280A82B19ACEB2900C6CD4C /* NSLayoutConstraint.swift in Sources */,
-				225278DC19ADDB2500557944 /* ImageContentController.swift in Sources */,
+				225278DC19ADDB2500557944 /* ImageContentViewController.swift in Sources */,
 				22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */,
 				223B9C3019ACFE5200421F74 /* Model.swift in Sources */,
 				22E062EA1998E8E80082369F /* IntervalType.swift in Sources */,
-				225278DA19ADDB0F00557944 /* SVGContentController.swift in Sources */,
+				225278DA19ADDB0F00557944 /* SVGContentViewController.swift in Sources */,
 				225278D519ADDABF00557944 /* ImageContent.swift in Sources */,
 				22CF394219ADE1E2002A1F54 /* LayerData.swift in Sources */,
 				2280A82519ACC1E000C6CD4C /* SerialController.swift in Sources */,

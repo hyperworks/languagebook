@@ -1,6 +1,6 @@
 import Foundation
 
-class ImageContentController: ContentController {
+class ImageContentViewController: ContentViewController {
     let imageContent: ImageContent
     
     required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }

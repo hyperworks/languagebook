@@ -4,7 +4,7 @@ class PageViewController: UIViewController, SerialController {
     let chapter: Chapter
     let page: Page
     
-    let contentControllers: [ContentController]
+    let contentControllers: [ContentViewController]
     let syncer: MediaSynchronizer
     
     var nextViewController: UIViewController? {
@@ -28,7 +28,7 @@ class PageViewController: UIViewController, SerialController {
         self.chapter = chapter
         self.page = page
         
-        self.contentControllers = page.contents.map({ ContentController.fromContent($0) })
+        self.contentControllers = page.contents.map({ ContentViewController.fromContent($0) })
         self.syncer = MediaSynchronizer(medias: contentControllers)
         super.init(nibName: nil, bundle: nil)
     }
