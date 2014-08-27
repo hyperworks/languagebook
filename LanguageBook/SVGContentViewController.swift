@@ -1,4 +1,5 @@
-import Foundation
+import UIKit
+import QuartzCore
 
 class SVGContentViewController: ContentViewController {
     private var _interactiveLayers: [CALayer] = []

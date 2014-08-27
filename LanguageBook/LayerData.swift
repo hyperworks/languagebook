@@ -1,4 +1,5 @@
 import UIKit
+import QuartzCore
 
 @objc class LayerData: NSObject {
     let scope: AudioInterval?

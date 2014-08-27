@@ -1,4 +1,5 @@
-import Foundation
+import UIKit
+import QuartzCore
 
 @objc class LayerDataLoader: NSObject {
     let image: SVGKImage
