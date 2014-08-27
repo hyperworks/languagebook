@@ -17,4 +17,18 @@ class ChapterViewController: PageNavigationController {
         pageControllers = chapter.pages.map({ PageViewController(chapter: chapter, page: $0) })
         super.init()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if chapter.pages.count == 0 {
+            dump(chapter, name: "chapter has no pages")
+            return
+        }
+        
+        let firstPage = chapter.pages[0]
+        setViewControllers([PageViewController(chapter: chapter, page: firstPage)],
+            direction: .Forward,
+            animated: false,
+            completion: nil)
+    }
 }

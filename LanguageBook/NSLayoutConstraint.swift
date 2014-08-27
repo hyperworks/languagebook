@@ -86,4 +86,24 @@ extension NSLayoutConstraint {
             multiplier: 1.0,
             constant: height)
     }
+
+    convenience init(sizeItem item: UIView, widthEqualsToItem another: UIView) {
+        self.init(item: item,
+            attribute: .Width,
+            relatedBy: .Equal,
+            toItem: another,
+            attribute: .Width,
+            multiplier: 1.0,
+            constant: 0.0)
+    }
+
+    convenience init(sizeItem item: UIView, heightEqualsToItem another: UIView) {
+        self.init(item: item,
+            attribute: .Height,
+            relatedBy: .Equal,
+            toItem: another,
+            attribute: .Height,
+            multiplier: 1.0,
+            constant: 0.0)
+    }
 }
