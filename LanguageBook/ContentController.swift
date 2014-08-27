@@ -3,13 +3,28 @@ import UIKit
 // TODO: AudioContentController
 
 class ContentController: UIViewController, MediaController {
+    private var _playhead: AudioTime = AudioTime()
+    private var _scope: AudioInterval = AudioInterval()
+    
     let content: Content
     
     var playheadDidChange: DidChangeHandler? = nil
-    var playhead: AudioTime = AudioTime()
+    var playhead: AudioTime {
+        get { return _playhead }
+        set {
+            _playhead = newValue
+            playheadDidChange?()
+        }
+    }
     
     var scopeDidChange: DidChangeHandler? = nil
-    var scope: AudioInterval = AudioInterval()
+    var scope: AudioInterval {
+        get { return _scope }
+        set {
+            _scope = newValue
+            scopeDidChange?()
+        }
+    }
     
     var paused: Bool = false
     
