@@ -1,16 +1,18 @@
 import Foundation
 
 class Chapter: Model {
-    let pages: [Page]
+    let book: Book
+    private(set) var pages: [Page] = []
     
-    class func fromJSON(#id: String) -> Chapter {
-        return Chapter(dict: Model.loadJSON("contents", inDirectory: id) as JSONDict)
+    class func fromJSON(#id: String, inBook book: Book) -> Chapter {
+        return Chapter(book: book, dict: Model.loadJSON("contents", inDirectory: id) as JSONDict)
     }
     
-    override init(dict: JSONDict) {
-        pages = (dict["pages"]! as JSONArray)
-            .map({ Page(dict: $0 as JSONDict) })
-        
+    init(book: Book, dict: JSONDict) {
+        self.book = book
         super.init(dict: dict)
+        
+        pages = (dict["pages"]! as JSONArray)
+            .map({ Page(chapter: self, dict: $0 as JSONDict) })
     }
 }

@@ -1,12 +1,14 @@
 import UIKit
 
 class Page: Model {
-    let contents: [Content]
+    let chapter: Chapter
+    private(set) var contents: [Content] = []
     
-    override init(dict: JSONDict) {
-        contents = (dict["contents"]! as JSONArray)
-            .map({ Content.fromJSON($0 as JSONDict) })
-        
+    init(chapter: Chapter, dict: JSONDict) {
+        self.chapter = chapter
         super.init(dict: dict)
+        
+        contents = (dict["contents"]! as JSONArray)
+            .map({ Content.fromJSON(page: self, dict: $0 as JSONDict) })
     }
 }

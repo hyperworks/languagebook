@@ -10,9 +10,9 @@ import Foundation
         self.medias = medias
         super.init()
         
-        for media in medias {
-            media.playheadDidChange = playheadDidChange(media)
-            media.scopeDidChange = scopeDidChange(media)
+        for m in medias {
+            m.playheadDidChange = playheadDidChange(m)
+            m.scopeDidChange = scopeDidChange(m)
         }
     }
     

@@ -1,3 +1,7 @@
 { "id": "menu"
-, "pages": []
+, "pages":
+  [ { "id": "menu"
+    , "contents": [ { "svg": "menu.svg", "interactive": true } ]
+    }
+  ]
 }

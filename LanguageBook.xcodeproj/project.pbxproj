@@ -19,6 +19,10 @@
 		223B9C3C19AD1A5200421F74 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9C3B19AD1A5200421F74 /* ContentController.swift */; };
 		224CD46B1994B87600C72178 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CD46A1994B87600C72178 /* Array.swift */; };
 		225278D319ADB84000557944 /* MediaSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D219ADB84000557944 /* MediaSynchronizer.swift */; };
+		225278D519ADDABF00557944 /* ImageContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D419ADDABF00557944 /* ImageContent.swift */; };
+		225278D719ADDAD300557944 /* SVGContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D619ADDAD300557944 /* SVGContent.swift */; };
+		225278DA19ADDB0F00557944 /* SVGContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278D919ADDB0F00557944 /* SVGContentController.swift */; };
+		225278DC19ADDB2500557944 /* ImageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225278DB19ADDB2500557944 /* ImageContentController.swift */; };
 		2280A81A19AC877100C6CD4C /* MediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A81919AC877100C6CD4C /* MediaController.swift */; };
 		2280A81F19AC909A00C6CD4C /* AudioTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A81E19AC909A00C6CD4C /* AudioTypes.swift */; };
 		2280A82319ACC11300C6CD4C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A82219ACC11300C6CD4C /* RootViewController.swift */; };
@@ -52,6 +56,10 @@
 		223B9C3E19AD1CD500421F74 /* LanguageBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LanguageBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		224CD46A1994B87600C72178 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		225278D219ADB84000557944 /* MediaSynchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaSynchronizer.swift; sourceTree = "<group>"; };
+		225278D419ADDABF00557944 /* ImageContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContent.swift; sourceTree = "<group>"; };
+		225278D619ADDAD300557944 /* SVGContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGContent.swift; sourceTree = "<group>"; };
+		225278D919ADDB0F00557944 /* SVGContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGContentController.swift; sourceTree = "<group>"; };
+		225278DB19ADDB2500557944 /* ImageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContentController.swift; sourceTree = "<group>"; };
 		2280A81919AC877100C6CD4C /* MediaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaController.swift; sourceTree = "<group>"; };
 		2280A81E19AC909A00C6CD4C /* AudioTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTypes.swift; sourceTree = "<group>"; };
 		2280A82219ACC11300C6CD4C /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -89,9 +97,11 @@
 			children = (
 				223B9C2D19ACFE4600421F74 /* Book.swift */,
 				223B9C3119ACFE7500421F74 /* Chapter.swift */,
+				223B9C3519AD0AFC00421F74 /* Content.swift */,
+				225278D419ADDABF00557944 /* ImageContent.swift */,
 				223B9C2F19ACFE5200421F74 /* Model.swift */,
 				223B9C3319AD052C00421F74 /* Page.swift */,
-				223B9C3519AD0AFC00421F74 /* Content.swift */,
+				225278D619ADDAD300557944 /* SVGContent.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -110,15 +120,25 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		225278D819ADDB0100557944 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				223B9C3B19AD1A5200421F74 /* ContentController.swift */,
+				225278DB19ADDB2500557944 /* ImageContentController.swift */,
+				225278D919ADDB0F00557944 /* SVGContentController.swift */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
 		2280A81B19AC8C2300C6CD4C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				223B9C3719AD19B300421F74 /* ChapterViewController.swift */,
-				223B9C3B19AD1A5200421F74 /* ContentController.swift */,
 				2280A82619ACE58E00C6CD4C /* DebugController.swift */,
 				22AA922F19889D1F0091F5E2 /* PageNavigationController.swift */,
 				223B9C3919AD1A3500421F74 /* PageViewController.swift */,
 				2280A82219ACC11300C6CD4C /* RootViewController.swift */,
+				225278D819ADDB0100557944 /* Content */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -285,6 +305,7 @@
 			files = (
 				22B915FE199201A600E740D5 /* NSRange.swift in Sources */,
 				223B9C3C19AD1A5200421F74 /* ContentController.swift in Sources */,
+				225278D719ADDAD300557944 /* SVGContent.swift in Sources */,
 				223B9C3619AD0AFC00421F74 /* Content.swift in Sources */,
 				222D9B8F1993F24100AE21FE /* CMTime.swift in Sources */,
 				2280A82919ACE69B00C6CD4C /* Random.swift in Sources */,
@@ -295,9 +316,12 @@
 				2280A82319ACC11300C6CD4C /* RootViewController.swift in Sources */,
 				22AA923019889D1F0091F5E2 /* PageNavigationController.swift in Sources */,
 				2280A82B19ACEB2900C6CD4C /* NSLayoutConstraint.swift in Sources */,
+				225278DC19ADDB2500557944 /* ImageContentController.swift in Sources */,
 				22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */,
 				223B9C3019ACFE5200421F74 /* Model.swift in Sources */,
 				22E062EA1998E8E80082369F /* IntervalType.swift in Sources */,
+				225278DA19ADDB0F00557944 /* SVGContentController.swift in Sources */,
+				225278D519ADDABF00557944 /* ImageContent.swift in Sources */,
 				2280A82519ACC1E000C6CD4C /* SerialController.swift in Sources */,
 				22F11E4D199E0F94006B4033 /* Notification.swift in Sources */,
 				223B9C3419AD052C00421F74 /* Page.swift in Sources */,

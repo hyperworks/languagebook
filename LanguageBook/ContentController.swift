@@ -2,38 +2,6 @@ import UIKit
 
 // TODO: AudioContentController
 
-class SVGContentController: ContentController {
-    let svgContent: SVGContent
-    
-    required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
-    init(SVGContent svg: SVGContent) {
-        self.svgContent = svg
-        super.init(content: svg)
-    }
-    
-    // TODO: Add parent folder information. Name alone will surely not load.
-    override func loadView() {
-        view = SVGKImageView(SVGKImage: SVGKImage(named: svgContent.name))
-    }
-}
-
-class ImageContentController: ContentController {
-    let imageContent: ImageContent
-    
-    required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
-    init(ImageContent image: ImageContent) {
-        self.imageContent = image
-        super.init(content: image)
-    }
-    
-    // TODO: Add parent folder information. Name alone will surely not load.
-    override func loadView() {
-        view = UIImageView(image: UIImage(named: imageContent.name))
-    }
-}
-
 class ContentController: UIViewController, MediaController {
     let content: Content
     
