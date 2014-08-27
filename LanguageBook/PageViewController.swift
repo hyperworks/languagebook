@@ -4,6 +4,9 @@ class PageViewController: UIViewController, SerialController {
     let chapter: Chapter
     let page: Page
     
+    let contentControllers: [ContentController]
+    let syncer: MediaSynchronizer
+    
     var nextViewController: UIViewController? {
         let nextIdx = find(chapter.pages, page)! + 1
         if nextIdx >= chapter.pages.count { return nil }
@@ -25,6 +28,8 @@ class PageViewController: UIViewController, SerialController {
         self.chapter = chapter
         self.page = page
         
+        self.contentControllers = page.contents.map({ ContentController.fromContent($0) })
+        self.syncer = MediaSynchronizer(medias: contentControllers)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,7 +38,6 @@ class PageViewController: UIViewController, SerialController {
         v.setTranslatesAutoresizingMaskIntoConstraints(false)
         v.backgroundColor = .whiteColor()
         
-        let contentControllers = page.contents.map({ ContentController.fromContent($0) })
         for controller in contentControllers {
             let subview = controller.view
             addChildViewController(controller)

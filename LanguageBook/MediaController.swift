@@ -1,6 +1,6 @@
 import UIKit
 
-typealias DidChangeHandler = () -> ()
+typealias DidChangeHandler = @autoclosure () -> ()
 
 @objc protocol MediaController: class {
     var playheadDidChange: DidChangeHandler? { get set }

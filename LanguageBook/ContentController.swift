@@ -1,5 +1,7 @@
 import UIKit
 
+// TODO: AudioContentController
+
 class SVGContentController: ContentController {
     let svgContent: SVGContent
     
@@ -32,8 +34,17 @@ class ImageContentController: ContentController {
     }
 }
 
-class ContentController: UIViewController {
+class ContentController: UIViewController, MediaController {
     let content: Content
+    
+    var playheadDidChange: DidChangeHandler? = nil
+    var playhead: AudioTime = AudioTime()
+    
+    var scopeDidChange: DidChangeHandler? = nil
+    var scope: AudioInterval = AudioInterval()
+    
+    var paused: Bool = false
+    
     
     class func fromContent(content: Content) -> ContentController {
         switch content {
