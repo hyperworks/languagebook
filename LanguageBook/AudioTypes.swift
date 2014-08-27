@@ -5,7 +5,7 @@ typealias AudioTime = NSTimeInterval
 // TODO: We can't use the built-in HalfOpenInterval<T> or ClosedInterval<T> type because it cannot
 //   be represented in ObjC causing all protocols that reference them to not work with ObjC types.
 //   As this is a fundamental Swift type, it'll probably be updated to work in future Swift betas.
-@objc class AudioInterval: IntervalType {
+@objc class AudioInterval: IntervalType, Equatable {
     typealias Bound = AudioTime
     
     var isEmpty: Bool { return start <= end }
@@ -35,4 +35,8 @@ typealias AudioTime = NSTimeInterval
         
         return self
     }
+}
+
+func ==(lhs: AudioInterval, rhs: AudioInterval) -> Bool {
+    return lhs.start == rhs.start && lhs.end == rhs.end
 }
