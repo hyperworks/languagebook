@@ -5,7 +5,7 @@ class Chapter: Model {
     private(set) var pages: [Page] = []
     
     class func fromJSON(#id: String, inBook book: Book) -> Chapter {
-        return Chapter(book: book, dict: Model.loadJSON("contents", inDirectory: id) as JSONDict)
+        return Chapter(book: book, dict: Model.loadJSON("contents.json", inDirectory: id) as JSONDict)
     }
     
     init(book: Book, dict: JSONDict) {

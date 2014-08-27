@@ -17,14 +17,17 @@ import Foundation
     }
     
     
-    class func loadJSON(name: String, inDirectory dir: String? = nil) -> AnyObject {
-        let directory = dir == nil ? "Assets" : "Assets/\(dir!)"
-        
+    class func pathForName(name: String, inDirectory dir: String?) -> String {
         let bundle = NSBundle.mainBundle()
-        let path = bundle.pathForResource(name, ofType: "json", inDirectory: directory)
-        assert(path != nil, "failed to find json file: `\(name)` in dir: `\(directory)`")
+        let subdir = dir == nil ? "Assets" : "Assets/\(dir!)"
+        dump(subdir, name: "dir")
         
-        let data = NSData(contentsOfFile: path!)
+        return bundle.pathForResource(name, ofType: nil, inDirectory: subdir)!
+    }
+    
+    class func loadJSON(name: String, inDirectory dir: String? = nil) -> AnyObject {
+        let path = pathForName(name, inDirectory: dir)
+        let data = NSData(contentsOfFile: path)
         
         var error: NSError? = nil
         let opts: NSJSONReadingOptions = NSJSONReadingOptions.fromMask(0)

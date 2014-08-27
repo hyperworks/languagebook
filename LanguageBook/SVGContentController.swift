@@ -1,7 +1,11 @@
 import Foundation
 
 class SVGContentController: ContentController {
+    private var _interactiveLayers: [CALayer] = []
+    private var _selectedLayers: [CALayer] = []
+    
     let svgContent: SVGContent
+    
     
     required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
@@ -12,13 +16,25 @@ class SVGContentController: ContentController {
     
     // TODO: Add parent folder information. Name alone will surely not load.
     override func loadView() {
-        let image = SVGKImage(contentsOfFile: svgContent.path)
-        
         if svgContent.interactive {
-            view = SVGKLayeredImageView(SVGKImage: image)
+            view = SVGKLayeredImageView(SVGKImage: svgContent.image)
         } else {
-            view = SVGKFastImageView(SVGKImage: image)
+            view = SVGKFastImageView(SVGKImage: svgContent.image)
         }
+        
+        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        view.backgroundColor = .whiteColor()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if svgContent.interactive {
+            loadLayerData()
+        }
+    }
+    
+    private func loadLayerData() {
+        
     }
 }
 

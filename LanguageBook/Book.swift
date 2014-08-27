@@ -4,7 +4,7 @@ class Book: Model {
     private(set) var chapters: [Chapter] = []
     
     class func fromJSON() -> Book {
-        return Book(dict: Model.loadJSON("contents") as JSONDict)
+        return Book(dict: Model.loadJSON("contents.json") as JSONDict)
     }
     
     override init(dict: JSONDict) {

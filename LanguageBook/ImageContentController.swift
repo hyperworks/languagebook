@@ -10,9 +10,9 @@ class ImageContentController: ContentController {
         super.init(content: image)
     }
     
-    // TODO: Add parent folder information. Name alone will surely not load.
     override func loadView() {
         view = UIImageView(image: UIImage(contentsOfFile: imageContent.path))
+        view.setTranslatesAutoresizingMaskIntoConstraints(false)
     }
 }
 
