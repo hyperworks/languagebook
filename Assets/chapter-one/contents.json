@@ -2,17 +2,17 @@
 , "pages":
   [ { "id": "page-one"
     , "contents":
-      [ { "svg": "bar copy.svg", "flatten": true }
+      [ { "svg": "bar copy.svg", "interactive": false }
       ]
     }
   , { "id": "page-two"
     , "contents":
-      [ { "svg": "disco copy.svg", "flatten": true }
+      [ { "svg": "disco copy.svg", "interactive": false }
       ]
     }
   , { "id": "page-three"
     , "contents":
-      [ { "svg": "subway copy.svg", "flatten": true }
+      [ { "svg": "subway copy.svg", "interactive": false }
       ]
     }
   ]

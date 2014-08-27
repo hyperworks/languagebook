@@ -2,11 +2,11 @@ import Foundation
 
 class SVGContent: Content {
     let name: String
-    let flatten: Bool
+    let interactive: Bool
     
     override init(dict: JSONDict) {
         name = dict["svg"]! as String
-        flatten = (dict["flatten"] ?? false) as Bool
+        interactive = (dict["interactive"] ?? false) as Bool
         
         super.init(id: name)
     }
