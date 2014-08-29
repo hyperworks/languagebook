@@ -20,7 +20,6 @@ import Foundation
     class func pathForName(name: String, inDirectory dir: String?) -> String {
         let bundle = NSBundle.mainBundle()
         let subdir = dir == nil ? "Assets" : "Assets/\(dir!)"
-        dump(subdir, name: "dir")
         
         return bundle.pathForResource(name, ofType: nil, inDirectory: subdir)!
     }

@@ -5,39 +5,43 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <rect id="Rectangle-169" stroke="#000000" sketch:type="MSShapeGroup" x="0" y="0" width="539" height="688"></rect>
+        <rect lb:scope="8.160-10.945" id="panel-1" fill-opacity="0" fill="#D8D8D8" sketch:type="MSShapeGroup" x="4" y="5" width="529" height="138"></rect>
+        <rect lb:scope="11.001-13.365" id="panel-2" fill-opacity="0" fill="#D8D8D8" sketch:type="MSShapeGroup" x="4" y="154" width="529" height="138"></rect>
+        <rect lb:scope="13.885-16.748" id="panel-3" fill-opacity="0" fill="#D8D8D8" sketch:type="MSShapeGroup" x="4" y="326" width="529" height="138"></rect>
+        <rect lb:scope="16.749-19.194" id="panel-4" fill-opacity="0" fill="#D8D8D8" sketch:type="MSShapeGroup" x="10" y="498" width="529" height="138"></rect>
         <g id="Rectangle-165-+-TWINKLE-+-TWINKLE-copy" sketch:type="MSLayerGroup" transform="translate(397.000000, 30.000000)">
-            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="83"></rect>
-            <text id="TWINKLE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
+            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="100"></rect>
+            <text lb:animation="bounce" lb:scope="8.160-9.569" id="TWINKLE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
                 <tspan>TWINKLE</tspan>
             </text>
-            <text id="TWINKLE-copy" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
+            <text lb:animation="bounce" lb:scope="9.570-10.945"  id="TWINKLE-copy" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
                 <tspan>TWINKLE</tspan>
             </text>
         </g>
         <g id="Rectangle-165-+-TWINKLE-+-TWINKLE-copy-2" sketch:type="MSLayerGroup" transform="translate(404.000000, 160.000000)">
-            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="83"></rect>
-            <text id="LITTLE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
+            <rect id="Rectangle-164" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="100"></rect>
+            <text lb:animation="bounce" lb:scope="11.001-12.279" id="LITTLE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
                 <tspan>LITTLE</tspan>
             </text>
-            <text id="STAR" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
+            <text lb:animation="bounce" lb:scope="12.280-13.365" id="STAR" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
                 <tspan>STAR</tspan>
             </text>
         </g>
         <g id="Rectangle-165-+-TWINKLE-+-TWINKLE-copy-3" sketch:type="MSLayerGroup" transform="translate(7.000000, 344.000000)">
-            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="83"></rect>
-            <text id="HOW-I" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
+            <rect id="Rectangle-163" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="100"></rect>
+            <text lb:animation="bounce" lb:scope="13.885-15.325" id="HOW-I" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
                 <tspan>HOW I</tspan>
             </text>
-            <text id="WONDER" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
+            <text lb:animation="bounce" lb:scope="15.325-16.748" id="WONDER" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
                 <tspan>WONDER</tspan>
             </text>
         </g>
         <g id="Rectangle-165-+-TWINKLE-+-TWINKLE-copy-4" sketch:type="MSLayerGroup" transform="translate(404.000000, 520.000000)">
-            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="83"></rect>
-            <text id="WHAT" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
+            <rect id="Rectangle-162" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="100"></rect>
+            <text lb:animation="bounce" lb:scope="16.740-17.240" id="WHAT" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
                 <tspan>WHAT</tspan>
             </text>
-            <text id="YOU-ARE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
+            <text lb:animation="bounce" lb:scope="17.240-19.194" id="YOU-ARE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
                 <tspan>YOU ARE</tspan>
             </text>
         </g>

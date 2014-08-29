@@ -25,10 +25,7 @@ class ChapterViewController: PageNavigationController {
             return
         }
         
-        let firstPage = chapter.pages[0]
-        setViewControllers([PageViewController(chapter: chapter, page: firstPage)],
-            direction: .Forward,
-            animated: false,
-            completion: nil)
+        let firstPage = pageControllers[0]
+        setViewControllers([firstPage], direction: .Forward, animated: false, completion: nil)
     }
 }

@@ -3,9 +3,8 @@ import Foundation
 class Content: Model {
     let page: Page
     
-    var path: String {
-        return Model.pathForName(id, inDirectory: page.chapter.id)
-    }
+    var path: String { return Model.pathForName(id, inDirectory: page.chapter.id) }
+    var fileURL: NSURL { return NSURL.fileURLWithPath(path)! }
     
     
     init(page: Page, dict: JSONDict) {
@@ -24,6 +23,8 @@ class Content: Model {
             return SVGContent(page: page, dict: dict)
         } else if dict["image"] != nil {
             return ImageContent(page: page, dict: dict)
+        } else if dict["audio"] != nil {
+            return AudioContent(page: page, dict: dict)
         }
         
         return Content(page: page, dict: dict)

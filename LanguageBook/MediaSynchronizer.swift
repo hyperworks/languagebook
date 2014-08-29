@@ -18,15 +18,17 @@ import Foundation
     
     
     private func playheadDidChange(media: MediaController) {
-        sync(&syncPlayhead) {
-            for m in self.medias { m.playhead = media.playhead }
-        }
+        if syncPlayhead { return }
+        syncPlayhead = true
+        for m in self.medias { m.playhead = media.playhead }
+        syncPlayhead = false
     }
     
     private func scopeDidChange(media: MediaController) {
-        sync(&syncScope) {
-            for m in self.medias { m.scope = media.scope }
-        }
+        if syncScope { return }
+        syncScope = true
+        for m in self.medias { m.scope = media.scope }
+        syncScope = false
     }
     
     private func sync(inout lock: Bool, action: () -> ()) {

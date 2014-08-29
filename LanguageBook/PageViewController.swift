@@ -34,25 +34,25 @@ class PageViewController: UIViewController, SerialController {
     }
     
     override func loadView() {
-        let v = UIView(frame: CGRectMake(0, 0, 100, 100))
-        v.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let v = UIView(frame: CGRectMake(0, 0, 768, 1024))
         v.backgroundColor = .whiteColor()
+        v.opaque = true
         
         for controller in contentControllers {
             let subview = controller.view
             addChildViewController(controller)
-            
             v.addSubview(subview)
-            v.bringSubviewToFront(subview)
-            
             v.addConstraint(NSLayoutConstraint(verticalAlignItem: subview, withItem: v))
             v.addConstraint(NSLayoutConstraint(horizontalAlignItem: subview, withItem: v))
-            v.addConstraint(NSLayoutConstraint(sizeItem: subview, widthEqualsToItem: v))
-            v.addConstraint(NSLayoutConstraint(sizeItem: subview, heightEqualsToItem: v))
+            
+            v.bringSubviewToFront(subview)
             controller.didMoveToParentViewController(self)
         }
         
         // TODO: Load each content and overlay them on top of each other.
+        v.setTranslatesAutoresizingMaskIntoConstraints(false)
+        v.addConstraint(NSLayoutConstraint(item: v, width: 768))
+        v.addConstraint(NSLayoutConstraint(item: v, height: 1024))
         view = v
     }
 }

@@ -1,4 +1,4 @@
-import UIKit
+
 
 class ContentViewController: UIViewController, MediaController {
     private var _playhead: AudioTime = AudioTime()
@@ -33,6 +33,8 @@ class ContentViewController: UIViewController, MediaController {
             return SVGContentViewController(SVGContent: svg)
         case let image as ImageContent:
             return ImageContentViewController(ImageContent: image)
+        case let audio as AudioContent:
+            return AudioContentViewController(AudioContent: audio)
         default:
             fatalError("unsupported content type.")
         }
@@ -43,5 +45,17 @@ class ContentViewController: UIViewController, MediaController {
     init(content: Content) {
         self.content = content
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    override func loadView() {
+        let v = UIView(frame: CGRectMake(0, 0, 768, 1024))
+        v.userInteractionEnabled = false
+        v.backgroundColor = .clearColor()
+        v.opaque = false
+        
+        v.setTranslatesAutoresizingMaskIntoConstraints(false)
+        v.addConstraint(NSLayoutConstraint(item: v, width: 768))
+        v.addConstraint(NSLayoutConstraint(item: v, height: 1024))
+        view = v
     }
 }

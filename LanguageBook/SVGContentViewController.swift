@@ -23,8 +23,8 @@ class SVGContentViewController: ContentViewController {
     override func loadView() {
         let klass: SVGKImageView.Type = svgContent.interactive ? SVGKLayeredImageView.self : SVGKFastImageView.self
         
-        let v = klass(SVGKImage: svgContent.image)
-        v.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let image = svgContent.image
+        let v = klass(SVGKImage: image)
         v.backgroundColor = .clearColor()
         v.opaque = false
         
@@ -34,6 +34,9 @@ class SVGContentViewController: ContentViewController {
             v.addGestureRecognizer(gesture)
         }
         
+        v.setTranslatesAutoresizingMaskIntoConstraints(false)
+        v.addConstraint(NSLayoutConstraint(item: v, width: image.size.width))
+        v.addConstraint(NSLayoutConstraint(item: v, height: image.size.height))
         view = v
     }
     

@@ -4,6 +4,7 @@
     , "contents":
       [ { "svg": "bar copy.svg", "interactive": false }
       , { "svg": "bar copy conver.svg", "interactive": true }
+      , { "audio": "twinkle.mp3" }
       ]
     }
   , { "id": "page-two"

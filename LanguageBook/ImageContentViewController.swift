@@ -11,8 +11,15 @@ class ImageContentViewController: ContentViewController {
     }
     
     override func loadView() {
-        view = UIImageView(image: UIImage(contentsOfFile: imageContent.path))
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let image = UIImage(contentsOfFile: imageContent.path)
+        let v = UIImageView(image: image)
+        v.backgroundColor = .clearColor()
+        v.opaque = false
+        
+        v.setTranslatesAutoresizingMaskIntoConstraints(false)
+        v.addConstraint(NSLayoutConstraint(item: v, width: image.size.width))
+        v.addConstraint(NSLayoutConstraint(item: v, height: image.size.height))
+        view = v
     }
 }
 
