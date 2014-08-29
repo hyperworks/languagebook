@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		222B3CB719B059F30001E577 /* AudioContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B3CB619B059F30001E577 /* AudioContent.swift */; };
 		222B3CB919B05BA20001E577 /* AudioContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B3CB819B05BA20001E577 /* AudioContentViewController.swift */; };
+		222B3CBB19B074670001E577 /* SVGImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B3CBA19B074670001E577 /* SVGImageCache.swift */; };
 		222D9B8F1993F24100AE21FE /* CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D9B8E1993F24100AE21FE /* CMTime.swift */; };
 		223B9C2B19ACFD0000421F74 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 223B9C2A19ACFD0000421F74 /* Assets */; };
 		223B9C2E19ACFE4600421F74 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9C2D19ACFE4600421F74 /* Book.swift */; };
@@ -49,6 +50,7 @@
 		175D8DC6B38942C8AFFF000A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		222B3CB619B059F30001E577 /* AudioContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioContent.swift; sourceTree = "<group>"; };
 		222B3CB819B05BA20001E577 /* AudioContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioContentViewController.swift; sourceTree = "<group>"; };
+		222B3CBA19B074670001E577 /* SVGImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGImageCache.swift; sourceTree = "<group>"; };
 		222D9B8E1993F24100AE21FE /* CMTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTime.swift; sourceTree = "<group>"; };
 		223B9C2A19ACFD0000421F74 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		223B9C2D19ACFE4600421F74 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				22F11E4C199E0F94006B4033 /* Notification.swift */,
 				2280A82819ACE69B00C6CD4C /* Random.swift */,
 				2280A82419ACC1E000C6CD4C /* SerialController.swift */,
+				222B3CBA19B074670001E577 /* SVGImageCache.swift */,
 				22AA923419889D1F0091F5E2 /* Images.xcassets */,
 				2246438C198E20D70001DEBF /* Extensions */,
 				223B9C2C19ACFD7E00421F74 /* Models */,
@@ -334,6 +337,7 @@
 				223B9C3019ACFE5200421F74 /* Model.swift in Sources */,
 				22E062EA1998E8E80082369F /* IntervalType.swift in Sources */,
 				225278DA19ADDB0F00557944 /* SVGContentViewController.swift in Sources */,
+				222B3CBB19B074670001E577 /* SVGImageCache.swift in Sources */,
 				225278D519ADDABF00557944 /* ImageContent.swift in Sources */,
 				22CF394219ADE1E2002A1F54 /* LayerData.swift in Sources */,
 				2280A82519ACC1E000C6CD4C /* SerialController.swift in Sources */,

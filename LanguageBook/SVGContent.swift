@@ -5,7 +5,7 @@ class SVGContent: Content {
     let interactive: Bool
     
     lazy private(set) var image: SVGKImage = {
-        return SVGKImage(contentsOfFile: self.path)
+        return SVGImageCache.sharedInstance[self.path]
     }()
     
     override init(page: Page, dict: JSONDict) {
