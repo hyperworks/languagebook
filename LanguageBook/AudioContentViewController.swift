@@ -27,7 +27,6 @@ class AudioContentViewController: ContentViewController {
         _asset = content.asset
         
         super.init(content: content)
-        dump(content.asset, name: "audio")
     }
 
     

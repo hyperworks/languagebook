@@ -9,12 +9,16 @@
     }
   , { "id": "page-two"
     , "contents":
-      [ { "svg": "disco copy.svg", "interactive": false }
+      [ { "svg": "librarycolor.svg", "interactive": false }
+      , { "svg": "bar copy conver.svg", "interactive": true }
+      , { "audio": "twinkle.mp3" }
       ]
     }
   , { "id": "page-three"
     , "contents":
-      [ { "svg": "subway copy.svg", "interactive": false }
+      [ { "image": "librarycolor.png" }
+      , { "svg": "bar copy conver.svg", "interactive": true }
+      , { "audio": "twinkle.mp3" }
       ]
     }
   ]
