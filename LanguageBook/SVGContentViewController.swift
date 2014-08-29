@@ -25,7 +25,8 @@ class SVGContentViewController: ContentViewController {
         
         let v = klass(SVGKImage: svgContent.image)
         v.setTranslatesAutoresizingMaskIntoConstraints(false)
-        v.backgroundColor = .whiteColor()
+        v.backgroundColor = .clearColor()
+        v.opaque = false
         
         if svgContent.interactive {
             let gesture = UITapGestureRecognizer(target: self, action: "didTapImage:")

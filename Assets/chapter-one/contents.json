@@ -3,6 +3,7 @@
   [ { "id": "page-one"
     , "contents":
       [ { "svg": "bar copy.svg", "interactive": false }
+      , { "svg": "bar copy conver.svg", "interactive": true }
       ]
     }
   , { "id": "page-two"

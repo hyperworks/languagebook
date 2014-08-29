@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="539px" height="688px" viewBox="0 0 539 688" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <rect id="Rectangle-169" stroke="#000000" sketch:type="MSShapeGroup" x="0" y="0" width="539" height="688"></rect>
+        <g id="Rectangle-165-+-TWINKLE-+-TWINKLE-copy" sketch:type="MSLayerGroup" transform="translate(397.000000, 30.000000)">
+            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="83"></rect>
+            <text id="TWINKLE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
+                <tspan>TWINKLE</tspan>
+            </text>
+            <text id="TWINKLE-copy" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
+                <tspan>TWINKLE</tspan>
+            </text>
+        </g>
+        <g id="Rectangle-165-+-TWINKLE-+-TWINKLE-copy-2" sketch:type="MSLayerGroup" transform="translate(404.000000, 160.000000)">
+            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="83"></rect>
+            <text id="LITTLE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
+                <tspan>LITTLE</tspan>
+            </text>
+            <text id="STAR" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
+                <tspan>STAR</tspan>
+            </text>
+        </g>
+        <g id="Rectangle-165-+-TWINKLE-+-TWINKLE-copy-3" sketch:type="MSLayerGroup" transform="translate(7.000000, 344.000000)">
+            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="83"></rect>
+            <text id="HOW-I" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
+                <tspan>HOW I</tspan>
+            </text>
+            <text id="WONDER" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
+                <tspan>WONDER</tspan>
+            </text>
+        </g>
+        <g id="Rectangle-165-+-TWINKLE-+-TWINKLE-copy-4" sketch:type="MSLayerGroup" transform="translate(404.000000, 520.000000)">
+            <rect id="Rectangle-165" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="123" height="83"></rect>
+            <text id="WHAT" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="30">
+                <tspan>WHAT</tspan>
+            </text>
+            <text id="YOU-ARE" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" fill="#000000" x="11" y="67">
+                <tspan>YOU ARE</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
