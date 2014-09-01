@@ -448,7 +448,7 @@
 				INFOPLIST_FILE = LanguageBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "61d30900-9aa0-4e0a-b1b7-e00d1f05f9f8";
+				PROVISIONING_PROFILE = "ecef600b-eda5-4f98-89db-a735054a9996";
 				SWIFT_OBJC_BRIDGING_HEADER = "LanguageBook/LanguageBook-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -466,7 +466,7 @@
 				INFOPLIST_FILE = LanguageBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6fe8caca-994f-4cb1-97c4-1a4c6c21235d";
+				PROVISIONING_PROFILE = "6aea5ec7-5ac9-4eeb-a9fb-470f5400fd86";
 				SWIFT_OBJC_BRIDGING_HEADER = "LanguageBook/LanguageBook-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
