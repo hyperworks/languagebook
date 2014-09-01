@@ -2,6 +2,7 @@ import Foundation
 
 typealias AudioTime = NSTimeInterval
 
+// dummy edits.
 // TODO: We can't use the built-in HalfOpenInterval<T> or ClosedInterval<T> type because it cannot
 //   be represented in ObjC causing all protocols that reference them to not work with ObjC types.
 //   As this is a fundamental Swift type, it'll probably be updated to work in future Swift betas.
