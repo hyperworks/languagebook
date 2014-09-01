@@ -8,9 +8,15 @@ TESTFLIGHT_TEAMTOKEN := b497c9485455cb6f8f99abf358bd1c2d_NDI2MzQ0MjAxNC0wOS0wMSA
 WORKDIR   := build
 SRC_FILES := $(wildcard $(NAME)/* $(NAME)/**/*) Podfile
 WORKSPACE := $(NAME).xcworkspace
-SCHEME    := $(NAME)
 ARCHIVE   := $(WORKDIR)/$(NAME).xcarchive
 IPA       := $(WORKDIR)/$(NAME).ipa
+
+SCHEME  := $(NAME)
+ifdef BUILD_NUMBER
+ifndef PROFILE
+PROFILE := TestFlight
+endif
+endif
 
 POD     := pod --verbose
 XCBUILD := xcodebuild
@@ -57,5 +63,9 @@ $(ARCHIVE): $(WORKSPACE)
 	$(XCBUILD) -workspace $(WORKSPACE) -scheme $(SCHEME) archive -archivePath $(ARCHIVE)
 
 $(IPA): $(ARCHIVE)
+ifdef PROFILE
+	$(XCBUILD) -exportArchive -archivePath $(ARCHIVE) -exportPath $(IPA) -exportProvisioningProfile $(PROFILE)
+else
 	$(XCBUILD) -exportArchive -archivePath $(ARCHIVE) -exportPath $(IPA)
+endif
 
