@@ -2,12 +2,12 @@
 
 NAME := LanguageBook
 
+WORKDIR   := build
+SRC_FILES := $(wildcard $(NAME)/* $(NAME)/**/*) Podfile
 WORKSPACE := $(NAME).xcworkspace
 SCHEME    := $(NAME)
-ARCHIVE   := $(NAME).xcarchive
-IPA       := $(NAME).ipa
-
-SRC_FILES := $(wildcard $(NAME)/* $(NAME)/**/*) Makefile Podfile Podfile.lock
+ARCHIVE   := $(WORKDIR)/$(NAME).xcarchive
+IPA       := $(WORKDIR)/$(NAME).ipa
 
 POD     := pod --verbose
 XCBUILD := xcodebuild
@@ -15,6 +15,7 @@ XCBUILD := xcodebuild
 .PHONY: default clean
 
 default: $(IPA)
+
 clean:
 	$(XCBUILD) clean
 	rm -r $(ARCHIVE)
@@ -22,6 +23,7 @@ clean:
 
 $(WORKSPACE): $(SRC_FILES)
 	$(POD) install
+	touch $(WORKSPACE)
 
 $(ARCHIVE): $(WORKSPACE)
 	$(XCBUILD) -workspace $(WORKSPACE) -scheme $(SCHEME) archive -archivePath $(ARCHIVE)
