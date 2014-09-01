@@ -448,7 +448,7 @@
 				INFOPLIST_FILE = LanguageBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4ffb8553-a90b-454f-8ccd-9ec36a653ad7";
+				PROVISIONING_PROFILE = "61d30900-9aa0-4e0a-b1b7-e00d1f05f9f8";
 				SWIFT_OBJC_BRIDGING_HEADER = "LanguageBook/LanguageBook-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -465,7 +465,7 @@
 				INFOPLIST_FILE = LanguageBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4ffb8553-a90b-454f-8ccd-9ec36a653ad7";
+				PROVISIONING_PROFILE = "61d30900-9aa0-4e0a-b1b7-e00d1f05f9f8";
 				SWIFT_OBJC_BRIDGING_HEADER = "LanguageBook/LanguageBook-Bridging-Header.h";
 			};
 			name = Release;
