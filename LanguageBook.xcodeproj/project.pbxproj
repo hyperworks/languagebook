@@ -451,6 +451,7 @@
 				PROVISIONING_PROFILE = "61d30900-9aa0-4e0a-b1b7-e00d1f05f9f8";
 				SWIFT_OBJC_BRIDGING_HEADER = "LanguageBook/LanguageBook-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -467,6 +468,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "61d30900-9aa0-4e0a-b1b7-e00d1f05f9f8";
 				SWIFT_OBJC_BRIDGING_HEADER = "LanguageBook/LanguageBook-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
