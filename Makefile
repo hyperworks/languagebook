@@ -15,6 +15,22 @@ IPA       := $(WORKDIR)/$(NAME).ipa
 POD     := pod --verbose
 XCBUILD := xcodebuild
 
+
+ifdef BUILD_NUMBER # we're inside Jenkins
+define BUILD_NOTES
+Jenkins build #$(BUILD_NUMBER) $(BUILD_ID)
+$(BUILD_URL)
+
+git: $(GIT_COMMIT) ($(GIT_URL))
+endef
+
+else
+BUILD_NOTES := Commandline build.
+
+endif
+export BUILD_NOTES
+
+
 .PHONY: clean testflight
 
 default: $(IPA)
@@ -29,7 +45,7 @@ testflight: $(IPA)
 		-F file=@$(IPA)                                 \
 		-F api_token='$(TESTFLIGHT_APIKEY)'             \
 		-F team_token='$(TESTFLIGHT_TEAMTOKEN)'         \
-		-F notes='Jenkins build.'
+		-F notes="$$BUILD_NOTES"
 
 $(WORKSPACE): $(SRC_FILES)
 	$(POD) install
