@@ -21,8 +21,8 @@ default: $(IPA)
 
 clean:
 	$(XCBUILD) clean
-	rm -r $(ARCHIVE)
-	rm $(IPA)
+	-rm -r $(ARCHIVE)
+	-rm $(IPA)
 
 testflight: $(IPA)
 	curl -vv http://testflightapp.com/api/builds.json \
