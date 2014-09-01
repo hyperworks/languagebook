@@ -18,10 +18,12 @@ XCBUILD := xcodebuild
 
 ifdef BUILD_NUMBER # we're inside Jenkins
 define BUILD_NOTES
-Jenkins build #$(BUILD_NUMBER) $(BUILD_ID)
-$(BUILD_URL)
+Jenkins build #$(BUILD_NUMBER)
 
-git: $(GIT_COMMIT) ($(GIT_URL))
+id: $(BUILD_ID)
+url: $(BUILD_URL)
+git: $(GIT_COMMIT)
+repo: $(GIT_URL)
 endef
 
 else
