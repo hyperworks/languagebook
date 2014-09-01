@@ -12,14 +12,17 @@ ARCHIVE   := $(WORKDIR)/$(NAME).xcarchive
 IPA       := $(WORKDIR)/$(NAME).ipa
 
 SCHEME  := $(NAME)
-ifdef BUILD_NUMBER
-ifndef PROFILE
-PROFILE := TestFlight
-endif
+CONFIG  := Debug
+
+ifneq "$(CONFIG)" "Debug"
+# NOTE: You can list all signing identities on a machine with
+# $ security find-identity -v -p codesigning
+IPA_SIGN_ID := "iPhone Distribution: Hyperworks Inc (5FS5J26RW8)"
+IPA_PROFILE := TestFlight
 endif
 
 POD     := pod --verbose
-XCBUILD := xcodebuild
+XCBUILD := xcodebuild -configuration $(CONFIG)
 
 
 ifdef BUILD_NUMBER # we're inside Jenkins
@@ -63,9 +66,10 @@ $(ARCHIVE): $(WORKSPACE)
 	$(XCBUILD) -workspace $(WORKSPACE) -scheme $(SCHEME) archive -archivePath $(ARCHIVE)
 
 $(IPA): $(ARCHIVE)
-ifdef PROFILE
-	$(XCBUILD) -exportArchive -archivePath $(ARCHIVE) -exportPath $(IPA) -exportProvisioningProfile $(PROFILE)
-else
+	-rm $(IPA)
+ifeq "$(CONFIG)" "Debug"
 	$(XCBUILD) -exportArchive -archivePath $(ARCHIVE) -exportPath $(IPA)
+else
+	$(XCBUILD) -exportArchive -archivePath $(ARCHIVE) -exportPath $(IPA) -exportSigningIdentity $(IPA_SIGN_ID)
 endif
 
