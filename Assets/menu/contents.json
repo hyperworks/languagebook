@@ -1,7 +1,0 @@
-{ "id": "menu"
-, "pages":
-  [ { "id": "menu"
-    , "contents": [ { "svg": "menu.svg", "interactive": true } ]
-    }
-  ]
-}
