@@ -30,12 +30,4 @@ import Foundation
         for m in self.medias { m.scope = media.scope }
         syncScope = false
     }
-    
-    private func sync(inout lock: Bool, action: () -> ()) {
-        // TODO: Use a proper multi-threaded atomic lock?
-        if lock { return }
-        lock = true
-        action()
-        lock = false
-    }
 }
