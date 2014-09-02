@@ -5,8 +5,9 @@ class Content: Model {
     
     var path: String { return Model.pathForName(id, inDirectory: page.chapter.id) }
     var fileURL: NSURL { return NSURL.fileURLWithPath(path)! }
-    
-    
+
+    var dimension: CGSize { return CGSizeZero }
+
     init(page: Page, dict: JSONDict) {
         self.page = page
         super.init(dict: dict)

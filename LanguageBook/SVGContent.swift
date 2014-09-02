@@ -1,13 +1,15 @@
 import Foundation
 
 class SVGContent: Content {
+    private lazy var _image: SVGKImage = SVGImageCache.sharedInstance[self.path]
+
     let name: String
     let interactive: Bool
-    
-    lazy private(set) var image: SVGKImage = {
-        return SVGImageCache.sharedInstance[self.path]
-    }()
-    
+
+    var image: SVGKImage { return _image }
+    override var dimension: CGSize { return image.size }
+
+
     override init(page: Page, dict: JSONDict) {
         name = dict["svg"]! as String
         interactive = (dict["interactive"] ?? false) as Bool
