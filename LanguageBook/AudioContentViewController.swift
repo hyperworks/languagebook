@@ -29,6 +29,14 @@ class AudioContentViewController: ContentViewController {
         super.init(content: content)
     }
 
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if audioContent.autoplay {
+            playThrough()
+        }
+    }
+
     
     private func playScope(scope: AudioInterval) {
         let item = AVPlayerItem(asset: _asset)

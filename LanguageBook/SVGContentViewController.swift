@@ -110,7 +110,8 @@ class SVGContentViewController: ContentViewController {
         case "bounce":
             let anim = CABasicAnimation(keyPath: "position")
             anim.fromValue = NSValue(CGPoint: layer.position)
-            anim.toValue = NSValue(CGPoint: CGPoint(x: layer.position.x, y: layer.position.y - 20))
+            anim.toValue = NSValue(CGPoint: CGPoint(x: layer.position.x, y: layer.position.y - 10))
+            anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             anim.autoreverses = true
             
             if let scope = data.scope {

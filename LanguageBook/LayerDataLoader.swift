@@ -23,7 +23,7 @@ import QuartzCore
                     animation: elem.getAttribute("animation"),
                     link: elem.getAttribute("link")
                 )
-                
+
                 data.writeTo(layer)
                 interactiveLayers += [layer]
             }
