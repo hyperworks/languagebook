@@ -43,6 +43,7 @@
 		22E062EA1998E8E80082369F /* IntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E062E91998E8E70082369F /* IntervalType.swift */; };
 		22F11E4D199E0F94006B4033 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E4C199E0F94006B4033 /* Notification.swift */; };
 		22F11E51199E1B56006B4033 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F11E50199E1B56006B4033 /* BlockObserver.swift */; };
+		22F40A0019B63282007D0A0E /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F409FF19B63282007D0A0E /* UIScreen.swift */; };
 		3018E05F736A44B2A1991C22 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B43C86241A4C4609BE47DA3B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		22E062E91998E8E70082369F /* IntervalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalType.swift; sourceTree = "<group>"; };
 		22F11E4C199E0F94006B4033 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		22F11E50199E1B56006B4033 /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
+		22F409FF19B63282007D0A0E /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		B43C86241A4C4609BE47DA3B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				22E062E91998E8E70082369F /* IntervalType.swift */,
 				2280A82A19ACEB2900C6CD4C /* NSLayoutConstraint.swift */,
 				22B915FD199201A600E740D5 /* NSRange.swift */,
+				22F409FF19B63282007D0A0E /* UIScreen.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				223B9C3019ACFE5200421F74 /* Model.swift in Sources */,
 				22E062EA1998E8E80082369F /* IntervalType.swift in Sources */,
 				225278DA19ADDB0F00557944 /* SVGContentViewController.swift in Sources */,
+				22F40A0019B63282007D0A0E /* UIScreen.swift in Sources */,
 				222B3CBB19B074670001E577 /* SVGImageCache.swift in Sources */,
 				225278D519ADDABF00557944 /* ImageContent.swift in Sources */,
 				22CF394219ADE1E2002A1F54 /* LayerData.swift in Sources */,
