@@ -246,7 +246,7 @@
 				TargetAttributes = {
 					22AA922719889D1F0091F5E2 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = ES39E58ABA;
+						DevelopmentTeam = 5FS5J26RW8;
 					};
 				};
 			};
@@ -460,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hyperworks Inc (5FS5J26RW8)";
 				INFOPLIST_FILE = LanguageBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
