@@ -29,9 +29,8 @@ class AudioContentViewController: ContentViewController {
         super.init(content: content)
     }
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if audioContent.autoplay {
             playThrough()
         }
