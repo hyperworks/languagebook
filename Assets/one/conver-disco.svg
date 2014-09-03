@@ -66,6 +66,12 @@
         </filter>
     </defs>
     <g lb:animation="bounce" id="DISCO" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="panel-bounds" sketch:type="MSLayerGroup" transform="translate(191.000000, 14.000000)" fill="#FFFFFF" fill-opacity="0.01">
+            <rect lb:scope="14.840-17.994" id="panel1" sketch:type="MSShapeGroup" x="0.296875" y="0" width="543.851562" height="171"></rect>
+            <rect lb:scope="18.120-19.891" id="panel2" sketch:type="MSShapeGroup" x="0.296875" y="169" width="543.851562" height="175"></rect>
+            <rect lb:scope="20.891-23.805" id="panel3" sketch:type="MSShapeGroup" x="0.296875" y="344" width="543.851562" height="171"></rect>
+            <rect lb:scope="23.960-25.411" id="panel4" sketch:type="MSShapeGroup" x="0.296875" y="515" width="543.851562" height="171"></rect>
+        </g>
         <g id="conversation" sketch:type="MSLayerGroup" transform="translate(35.000000, 29.000000)">
             <g lb:scope="14.840-15.908" id="are-you-friends" transform="translate(13.000000, 0.000000)">
                 <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-1)" sketch:type="MSShapeGroup" x="0" y="0" width="217" height="43"></rect>
