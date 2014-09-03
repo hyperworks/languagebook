@@ -1,12 +1,22 @@
 import UIKit
 
-class PageViewController: UIViewController, SerialController {
+class PageViewController: UIViewController, SerialController, Pausable {
+    private var _paused = false
+    
     let chapter: Chapter
     let page: Page
     
     let contentControllers: [ContentViewController]
     let contentSize: CGSize
     let syncer: MediaSynchronizer
+    
+    var paused: Bool {
+        get { return _paused }
+        set {
+            _paused = newValue
+            contentControllers.each { $0.paused = newValue }
+        }
+    }
     
     var nextViewController: UIViewController? {
         let nextIdx = find(chapter.pages, page)! + 1

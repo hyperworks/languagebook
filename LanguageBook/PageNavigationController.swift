@@ -42,16 +42,17 @@ class PageNavigationController: UIPageViewController, UIPageViewControllerDataSo
     func pageViewController(pageViewController: UIPageViewController,
         willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
         
-        viewControllers.cast({ $0 as? MediaController }).each({ $0.paused = true })
-        pendingViewControllers.cast({ $0 as? MediaController }).each({ $0.paused = true })
+        viewControllers.cast({ $0 as? Pausable }).each({ dump("pausing"); $0.paused = true })
+        pendingViewControllers.cast({ $0 as? Pausable }).each({ $0.paused = true })
     }
+    
     
     func pageViewController(pageViewController: UIPageViewController,
         didFinishAnimating finished: Bool,
         previousViewControllers: [AnyObject],
         transitionCompleted completed: Bool) {
     
-        viewControllers.cast({ $0 as? MediaController }).each({ $0.paused = false })
+        viewControllers.cast({ $0 as? Pausable }).each({ $0.paused = false })
     }
 }
 
