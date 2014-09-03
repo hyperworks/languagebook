@@ -4,7 +4,6 @@ class Book: Model {
     private(set) var chapters: [Chapter] = []
     
     class func fromJSON() -> Book {
-        dump("fromJSON")
         return Book(dict: Model.loadJSON("contents.json") as JSONDict)
     }
     
