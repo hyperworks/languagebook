@@ -2,13 +2,13 @@ import Foundation
 import AVFoundation
 
 class AudioContent: Content {
+    private lazy var _asset: AVAsset = AVURLAsset(URL: self.fileURL, options: nil)
+    
     let name: String
     let autoplay: Bool
     let scope: AudioInterval?
     
-    lazy private(set) var asset: AVAsset = {
-        return AVURLAsset(URL: self.fileURL, options: nil)
-    }()
+    var asset: AVAsset { return _asset }
     
     override init(page: Page, dict: JSONDict) {
         name = dict["audio"]! as String
