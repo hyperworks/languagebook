@@ -85,54 +85,54 @@
             </feMerge>
         </filter>
     </defs>
-    <g id="BAR" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+    <g lb:animation="bounce" id="BAR" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="conv.-bubbles" sketch:type="MSLayerGroup" transform="translate(19.000000, 75.000000)">
-            <g id="hey,-you-look-cute!" transform="translate(577.000000, 0.000000)">
+            <g lb:scope="0.045-1.611" id="hey,-you-look-cute!" transform="translate(577.000000, 0.000000)">
                 <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-1)" sketch:type="MSShapeGroup" x="0" y="0" width="246" height="43"></rect>
-                <text id="Hey,-you-look-cute!" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
-                    <tspan x="13.301105" y="31">Hey, you look cute!</tspan>
+                <text x="13.301105" y="31" id="Hey,-you-look-cute!" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan>Hey, you look cute!</tspan>
                 </text>
             </g>
-            <g id="oh,-thank-you!" transform="translate(86.000000, 11.000000)">
+            <g lb:scope="1.748-2.908" id="oh,-thank-you!" transform="translate(86.000000, 11.000000)">
                 <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-2)" sketch:type="MSShapeGroup" x="0" y="0" width="202" height="43"></rect>
-                <text id="Oh,-thank-you!" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
-                    <tspan x="18.3618785" y="31">Oh, thank you!</tspan>
+                <text x="18.3618785" y="31" id="Oh,-thank-you!" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan>Oh, thank you!</tspan>
                 </text>
             </g>
-            <g id="can-I-buy-you-a-drink?" transform="translate(577.000000, 107.000000)">
+            <g lb:scope="3.422-4.680" id="can-I-buy-you-a-drink?" transform="translate(577.000000, 107.000000)">
                 <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-3)" sketch:type="MSShapeGroup" x="0" y="0" width="303" height="43"></rect>
-                <text id="Can-I-buy-you-a-drin" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
-                    <tspan x="15.1353591" y="31">Can I buy you a drink?</tspan>
+                <text x="15.1353591" y="31" id="Can-I-buy-you-a-drin" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan>Can I buy you a drink?</tspan>
                 </text>
             </g>
-            <g id="yes-i-want-a-martini" transform="translate(19.000000, 199.000000)">
+            <g lb:scope="4.994-6.754" id="yes-i-want-a-martini" transform="translate(19.000000, 199.000000)">
                 <path d="M0,0 L0,43 L282,43 L282,17.78125 L282,0 L0,0 Z" id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-4)" sketch:type="MSShapeGroup"></path>
-                <text id="Yes,-I-want-a-Martin" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
-                    <tspan x="16.1906077" y="31">Yes, I want a Martini.</tspan>
+                <text x="16.1906077" y="31" id="Yes,-I-want-a-Martin" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan>Yes, I want a Martini.</tspan>
                 </text>
             </g>
-            <g id="what's-your-name?" transform="translate(617.000000, 294.000000)">
+            <g lb:scope="7.194-8.222" id="what's-your-name?" transform="translate(617.000000, 294.000000)">
                 <path d="M0,0 L0,43 L246,43 L246,17.78125 L246,0 L0,0 Z" id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-5)" sketch:type="MSShapeGroup"></path>
-                <text id="What’s-your-name?" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
-                    <tspan x="18.9088398" y="31">What’s your name?</tspan>
+                <text x="18.9088398" y="31" id="What’s-your-name?" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan>What’s your name?</tspan>
                 </text>
             </g>
-            <g id="my-name-is-jane" transform="translate(46.000000, 368.000000)">
+            <g lb:scope="8.394-9.862" id="my-name-is-jane" transform="translate(46.000000, 368.000000)">
                 <path d="M0,0 L0,43 L229,43 L229,17.78125 L229,0 L0,0 Z" id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-6)" sketch:type="MSShapeGroup"></path>
-                <text id="My-name-is-Jane." sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
-                    <tspan x="15.6104972" y="31">My name is Jane.</tspan>
+                <text x="15.6104972" y="31" id="My-name-is-Jane." sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan>My name is Jane.</tspan>
                 </text>
             </g>
-            <g id="you-have-the-prettiest-eyes." transform="translate(525.000000, 457.000000)">
+            <g lb:scope="10.314-12.108" id="you-have-the-prettiest-eyes." transform="translate(525.000000, 457.000000)">
                 <path d="M0,0 L0,43 L338,43 L338,17.78125 L338,0 L0,0 Z" id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-7)" sketch:type="MSShapeGroup"></path>
-                <text id="You-have-the-prettie" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
-                    <tspan x="12.3895028" y="31">You have the prettiest eyes.</tspan>
+                <text x="12.3895028" y="31" id="You-have-the-prettie" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan>You have the prettiest eyes.</tspan>
                 </text>
             </g>
-            <g id="all-the-guys-say-this" transform="translate(0.000000, 551.000000)">
+            <g lb:scope="12.331-14.091" id="all-the-guys-say-this" transform="translate(0.000000, 551.000000)">
                 <path d="M0,0 L0,43 L275,43 L275,17.78125 L275,0 L0,0 Z" id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-8)" sketch:type="MSShapeGroup"></path>
-                <text id="All-the-guys-say-thi" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
-                    <tspan x="16.6546961" y="31">All the guys say this.</tspan>
+                <text x="16.6546961" y="31" id="All-the-guys-say-thi" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan>All the guys say this.</tspan>
                 </text>
             </g>
         </g>
