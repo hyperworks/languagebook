@@ -19,7 +19,7 @@ import QuartzCore
             
             if let layer = image.layerWithIdentifier(id) {
                 let data = LayerData(
-                    scope: elem.hasAttribute("scope") ? parseScope(elem.getAttribute("scope")) : nil,
+                    scope: elem.hasAttribute("scope") ? AudioInterval.parse(elem.getAttribute("scope")) : nil,
                     animation: elem.getAttribute("animation"),
                     link: elem.getAttribute("link")
                 )
@@ -58,15 +58,5 @@ import QuartzCore
         }
         
         return resolved[key] as? T
-    }
-    
-    
-    private func parseScope(rawStr: String) -> AudioInterval {
-        let components = rawStr.componentsSeparatedByString("-")
-        var start = Double(0.0), end = Double(0.0)
-        NSScanner.localizedScannerWithString(components[0]).scanDouble(&start)
-        NSScanner.localizedScannerWithString(components[1]).scanDouble(&end)
-        
-        return AudioInterval(start: start, end: end)
     }
 }

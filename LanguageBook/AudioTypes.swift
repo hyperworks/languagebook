@@ -20,6 +20,15 @@ typealias AudioTime = NSTimeInterval
         self.end = end
     }
     
+    class func parse(rawString: String) -> AudioInterval {
+        let components = rawString.componentsSeparatedByString("-")
+        var start = Double(0.0), end = Double(0.0)
+        NSScanner.localizedScannerWithString(components[0]).scanDouble(&start)
+        NSScanner.localizedScannerWithString(components[1]).scanDouble(&end)
+        
+        return AudioInterval(start: start, end: end)
+    }
+    
     
     func contains(value: Bound) -> Bool {
         return start <= value && value < end
