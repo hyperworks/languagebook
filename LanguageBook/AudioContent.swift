@@ -14,7 +14,8 @@ class AudioContent: Content {
         name = dict["audio"]! as String
         autoplay = (dict["autoplay"] ?? false) as Bool
         
-        if let str = dict["scale"]! as? String {
+        let raw: AnyObject? = dict["scope"]?
+        if let str = raw as? String {
             scope = AudioInterval.parse(str)
         } else {
             scope = nil

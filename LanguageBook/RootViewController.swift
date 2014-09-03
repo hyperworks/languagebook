@@ -2,6 +2,17 @@ import UIKit
 
 class RootViewController: UIViewController {
     let book = Book.fromJSON()
+    
+    // TODO: Book.fromJSON() gets called twice if we do not overrides the initializers, possibly
+    //   a bug in the Swift compiler or library.
+    required init(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    convenience override init() { self.init(nibName: nil, bundle: nil) }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
 
     override func supportedInterfaceOrientations() -> Int {
         var mask: UIInterfaceOrientationMask = .Portrait | .PortraitUpsideDown |

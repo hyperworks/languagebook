@@ -32,7 +32,11 @@ class AudioContentViewController: ContentViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if audioContent.autoplay {
-            playThrough()
+            if let scope = audioContent.scope {
+                playScope(scope)
+            } else {
+                playThrough()
+            }
         }
     }
 
