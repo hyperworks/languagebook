@@ -4,10 +4,16 @@
     , "contents":
       [ { "image": "comic-disco.png" }
       , { "svg": "conver-disco.svg", "interactive": true }
-      , { "audio": "conver-disco.mp3", "autoplay": true }
+      , { "audio": "conver.mp3", "autoplay": true, "scope": "0.045-14.091" }
       ]
     }
-  , { "id": "bar", "contents": [ { "image": "comic-bar.png" } ] }
+  , { "id": "bar"
+    , "contents":
+      [ { "image": "comic-bar.png" }
+      , { "svg": "conver-bar.svg", "interactive": true }
+      , { "audio": "conver.mp3", "autoplay": true, "scope": "14.840-25.411" }
+      ]
+    }
   , { "id": "library", "contents": [ { "image": "comic-library.png" } ] }
   , { "id": "subway", "contents": [ { "image": "comic-subway.png" } ] }
   ]

@@ -1,97 +1,106 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="1054px" height="695px" viewBox="0 0 1054 695" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:lb="http://languagebook.hyperworks.co.th/">
+<svg width="919px" height="717px" viewBox="0 0 919 717" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
     <title>conver-disco</title>
-    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
-    <defs></defs>
-    <g lb:animation="bounce" id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <rect id="alignment-frame" stroke-opacity="0.01" stroke="#D3D3D3" sketch:type="MSShapeGroup" x="0" y="0" width="1054" height="695"></rect>
-        <rect lb:scope="0.045-6.475" id="panel1" fill-opacity="0.01" fill="#FFFFFF" sketch:type="MSShapeGroup" x="254" y="2" width="542" height="172"></rect>
-        <rect lb:scope="7.194-14.091" id="panel2" fill-opacity="0.01" fill="#FFFFFF" sketch:type="MSShapeGroup" x="256" y="174" width="542" height="172"></rect>
-        <rect lb:scope="14.840-19.891" id="panel3" fill-opacity="0.01" fill="#FFFFFF" sketch:type="MSShapeGroup" x="254" y="346" width="542" height="172"></rect>
-        <rect lb:scope="20.891-25.411" id="panel4" fill-opacity="0.01" fill="#FFFFFF" sketch:type="MSShapeGroup" x="252" y="518" width="542" height="172"></rect>
-        <g id="Group" sketch:type="MSLayerGroup" transform="translate(27.000000, 21.000000)">
-            <g lb:scope="0.045-1.611" id="Rectangle-1-+-Hey,-you-look-cute!" transform="translate(86.000000, 3.000000)">
-                <rect id="Rectangle-1" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="230" height="59"></rect>
-                <text x="27" y="36" id="Hey,-you-look-cute!" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Hey, you look cute!</tspan>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feMorphology radius="2" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="2" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.762489371   0 0 0 0 0.762489371   0 0 0 0 0.762489371  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="2" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="2" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.762489371   0 0 0 0 0.762489371   0 0 0 0 0.762489371  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="2" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="2" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.762489371   0 0 0 0 0.762489371   0 0 0 0 0.762489371  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="2" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="2" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.762489371   0 0 0 0 0.762489371   0 0 0 0 0.762489371  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-5">
+            <feMorphology radius="2" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="2" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.762489371   0 0 0 0 0.762489371   0 0 0 0 0.762489371  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="2" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="2" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.762489371   0 0 0 0 0.762489371   0 0 0 0 0.762489371  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="DISCO" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="conversation" sketch:type="MSLayerGroup" transform="translate(35.000000, 29.000000)">
+            <g id="are-you-friends" transform="translate(13.000000, 0.000000)">
+                <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-1)" sketch:type="MSShapeGroup" x="0" y="0" width="217" height="43"></rect>
+                <text id="Are-you-friends?" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="14.2071823" y="31">Are you friends?</tspan>
                 </text>
             </g>
-            <g lb:scope="3.422-4.680" id="Rectangle-1-copy-+-Can-I-buy-you-a-drin" transform="translate(33.000000, 79.000000)">
-                <rect id="Rectangle-1-copy" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="264" height="59"></rect>
-                <text x="25" y="36" id="Can-I-buy-you-a-drin" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Can I buy you a drink?</tspan>
+            <g id="yes,-best-friends" transform="translate(527.000000, 84.000000)">
+                <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-2)" sketch:type="MSShapeGroup" x="0" y="0" width="232" height="43"></rect>
+                <text id="Yes,-best-friends." sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="18.2955801" y="31">Yes, best friends.</tspan>
                 </text>
             </g>
-            <g lb:scope="4.994-6.754" id="Rectangle-1-copy-2-+-Yes,-I-want-a-Martin" transform="translate(612.000000, 74.000000)">
-                <rect id="Rectangle-1-copy-2" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="264" height="59"></rect>
-                <text x="24" y="36" id="Yes,-I-want-a-Martin" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Yes, I want a Martini.</tspan>
+            <g id="you-two-are-so-cute" transform="translate(0.000000, 254.000000)">
+                <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-3)" sketch:type="MSShapeGroup" x="0" y="0" width="272" height="43"></rect>
+                <text id="You-two-are-so-cute!" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="18.859116" y="31">You two are so cute!</tspan>
                 </text>
             </g>
-            <g lb:scope="7.194-8.222" id="Rectangle-1-copy-3-+-What’s-your-name?" transform="translate(61.000000, 180.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="230" height="59"></rect>
-                <text x="21" y="36" id="What’s-your-name?" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>What’s your name?</tspan>
+            <g id="are-you-good?" transform="translate(592.000000, 354.000000)">
+                <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-4)" sketch:type="MSShapeGroup" x="0" y="0" width="206" height="43"></rect>
+                <text id="Are-you-good?" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="20.6767956" y="31">Are you good?</tspan>
                 </text>
             </g>
-            <g lb:scope="10.314-12.108" id="Rectangle-1-copy-3-+-What’s-your-name?2" transform="translate(0.000000, 256.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="314" height="59"></rect>
-                <text x="21" y="36" id="You-have-the-prettie" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>You have the prettiest eyes.</tspan>
+            <g id="alright-lets-dance-instead" transform="translate(0.000000, 430.000000)">
+                <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-5)" sketch:type="MSShapeGroup" x="0" y="0" width="346" height="43"></rect>
+                <text id="Alright,-let’s-dance" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="16.058011" y="31">Alright, let’s dance instead!</tspan>
                 </text>
             </g>
-            <g lb:scope="12.331-14.091" id="Rectangle-1-copy-3-+-What’s-your-name?3" transform="translate(653.000000, 254.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="250" height="59"></rect>
-                <text x="21" y="36" id="All-the-guys-say-thi" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>All the guys say this.</tspan>
-                </text>
-            </g>
-            <g lb:scope="14.840-15.908" id="Rectangle-1-copy-3-+-What’s-your-name?4" transform="translate(51.000000, 352.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="204" height="59"></rect>
-                <text x="21" y="36" id="Are-you-friends?" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Are you friends?</tspan>
-                </text>
-            </g>
-            <g lb:scope="16.108-17.994" id="Rectangle-1-copy-3-+-What’s-your-name?5" transform="translate(736.000000, 352.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="212" height="59"></rect>
-                <text x="21" y="36" id="Yes,-best-friends." sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Yes, best friends.</tspan>
-                </text>
-            </g>
-            <g lb:scope="18.120-19.891" id="Rectangle-1-copy-3-+-What’s-your-name?6" transform="translate(83.000000, 428.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="237" height="59"></rect>
-                <text x="21" y="36" id="You-two-are-so-cute!" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>You two are so cute!</tspan>
-                </text>
-            </g>
-            <g lb:scope="20.891-21.874" id="Rectangle-1-copy-3-+-What’s-your-name?7" transform="translate(724.000000, 518.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="176" height="59"></rect>
-                <text x="21" y="36" id="Are-you-good?" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Are you good?</tspan>
-                </text>
-            </g>
-            <g lb:scope="21.988-23.805" id="Rectangle-1-copy-3-+-What’s-your-name?8" transform="translate(42.000000, 600.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="306" height="59"></rect>
-                <text x="21" y="36" id="Alright,-let’s-dance" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Alright, let’s dance instead!</tspan>
-                </text>
-            </g>
-            <g lb:scope="23.960-25.411" id="Rectangle-1-copy-3-+-What’s-your-name?9" transform="translate(676.000000, 606.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="219" height="59"></rect>
-                <text x="21" y="36" id="Awesome,-let’s-go!" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Awesome, let’s go!</tspan>
-                </text>
-            </g>
-            <g lb:scope="8.394-9.862" id="Rectangle-1-copy-3-+-What’s-your-name?10" transform="translate(693.000000, 180.000000)">
-                <rect id="Rectangle-1-copy-3" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="208" height="59"></rect>
-                <text x="22" y="36" id="My-name-is-Jane" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>My name is Jane</tspan>
-                </text>
-            </g>
-            <g lb:scope="1.748-2.908" id="Rectangle-1-copy-+-Oh,-thank-you!11" transform="translate(654.000000, 0.000000)">
-                <rect id="Rectangle-1-copy" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="184" height="59"></rect>
-                <text x="22" y="36" id="Oh,-thank-you!" sketch:type="MSTextLayer" font-family="MarkerFelt-Thin" font-size="24" font-weight="normal" line-spacing="29" letter-spacing="0.154838711" fill="#000000">
-                    <tspan>Oh, thank you!</tspan>
+            <g id="alright-lets-dance-instead" transform="translate(592.000000, 519.000000)">
+                <rect id="Rectangle-167" stroke="#000000" fill="#FFFFFF" filter="url(#filter-6)" sketch:type="MSShapeGroup" x="0" y="0" width="248" height="43"></rect>
+                <text id="Awesome,-let’s-go!" sketch:type="MSTextLayer" font-family="Chalkduster" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#000000">
+                    <tspan x="20.7154696" y="31">Awesome, let’s go!</tspan>
                 </text>
             </g>
         </g>
