@@ -68,11 +68,10 @@ class SVGContentViewController: ContentViewController {
     }
     
     private func resolveLayerData(layer: CALayer) -> LayerData? {
-        if let d = LayerData.readFrom(layer) {
-            return d
-        }
-        
-        return layer.superlayer != nil ? resolveLayerData(layer.superlayer!) : nil
+        if let d = layer.layerData { return d }
+        if let superlayer = layer.superlayer { return resolveLayerData(superlayer) }
+
+        return nil
     }
     
     
@@ -89,7 +88,7 @@ class SVGContentViewController: ContentViewController {
     }
 
     private func layerShouldBeActiveDuringPlayhead(playhead: AudioTime) (layer: CALayer) -> Bool {
-        if let data = LayerData.readFrom(layer) {
+        if let data = layer.layerData {
             if let scope = data.scope {
                 return scope ~= playhead
             }
@@ -99,7 +98,7 @@ class SVGContentViewController: ContentViewController {
     }
 
     private func activateLayer(layer: CALayer) {
-        let data: LayerData! = LayerData.readFrom(layer)
+        let data: LayerData! = layer.layerData
         if data == nil { return }
 
         let anim: String! = data.animation

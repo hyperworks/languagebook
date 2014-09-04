@@ -24,7 +24,7 @@ import QuartzCore
                     link: elem.getAttribute("link")
                 )
 
-                data.writeTo(layer)
+                layer.layerData = data
                 interactiveLayers += [layer]
             }
         }
@@ -34,14 +34,14 @@ import QuartzCore
     }
     
     private func resolveInheritance(layer: CALayer, var resolved: [String: Any] = [:]) {
-        if let data = LayerData.readFrom(layer) {
+        if let data = layer.layerData {
             let resolvedData = LayerData(
                 scope: inherits(&resolved, data.scope, AudioInterval(), "scope"),
                 animation: inherits(&resolved, data.animation, "", "animation"),
                 link: inherits(&resolved, data.link, "", "link")
             )
         
-            resolvedData.writeTo(layer)
+            layer.layerData = resolvedData
         }
         
         layer.sublayers?
