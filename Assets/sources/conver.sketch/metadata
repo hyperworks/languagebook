@@ -11,9 +11,12 @@
 	<key>fonts</key>
 	<array>
 		<string>Chalkduster</string>
+		<string>Thonburi</string>
+		<string>HiraKakuProN-W3</string>
+		<string>Thonburi-Light</string>
 	</array>
 	<key>length</key>
-	<integer>16043521</integer>
+	<integer>16067831</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
