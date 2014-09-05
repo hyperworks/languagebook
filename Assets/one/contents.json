@@ -1,6 +1,10 @@
 { "id": "one"
 , "pages":
-  [ { "id": "disco"
+  [ { "id": "cover"
+    , "contents":
+      [ { "svg": "cover.svg", "interactive": false } ]
+    }
+  , { "id": "disco"
     , "contents":
       [ { "image": "comic-disco.png" }
       , { "svg": "conver-disco.svg", "interactive": true }
