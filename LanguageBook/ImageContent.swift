@@ -6,8 +6,8 @@ class ImageContent: Content {
     
     override var dimension: CGSize { return image.size }
 
-    override init(page: Page, dict: JSONDict) {
+    init(page: Page, dict: JSONDict) {
         name = dict["image"]! as String
-        super.init(page: page, id: name)
+        super.init(page: page, id: name, dict: dict)
     }
 }

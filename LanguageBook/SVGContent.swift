@@ -7,11 +7,10 @@ class SVGContent: Content {
     var image: SVGKImage { return SVGImageCache.get(self.path) }
     override var dimension: CGSize { return image.size }
 
-
-    override init(page: Page, dict: JSONDict) {
+    init(page: Page, dict: JSONDict) {
         name = dict["svg"]! as String
         interactive = (dict["interactive"] ?? false) as Bool
         
-        super.init(page: page, id: name)
+        super.init(page: page, id: name, dict: dict)
     }
 }

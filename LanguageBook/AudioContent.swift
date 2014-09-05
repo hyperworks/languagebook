@@ -10,7 +10,7 @@ class AudioContent: Content {
     
     var asset: AVAsset { return _asset }
     
-    override init(page: Page, dict: JSONDict) {
+    init(page: Page, dict: JSONDict) {
         name = dict["audio"]! as String
         autoplay = (dict["autoplay"] ?? false) as Bool
         
@@ -21,6 +21,6 @@ class AudioContent: Content {
             scope = nil
         }
         
-        super.init(page: page, id: name)
+        super.init(page: page, id: name, dict: dict)
     }
 }

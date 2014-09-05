@@ -4,19 +4,26 @@ class Content: Model {
     private var _memoryWarning: Notification.Observation
     
     let page: Page
+    let tags: [String]
     
     var path: String { return Model.pathForName(id, inDirectory: page.chapter.id) }
     var fileURL: NSURL { return NSURL.fileURLWithPath(path)! }
 
     var dimension: CGSize { return CGSizeZero }
-
-    init(page: Page, dict: JSONDict) {
-        self.page = page
-        super.init(dict: dict)
+    
+    convenience init(page: Page, dict: JSONDict) {
+        let id = (dict["id"] ?? "") as String
+        self.init(page: page, id: id, dict: dict)
     }
     
-    init(page: Page, id: String) {
+    init(page: Page, id: String, dict: JSONDict) {
         self.page = page
+        if let tags = (dict["tags"] ?? []) as? JSONArray {
+            self.tags = (tags as JSONArray).cast({ $0 as? String })
+        } else {
+            self.tags = []
+        }
+        
         super.init(id: id)
     }
     
