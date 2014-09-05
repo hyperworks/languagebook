@@ -21,7 +21,8 @@ import QuartzCore
                 let data = LayerData(
                     scope: elem.hasAttribute("scope") ? AudioInterval.parse(elem.getAttribute("scope")) : nil,
                     animation: elem.getAttribute("animation"),
-                    link: elem.getAttribute("link")
+                    link: elem.getAttribute("link"),
+                    tags: elem.hasAttribute("tags") ? parseTags(elem.getAttribute("tags")) : []
                 )
 
                 layer.layerData = data
@@ -35,10 +36,12 @@ import QuartzCore
     
     private func resolveInheritance(layer: CALayer, var resolved: [String: Any] = [:]) {
         if let data = layer.layerData {
+            let defaultInterval = AudioInterval()
             let resolvedData = LayerData(
-                scope: inherits(&resolved, data.scope, AudioInterval(), "scope"),
+                scope: inherits(&resolved, data.scope, defaultInterval, "scope"),
                 animation: inherits(&resolved, data.animation, "", "animation"),
-                link: inherits(&resolved, data.link, "", "link")
+                link: inherits(&resolved, data.link, "", "link"),
+                tags: merge(&resolved, data.tags as [String], "tags")
             )
         
             layer.layerData = resolvedData
@@ -49,14 +52,36 @@ import QuartzCore
             .each({ self.resolveInheritance($0, resolved: resolved) })
     }
     
+    private func merge<T: Equatable>(inout resolved: [String: Any],
+        _ value: [T],
+        _ key: String) -> [T] {
+            
+        var result = value
+        if let existing = resolved[key] as? [T] {
+            result = value + existing
+            resolved[key] = result
+        }
+            
+        return result
+    }
+    
     private func inherits<T: Equatable>(inout resolved: [String: Any], _ value: T?, _ zeroValue: T, _ key: String) -> T? {
         if let v = value {
             if v != zeroValue {
+                // TODO: Tags should probably be merged, not replaced.
                 resolved[key] = v
                 return v
             }
         }
         
         return resolved[key] as? T
+    }
+    
+    
+    private func parseTags(rawList: String) -> [String] {
+        let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        let tags = rawList.componentsSeparatedByString(",")
+        
+        return tags.map({ $0.stringByTrimmingCharactersInSet(whitespace) })
     }
 }

@@ -1,5 +1,8 @@
 import Foundation
 
+// TODO: Rewrote this in Swift's top-level function style where we can apply more constraints and
+//   opt for a more performant impl. Also Swift already has a bunch of sequence manipulation funcs.
+//   See uniq() for a start
 extension Array {
 
     /// Finds the first element in the array that matches the given predicate.
@@ -32,6 +35,9 @@ extension Array {
         return result
     }
     
+    // Pairs each element in this array with element from supplied array at the same index position
+    // and return an array of tuples. The number of returned elements is the minimum of the length
+    // of both arrays.
     func zip<U>(with another: [U]) -> [(T, U)] {
         let count = self.count > another.count ? self.count : another.count
         
@@ -44,6 +50,7 @@ extension Array {
         
         return results
     }
+    
     
     /// Folds the array leftwise into a single value.
     func foldl<U>(var seed acc: U, folder: (U, T) -> U) -> U {
@@ -110,4 +117,19 @@ extension Array {
         
         return (minItem, maxItem)
     }
+}
+
+func uniq<T: protocol<Equatable, Hashable>>(seq: [T]) -> [T] {
+    var tally: [T: Bool] = [:]
+    var result: [T] = []
+    result.reserveCapacity(seq.count)
+    
+    for item in seq {
+        if tally[item]? == true { continue }
+        
+        tally[item] = true
+        result += [item]
+    }
+    
+    return result
 }

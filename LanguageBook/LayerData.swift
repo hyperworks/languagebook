@@ -12,13 +12,17 @@ extension CALayer {
     let scope: AudioInterval?
     let animation: String?
     let link: String?
+    let tags: [String]
     
     init(scope: AudioInterval?,
         animation: String?,
-        link: String?) {
+        link: String?,
+        tags: [String]) {
+            
         self.scope = scope
         self.animation = animation
         self.link = link
+        self.tags = uniq(tags)
         super.init()
     }
 }
