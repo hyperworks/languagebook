@@ -1,10 +1,9 @@
 import Foundation
 
 class ImageContent: Content {
-    private lazy var _image: UIImage = UIImage(contentsOfFile: self.path)
-
     let name: String
-    var image: UIImage { return _image }
+    var image: UIImage { return ImageCache.get(path) }
+    
     override var dimension: CGSize { return image.size }
 
     override init(page: Page, dict: JSONDict) {

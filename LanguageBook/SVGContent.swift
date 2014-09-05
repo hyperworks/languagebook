@@ -1,12 +1,10 @@
 import Foundation
 
 class SVGContent: Content {
-    private lazy var _image: SVGKImage = SVGImageCache.sharedInstance[self.path]
-
     let name: String
     let interactive: Bool
 
-    var image: SVGKImage { return _image }
+    var image: SVGKImage { return SVGImageCache.get(self.path) }
     override var dimension: CGSize { return image.size }
 
 

@@ -125,5 +125,9 @@ class SVGContentViewController: ContentViewController {
             dump(anim, name: "unknown animation")
         }
     }
+
+    private func deactivateLayer(layer: CALayer) {
+        // TODO: Implement
+    }
 }
 

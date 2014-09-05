@@ -13,6 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = w
         return true
     }
+    
+    func applicationDidReceiveMemoryWarning(application: UIApplication) {
+        dump("applicationDidReceiveMemoryWarning")
+        Notification.MemoryWarning.broadcast()
+    }
 
     func applicationWillResignActive(application: UIApplication!) { }
     func applicationDidEnterBackground(application: UIApplication!) { }

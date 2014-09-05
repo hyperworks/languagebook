@@ -34,6 +34,8 @@
 		2280A82919ACE69B00C6CD4C /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A82819ACE69B00C6CD4C /* Random.swift */; };
 		2280A82B19ACEB2900C6CD4C /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A82A19ACEB2900C6CD4C /* NSLayoutConstraint.swift */; };
 		228C34EC198E200600E9E6B9 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C34EB198E200600E9E6B9 /* CGPoint.swift */; };
+		22A9393F19B992E3006F4323 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9393E19B992E3006F4323 /* ImageCache.swift */; };
+		22A9394119B9931A006F4323 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9394019B9931A006F4323 /* Cache.swift */; };
 		22AA922E19889D1F0091F5E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA922D19889D1F0091F5E2 /* AppDelegate.swift */; };
 		22AA923019889D1F0091F5E2 /* PageNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA922F19889D1F0091F5E2 /* PageNavigationController.swift */; };
 		22AA923519889D1F0091F5E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AA923419889D1F0091F5E2 /* Images.xcassets */; };
@@ -78,6 +80,8 @@
 		2280A82819ACE69B00C6CD4C /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		2280A82A19ACEB2900C6CD4C /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		228C34EB198E200600E9E6B9 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		22A9393E19B992E3006F4323 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		22A9394019B9931A006F4323 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		22AA922819889D1F0091F5E2 /* LanguageBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AA922C19889D1F0091F5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AA922D19889D1F0091F5E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				223B9C2F19ACFE5200421F74 /* Model.swift */,
 				223B9C3319AD052C00421F74 /* Page.swift */,
 				225278D619ADDAD300557944 /* SVGContent.swift */,
+				228F84E819B99899001B627F /* Cache */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -162,6 +167,16 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		228F84E819B99899001B627F /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				22A9394019B9931A006F4323 /* Cache.swift */,
+				22A9393E19B992E3006F4323 /* ImageCache.swift */,
+				222B3CBA19B074670001E577 /* SVGImageCache.swift */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
 		22AA921F19889D1E0091F5E2 = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +207,6 @@
 				22B7B35819B70CD800FF52F4 /* Pausable.swift */,
 				2280A82819ACE69B00C6CD4C /* Random.swift */,
 				2280A82419ACC1E000C6CD4C /* SerialController.swift */,
-				222B3CBA19B074670001E577 /* SVGImageCache.swift */,
 				22AA923419889D1F0091F5E2 /* Images.xcassets */,
 				2246438C198E20D70001DEBF /* Extensions */,
 				223B9C2C19ACFD7E00421F74 /* Models */,
@@ -334,6 +348,7 @@
 				223B9C3219ACFE7500421F74 /* Chapter.swift in Sources */,
 				223B9C3A19AD1A3500421F74 /* PageViewController.swift in Sources */,
 				224CD46B1994B87600C72178 /* Array.swift in Sources */,
+				22A9393F19B992E3006F4323 /* ImageCache.swift in Sources */,
 				22B7B35919B70CD800FF52F4 /* Pausable.swift in Sources */,
 				2280A82319ACC11300C6CD4C /* RootViewController.swift in Sources */,
 				22AA923019889D1F0091F5E2 /* PageNavigationController.swift in Sources */,
@@ -353,6 +368,7 @@
 				22F11E4D199E0F94006B4033 /* Notification.swift in Sources */,
 				223B9C3419AD052C00421F74 /* Page.swift in Sources */,
 				222B3CB719B059F30001E577 /* AudioContent.swift in Sources */,
+				22A9394119B9931A006F4323 /* Cache.swift in Sources */,
 				228C34EC198E200600E9E6B9 /* CGPoint.swift in Sources */,
 				2280A82719ACE58E00C6CD4C /* DebugViewController.swift in Sources */,
 				223B9C3819AD19B300421F74 /* ChapterViewController.swift in Sources */,

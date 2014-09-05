@@ -1,6 +1,8 @@
 import Foundation
 
 class Content: Model {
+    private var _memoryWarning: Notification.Observation
+    
     let page: Page
     
     var path: String { return Model.pathForName(id, inDirectory: page.chapter.id) }

@@ -1,18 +1,25 @@
 import Foundation
 
-typealias ObservationToken = NSObjectProtocol!
-
 enum Notification: String {
+    typealias Observation = NSObjectProtocol!
+    
     case MemoryWarning = "th.co.hyperworks.MemoryWarning"
     
-    static func observe(notif: Notification, block: NSNotification -> ()) -> ObservationToken {
+    func broadcast() {
         let center = NSNotificationCenter.defaultCenter()
         let queue = NSOperationQueue.mainQueue()
         
-        return center.addObserverForName(notif.toRaw(), object: nil, queue: queue) { block($0!) }
+        center.postNotificationName(toRaw(), object: nil)
     }
     
-    static func unobserve(token: ObservationToken) {
+    func observe(block: NSNotification -> ()) -> Observation {
+        let center = NSNotificationCenter.defaultCenter()
+        let queue = NSOperationQueue.mainQueue()
+        
+        return center.addObserverForName(toRaw(), object: nil, queue: queue) { block($0!) }
+    }
+    
+    static func unobserve(token: Observation) {
         NSNotificationCenter.defaultCenter().removeObserver(token)
     }
 }
