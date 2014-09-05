@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222139E719B9B7A700DA81EC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222139E619B9B7A700DA81EC /* Config.swift */; };
 		222B3CB719B059F30001E577 /* AudioContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B3CB619B059F30001E577 /* AudioContent.swift */; };
 		222B3CB919B05BA20001E577 /* AudioContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B3CB819B05BA20001E577 /* AudioContentViewController.swift */; };
 		222B3CBB19B074670001E577 /* SVGImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B3CBA19B074670001E577 /* SVGImageCache.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		175D8DC6B38942C8AFFF000A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		222139E619B9B7A700DA81EC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		222B3CB619B059F30001E577 /* AudioContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioContent.swift; sourceTree = "<group>"; };
 		222B3CB819B05BA20001E577 /* AudioContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioContentViewController.swift; sourceTree = "<group>"; };
 		222B3CBA19B074670001E577 /* SVGImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGImageCache.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				22AA922D19889D1F0091F5E2 /* AppDelegate.swift */,
 				2280A81E19AC909A00C6CD4C /* AudioTypes.swift */,
+				222139E619B9B7A700DA81EC /* Config.swift */,
 				2280A81919AC877100C6CD4C /* MediaController.swift */,
 				225278D219ADB84000557944 /* MediaSynchronizer.swift */,
 				22F11E4C199E0F94006B4033 /* Notification.swift */,
@@ -370,6 +373,7 @@
 				222B3CB719B059F30001E577 /* AudioContent.swift in Sources */,
 				22A9394119B9931A006F4323 /* Cache.swift in Sources */,
 				228C34EC198E200600E9E6B9 /* CGPoint.swift in Sources */,
+				222139E719B9B7A700DA81EC /* Config.swift in Sources */,
 				2280A82719ACE58E00C6CD4C /* DebugViewController.swift in Sources */,
 				223B9C3819AD19B300421F74 /* ChapterViewController.swift in Sources */,
 				2280A81F19AC909A00C6CD4C /* AudioTypes.swift in Sources */,

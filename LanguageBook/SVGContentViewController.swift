@@ -47,10 +47,36 @@ class SVGContentViewController: ContentViewController {
         }
     }
     
+    // TODO: This should be done at the model layer. We shouldn't be mutating the model here.
     private func setupLayerInteraction() {
-        let loader = LayerDataLoader(image: svgContent.image)
+        let image = svgContent.image
+        let loader = LayerDataLoader(image: image)
         _interactiveLayers = loader.load()
         _activeLayers = []
+        
+        applyLayerConfiguration(image.CALayerTree)
+    }
+    
+    private func applyLayerConfiguration(layer: CALayer) {
+        if let sublayers = layer.sublayers {
+            for l in layer.sublayers {
+                let sublayer = l as CALayer
+                applyLayerConfiguration(sublayer)
+            }
+        }
+        
+        let config = Config.defaultConfig
+        if let data = layer.layerData {
+            if data.tags.count > 0 {
+                // TODO: Check for complete sub/superset instead of intersection?
+                for tag in data.tags {
+                    if find(config.activeTags, tag) == nil {
+                        layer.removeFromSuperlayer()
+                        return
+                    }
+                }
+            }
+        }
     }
     
     
@@ -75,6 +101,7 @@ class SVGContentViewController: ContentViewController {
     }
     
     
+    // TODO: KVO
     private func didChangePlayhead(playhead: AudioTime) {
         let predicate = layerShouldBeActiveDuringPlayhead(playhead)
         
